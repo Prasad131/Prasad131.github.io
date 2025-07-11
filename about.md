@@ -2,6 +2,8 @@
 layout: default
 title: About
 ---
-# About page
+# About Durga Prasad Pydi
 
-This page tells you a little bit about me.
+I am a PhD scholar at Department of Mechanical Engineering in IIT Madras.
+
+My research interesets include
