@@ -1,0 +1,66 @@
+toc:
+  - title: Introduction
+    subfolderitems:
+      - page: Applications of Convective Heat Transfer
+        url: /week1/applications.html
+      - page: Foundations of Heat Transfer
+        url: /week1/foundations.html
+  - title: Preliminary Concepts
+    subfolderitems:
+      - page: Derivation of Energy Equation
+        url: /week2/energy.html
+      - page: Derivation of Boundary Layer Equation
+        url: /week2/blEqn.html
+      - page: Derivation of Boundary Layer Energy Equation
+        url: /week2/blEqnEnergy.html
+  - title: Convective Heat Transfer in External Flows - I 
+    subfolderitems:
+      - page: Blasius Solution - Similarity Method 
+        url: /week3/blasius.html 
+      - page: Pohlhausen Solution -  Similarity Method
+        url: /week3/pohlhausen.html 
+      - page: Pohlhausen Solution - Heat Transfer Parameters 
+        url: /week3/pohlhausenHT.html 
+      - page: Falkner-Skan Equation - Boundary layer flow over a wedge 
+        url: /week3/falknerSkan.html
+  - title: Convective Heat Transfer in External Flows - II 
+    subfolderitems:
+      - page: Momentum Integral Equation for flat plate Boundary layer
+        url: /week4/momInt.html 
+      - page: Laminar Boundary Layer over flat plate - Uniform Surface Temperature 
+        url: /week4/constTempBL.html 
+      - page: Laminar Boundary Layer over flat plate - Uniform Surface Heat Flux 
+        url: /week4/constFluxBL.html 
+      - page: Solution of Example Problems
+        url: /week4/solEx.html
+  - title: Convective Heat Transfer in Internal Flows - I
+    subfolderitems:
+      - page: Hydrodynamic and thermal regions
+        url: /week5/hydro.html 
+      - page: Energy balance in channel flow
+        url: /week5/energy.html 
+      - page: Determination of heat transfer coefficient
+        url: /week5/htc.html 
+      - page: Velocity profile in fully-developed channel flow
+        url: /week5/vel.html
+  - title: Convective Heat Transfer in Internal Flows - II
+    subfolderitems:
+      - page: Thermally fully developed laminar slug flow with uniform wall heat flux 
+        url: /week6/slugFlux.html 
+      - page: Hydrodynamically and thermally fully developed flow with uniform wall heat flux condition
+        url: /week6/hydro.html 
+      - page: Fully developed flow through parallel plate channel with uniform wall temperature conditions
+        url: /week6/isothermal.html
+      - page: Fully developed flow through circular pipe with uniform wall temperature
+        url: /week6/isothermAnnular.html 
+  - title: Convective Heat Transfer in Internal Flows - III
+    subfolderitems:
+      - page: Thermally developing flow through circular pipe with uniform wall heat flux
+        url: /week7/isoflux.html
+      - page: Thermally developing flow through circular pipe with uniform wall temperature
+        url: /week7/isothermal.html 
+      - page: Heat transfer in Couette flow
+        url: /week7/couette.html
+      - page: Solutions of example problems
+        url: /week7/solEx.html
+  

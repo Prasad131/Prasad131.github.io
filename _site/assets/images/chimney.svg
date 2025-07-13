@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="chimney.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.6695208"
+     inkscape:cx="188.67689"
+     inkscape:cy="188.97638"
+     inkscape:window-width="1352"
+     inkscape:window-height="844"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient8"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="0.67405063"
+         id="stop10" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient7"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#03fa1f;stop-opacity:0.90853661;"
+         offset="0"
+         id="stop7" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop8" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7"
+       id="radialGradient8"
+       cx="50"
+       cy="74.987701"
+       fx="50"
+       fy="74.987701"
+       r="9.5589368"
+       gradientTransform="matrix(1,0,0,2.0582253,0,-79.353884)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8"
+       id="radialGradient10"
+       cx="50"
+       cy="74.987701"
+       fx="50"
+       fy="74.987701"
+       r="9.5589371"
+       gradientTransform="matrix(1,0,0,2.0582253,0,-79.353884)"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="chimney">
+      <path
+         style="fill:url(#radialGradient8);fill-opacity:1;stroke:url(#radialGradient10);stroke-width:0.1;stroke-opacity:0.992771"
+         d="m 59.389928,55.388273 0.118858,39.064975 -18.898635,0.158479 -0.11886,-39.223454 c 0,0 6.097327,2.5338 9.508747,2.614897 0.01979,4.71e-4 0.03965,8.6e-4 0.05957,0.0012 3.660752,0.05664 9.330324,-2.616065 9.330324,-2.616065 z"
+         id="path6"
+         sodipodi:nodetypes="ccccssc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.992771"
+         d="m 40.491291,55.388273 c 9.50872,-4.199683 18.898637,0 18.898637,0"
+         id="path7"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+</svg>
