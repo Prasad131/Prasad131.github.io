@@ -1,0 +1,9 @@
+.two-column {
+    /* column-count: 2; */
+    /* Or, if you prefer to specify column width */
+    column-width: 200px;
+    -webkit-column-gap: 20px; /* For Safari */
+    -moz-column-gap: 20px;   /* For Firefox */
+    column-gap: 20px;
+    text-align: center;
+}
