@@ -1,30 +1,32 @@
-<p align="center">
-  <a href="https://revealjs.com">
-  <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
-  </a>
-  <br><br>
-  <a href="https://github.com/hakimel/reveal.js/actions"><img src="https://github.com/hakimel/reveal.js/workflows/tests/badge.svg"></a>
-  <a href="https://slides.com/"><img src="https://static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
-</p>
+# Fundamentals of Convective Heat Transfer — NPTEL Live Sessions
 
-reveal.js is an open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free. Check out the live demo at [revealjs.com](https://revealjs.com/).
+Welcome to the website for the **NPTEL course: Fundamentals of Convective Heat Transfer**. This site serves as the central hub for all upcoming live sessions, resources, and course updates.
 
-The framework comes with a powerful feature set including [nested slides](https://revealjs.com/vertical-slides/), [Markdown support](https://revealjs.com/markdown/), [Auto-Animate](https://revealjs.com/auto-animate/), [PDF export](https://revealjs.com/pdf-export/), [speaker notes](https://revealjs.com/speaker-view/), [LaTeX typesetting](https://revealjs.com/math/), [syntax highlighted code](https://revealjs.com/code/) and an [extensive API](https://revealjs.com/api/).
+## About the Course
 
----
+**Fundamentals of Convective Heat Transfer** is an NPTEL course designed to provide a comprehensive understanding of convective heat transfer principles, mechanisms, and applications. The course is suitable for students, educators, and professionals seeking to deepen their knowledge in this area.
 
-Want to create reveal.js presentation in a graphical editor? Try <https://slides.com>. It's made by the same people behind reveal.js.
+## Live Sessions
 
----
+- **Upcoming live sessions** and related materials will be hosted on this website.
+- Please refer to the [home page](https://prasad131.github.io/) for detailed information.
 
-### Getting started
-- 🚀 [Install reveal.js](https://revealjs.com/installation)
-- 👀 [View the demo presentation](https://revealjs.com/demo)
-- 📖 [Read the documentation](https://revealjs.com/markup/)
-- 🖌 [Try the visual editor for reveal.js at Slides.com](https://slides.com/)
-- 🎬 [Watch the reveal.js video course (paid)](https://revealjs.com/course)
+## How This Site Was Built
 
---- 
-<div align="center">
-  MIT licensed | Copyright © 2011-2024 Hakim El Hattab, https://hakim.se
-</div>
+This website was created using [reveal.js](https://revealjs.com/), an open-source HTML presentation framework. Reveal.js enables interactive and visually engaging presentations directly in the browser.
+
+### Credits
+
+- [reveal.js](https://revealjs.com/) — MIT Licensed HTML presentation framework.
+
+## How to Use This Site
+
+1. **Visit the Home Page:** All essential information and session recordings are available on [home page](https://prasad131.github.io/).
+2. **Join Live Sessions:** Follow the instructions and links provided on the NPTEL course page to participate in live sessions.
+3. **Access Resources:** Additional materials, slides, and recordings (if available) will be posted on the website.
+
+## Contact
+
+For questions or feedback regarding the course or website, please use the contact information provided on the home page.
+
+*This site is not affiliated with or endorsed by NPTEL. All course content and live sessions are organized independently for educational purposes.*
