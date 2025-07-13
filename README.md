@@ -9,7 +9,7 @@ Welcome to the website for the **NPTEL course: Fundamentals of Convective Heat T
 ## Live Sessions
 
 - **Upcoming live sessions** and related materials will be hosted on this website.
-- Please refer to the [index.html](./index.html) (the home page) for detailed information.
+- Please refer to the [home page](https://prasad131.github.io/) for detailed information.
 
 ## How This Site Was Built
 
@@ -21,7 +21,7 @@ This website was created using [reveal.js](https://revealjs.com/), an open-sourc
 
 ## How to Use This Site
 
-1. **Visit the Home Page:** All essential information and session recordings are available on [index.html](./index.html).
+1. **Visit the Home Page:** All essential information and session recordings are available on [home page](https://prasad131.github.io/).
 2. **Join Live Sessions:** Follow the instructions and links provided on the NPTEL course page to participate in live sessions.
 3. **Access Resources:** Additional materials, slides, and recordings (if available) will be posted on the website.
 
