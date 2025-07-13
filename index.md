@@ -33,7 +33,7 @@ Prof. Amaresh Dalal is currently a Professor in the Department of Mechanical Eng
 
 ## About Me
 
-<img src="https://lh6.googleusercontent.com/dbhyciIuxm8gqkj7uCfDHM8IcvDWfD1wE_btUgZSQZ3O1JTLLRDjxtwaxd2dVzaeXKQDam1Io1K1xrcwDbsyHPPFZYotXwiwbY44RMtu5nUXTsmzlfswytkNftcYhuVDDd5E2Wu7F8e3J5oDPPGaDdvcg6ZkMYzRwu18T78yYLAxSCHzkE7R=w1280" align="left" width="80" style="margin-right: 25px;"/>
+<img src="https://drive.google.com/file/d/1J1NsRWbjY79ZO8sJ0mu0NzOuZCJ7oaIQ/view?usp=sharing" align="left" width="80" style="margin-right: 25px;"/>
 
 I am pursuing my PhD from the Department of Mechanical Engineering, Indian Institute of Technology Madras, under the guidance of Dr Advaith Sankar. My research interest falls in the artificial intelligence-assisted thermal management of buildings. 
 
