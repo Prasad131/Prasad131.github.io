@@ -27,6 +27,7 @@
 <h4>26-07-2025</h4>
 </section>
 
+<!-- Contents -->
 <section>
 <h2>Contents</h2>
 <ul>
@@ -359,76 +360,288 @@ $$
 
 <!-- Week1 Problems  -->
 <section>
-<section>
-<h2>Problem1</h2>
-<p>Which of the following non-dimensional number </p>
+<h2>Problems</h2>
 </section>
-</section>
-<section>
-    <section>
-        <h2>Problem2</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem3</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem4</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem5</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem6</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem7</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem8</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem9</h2>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>Problem10</h2>
-    </section>
-</section>
-<!-- </div>
-</div>
 
-<script src="../dist/reveal.js"></script>
-<script src="../plugin/notes/notes.js"></script>
-<script src="../plugin/markdown/markdown.js"></script>
-<script src="../plugin/highlight/highlight.js"></script>
-<script src="../plugin/math/math.js"></script>
+<!-- Problem -->
+<section style="text-align: left;">
+<p>
+Consider an infinite plate of thickness 5mm, heated with constant heat flux of 1 kW/m<sup>2</sup> on one side and exposed to environment with temperature in the range of 20-30&deg;C on the other side. Determine the minimum value of thermal conductivity of the plate material, if the maximum allowed temperature on the plate surface is 150&deg;C. (Assume the environment has heat transfer coefficient of 10-20 W/m<sup>2</sup>K).
+</p>
+<img src="./assets/week1_1.svg" alt="image for problem 1" width="100%" height="auto"> <br>
+<label>Thermal Conductivity (mW/mK): <input type="number" id="inputNumber"/></label> <span class="feedback" id="feedbackBox"></span>
+
 <script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-    Reveal.initialize({
-        hash: true,
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-    });
+  const input = document.getElementById('inputNumber');
+  const feedback = document.getElementById('feedbackBox');
+
+  input.addEventListener('input', function () {
+    const value = parseFloat(this.value);
+    if (!isNaN(value)) {
+      if (value==0.25)
+      {
+        feedback.textContent = '✔️ Correct ';
+        feedback.style.color = 'green';
+      } else {
+        feedback.textContent = '✖️ Wrong';
+        feedback.style.color = 'red';
+      }
+    }
+  });
 </script>
-</body>
-</html> -->
+
+</section>
+
+<!-- Problem  -->
+
+
+
+<section style="text-align: left;">
+<div class="quiz-block" data-quiz-id="2" data-type="single" data-correct="3">
+  <p>Which of the following expressions can be used to approximate the heat transfer coefficient in case of radiation with an ambient at a temperature, $T_0$? (State the requirement for validity of the assumption)</p>
+  <form>
+    
+      <label>
+        <input type="radio"
+               name="2" value="1"
+        >
+        $\epsilon \sigma$
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="radio"
+               name="2" value="2"
+        >
+        $\epsilon \sigma T_0^3$
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="radio"
+               name="2" value="3"
+        >
+        $4\epsilon \sigma T_0^3$
+        <span class="feedback"></span>
+      </label><br><br>
+    
+  </form>
+  <button type="button" class="check-answer">Check Answer</button>
+  <button type="button" class="clear-answer">Clear Answer</button>
+</div>
+</section>
+
+<!-- Problem  -->
+
+
+
+<section style="text-align: left;">
+<div class="quiz-block" data-quiz-id="3" data-type="multi" data-correct="1,2,4">
+  <p>Which terms in the Navier-Stokes equations are zero under hydrostatic conditions?</p>
+  <form>
+    
+      <label>
+        <input type="checkbox"
+               name="3" value="1"
+        >
+        Unsteady
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="3" value="2"
+        >
+        Inertia
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="3" value="3"
+        >
+        Pressure
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="3" value="4"
+        >
+        Viscosity
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="3" value="5"
+        >
+        Gravity
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="3" value="6"
+        >
+        All of the above
+        <span class="feedback"></span>
+      </label><br><br>
+    
+  </form>
+  <button type="button" class="check-answer">Check Answer</button>
+  <button type="button" class="clear-answer">Clear Answer</button>
+</div>
+</section>
+
+<!-- Problem  -->
+ 
+
+
+<section style="text-align: left;">
+<div class="quiz-block" data-quiz-id="4" data-type="multi" data-correct="1,4">
+  <p>Which terms in the Navier-Stokes equation are zero for Bernoulli's equation to be valid?$$p+\frac{\rho v^2}{2}+\rho g h=const$$</p>
+  <form>
+    
+      <label>
+        <input type="checkbox"
+               name="4" value="1"
+        >
+        Unsteady
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="4" value="2"
+        >
+        Inertia
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="4" value="3"
+        >
+        Pressure
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="4" value="4"
+        >
+        Viscosity
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="4" value="5"
+        >
+        Gravity
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="4" value="6"
+        >
+        All of the above
+        <span class="feedback"></span>
+      </label><br><br>
+    
+  </form>
+  <button type="button" class="check-answer">Check Answer</button>
+  <button type="button" class="clear-answer">Clear Answer</button>
+</div>
+</section>
+
+<!-- Problem -->
+
+
+
+<section style="text-align: left;">
+<div class="quiz-block" data-quiz-id="5" data-type="multi" data-correct="1,2,3">
+  <p>Which of the options are true for potential flow?</p>
+  <form>
+    
+      <label>
+        <input type="checkbox"
+               name="5" value="1"
+        >
+        Inviscid
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="5" value="2"
+        >
+        Incompressible
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="5" value="3"
+        >
+        Irrotational
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="checkbox"
+               name="5" value="4"
+        >
+        None of the above
+        <span class="feedback"></span>
+      </label><br><br>
+    
+  </form>
+  <button type="button" class="check-answer">Check Answer</button>
+  <button type="button" class="clear-answer">Clear Answer</button>
+</div>
+</section>
+
+<!-- Problem -->
+
+
+
+<section style="text-align: left;">
+<div class="quiz-block" data-quiz-id="6" data-type="single" data-correct="3">
+  <p>Which of the following non-dimensional numbers can be used to classify a flow as mixed convection?</p>
+  <form>
+    
+      <label>
+        <input type="radio"
+               name="6" value="1"
+        >
+        $Re=\frac{U L}{\nu}$
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="radio"
+               name="6" value="2"
+        >
+        $Gr = \frac{g \beta \Delta T L^3}{\nu ^2}$
+        <span class="feedback"></span>
+      </label><br><br>
+    
+      <label>
+        <input type="radio"
+               name="6" value="3"
+        >
+        $Ri = \frac{g \beta \Delta T L}{U^2}$
+        <span class="feedback"></span>
+      </label><br><br>
+    
+  </form>
+  <button type="button" class="check-answer">Check Answer</button>
+  <button type="button" class="clear-answer">Clear Answer</button>
+</div>
+</section>
 
 
 </div>
@@ -450,5 +663,69 @@ $$
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
     });
 </script>
+
+<script>
+  function arraysEqual(a, b) {
+    return a.length === b.length && a.every((v, i) => v === b[i]);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".quiz-block").forEach(quiz => {
+      const correct = quiz.dataset.correct.split(',').map(s => s.trim());
+      const type = quiz.dataset.type || "single";
+      const inputs = quiz.querySelectorAll("input");
+      const checkBtn = quiz.querySelector(".check-answer");
+      const clearBtn = quiz.querySelector(".clear-answer");
+
+      checkBtn.addEventListener("click", function () {
+        quiz.querySelectorAll('.feedback').forEach(fb => {
+          fb.textContent = '';
+          fb.style.color = '';
+        });
+
+        const selected = Array.from(inputs)
+          .filter(i => i.checked)
+          .map(i => i.value);
+
+        const sortedSelected = selected.sort();
+        const sortedCorrect = correct.sort();
+
+        inputs.forEach(input => {
+          const fb = input.parentElement.querySelector(".feedback");
+          const val = input.value;
+          if (input.checked) {
+            if (correct.includes(val)) {
+              fb.textContent = '✔️ Correct';
+              fb.style.color = 'green';
+            } else {
+              fb.textContent = '✖️ Wrong';
+              fb.style.color = 'red';
+            }
+          } else {
+            if (type === "multi" && correct.includes(val)) {
+              fb.textContent = '✖️ Missed';
+              fb.style.color = 'orange';
+            }
+          }
+        });
+
+        if (arraysEqual(sortedSelected, sortedCorrect)) {
+          console.log("🎉 All correct for quiz", quiz.dataset.quizId);
+        }
+      });
+
+      // ✅ Clear Answer functionality
+      clearBtn.addEventListener("click", function () {
+        inputs.forEach(input => input.checked = false);
+        quiz.querySelectorAll('.feedback').forEach(span => {
+          span.textContent = '';
+          span.style.color = '';
+        });
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>

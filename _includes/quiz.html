@@ -1,0 +1,21 @@
+{% assign options = include.options | split: "," %}
+{% assign correct_answers = include.correct | split: "," %}
+{% assign quiz_id = include.id | default: 'quiz-' | append: forloop.index0 | replace: ' ', '-' | replace: '.', '-' %}
+<section style="text-align: left;">
+<div class="quiz-block" data-quiz-id="{{ quiz_id }}" data-type="{{ include.type | default: 'single' }}" data-correct="{{ include.correct }}">
+  <p>{{ include.question | default: "Choose the correct option(s):" }}</p>
+  <form>
+    {% for opt in options %}
+      <label>
+        <input type="{{ include.type | default: 'single' | replace: 'single', 'radio' | replace: 'multi', 'checkbox' }}"
+               name="{{ quiz_id }}" value="{{ forloop.index }}"
+        >
+        {{ opt | strip }}
+        <span class="feedback"></span>
+      </label><br><br>
+    {% endfor %}
+  </form>
+  <button type="button" class="check-answer">Check Answer</button>
+  <button type="button" class="clear-answer">Clear Answer</button>
+</div>
+</section>

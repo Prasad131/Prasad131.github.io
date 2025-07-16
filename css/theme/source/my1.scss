@@ -64,6 +64,7 @@ $overlayElementFgColor: 240, 240, 240;
 .reveal li{
     text-align: left;
     margin-left: 0;
+    margin-bottom: 10px;
 }
 
 .reveal ul{
@@ -72,4 +73,8 @@ $overlayElementFgColor: 240, 240, 240;
 
 .reveal ol{
     display: block;
+}
+
+.katex {
+  font-size: 0.8em; /* Adjust to your desired size, e.g., 1em for the same size as surrounding text */
 }

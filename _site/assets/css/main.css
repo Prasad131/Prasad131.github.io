@@ -7,3 +7,16 @@
     column-gap: 20px;
     text-align: center;
 }
+
+.radio-left {
+  text-align: left !important;
+}
+.radio-left form {
+  display: inline-block;
+  text-align: left;
+}
+
+.feedback {
+margin-left: 8px;
+font-weight: bold;
+}

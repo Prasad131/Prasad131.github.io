@@ -48,5 +48,69 @@
         plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
     });
 </script>
+
+<script>
+  function arraysEqual(a, b) {
+    return a.length === b.length && a.every((v, i) => v === b[i]);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".quiz-block").forEach(quiz => {
+      const correct = quiz.dataset.correct.split(',').map(s => s.trim());
+      const type = quiz.dataset.type || "single";
+      const inputs = quiz.querySelectorAll("input");
+      const checkBtn = quiz.querySelector(".check-answer");
+      const clearBtn = quiz.querySelector(".clear-answer");
+
+      checkBtn.addEventListener("click", function () {
+        quiz.querySelectorAll('.feedback').forEach(fb => {
+          fb.textContent = '';
+          fb.style.color = '';
+        });
+
+        const selected = Array.from(inputs)
+          .filter(i => i.checked)
+          .map(i => i.value);
+
+        const sortedSelected = selected.sort();
+        const sortedCorrect = correct.sort();
+
+        inputs.forEach(input => {
+          const fb = input.parentElement.querySelector(".feedback");
+          const val = input.value;
+          if (input.checked) {
+            if (correct.includes(val)) {
+              fb.textContent = '✔️ Correct';
+              fb.style.color = 'green';
+            } else {
+              fb.textContent = '✖️ Wrong';
+              fb.style.color = 'red';
+            }
+          } else {
+            if (type === "multi" && correct.includes(val)) {
+              fb.textContent = '✖️ Missed';
+              fb.style.color = 'orange';
+            }
+          }
+        });
+
+        if (arraysEqual(sortedSelected, sortedCorrect)) {
+          console.log("🎉 All correct for quiz", quiz.dataset.quizId);
+        }
+      });
+
+      // ✅ Clear Answer functionality
+      clearBtn.addEventListener("click", function () {
+        inputs.forEach(input => input.checked = false);
+        quiz.querySelectorAll('.feedback').forEach(span => {
+          span.textContent = '';
+          span.style.color = '';
+        });
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>
