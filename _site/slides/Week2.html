@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Week 2</title>
+
+    <link rel="stylesheet" href="../dist/reset.css">
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/my1.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- Title Slide  -->
+<section>
+<h2>Fundamentals of Convective Heat Transfer</h2>
+<h3>NPTEL Live Session - 2</h3>
+<h4>Durga Prasad Pydi</h4>
+<h4>02-08-2025</h4>
+</section>
+
+<!-- Contents  -->
+<section>
+<h2>Contents</h2>
+<ul>
+    <li>Reynolds Transport Theorem</li>
+    <li>Derivation of Energy equation</li>
+</ul>
+</section>
+
+<!-- Reynolds Transport Theorem  -->
+<section style="text-align: left;">
+<h2>Reynolds Transport Theorem</h2>
+<p>
+<img src="./assets/week2_1.svg" style="float:left; width:auto; height:100%; margin-right:2.5em;"/>
+$$
+\left. \frac{DN}{Dt} \right|_{sys} = \underbrace{\frac{\partial }{\partial t} \int_{CV} \rho \eta dV}_{\text{rate of change in CV}} + \underbrace{\int_{CV} \rho \eta (\vec{v_r}.\hat{n})dA}_{\text{net flux out of CV}}
+$$
+
+where $N$,$\eta$ are extensive and intensive properties respectively <br>
+$\rho$: density of fluid, <br>
+$\vec{v_r}$: velocity of fluid relative to the CV <br>
+$\hat{n}$: outward normal vector to control surface
+</p>
+</section>
+
+</div>
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/math/math.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+        view: 'scroll',
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+</script>
+
+<script>
+  function arraysEqual(a, b) {
+    return a.length === b.length && a.every((v, i) => v === b[i]);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".quiz-block").forEach(quiz => {
+      const correct = quiz.dataset.correct.split(',').map(s => s.trim());
+      const type = quiz.dataset.type || "single";
+      const inputs = quiz.querySelectorAll("input");
+      const checkBtn = quiz.querySelector(".check-answer");
+      const clearBtn = quiz.querySelector(".clear-answer");
+
+      checkBtn.addEventListener("click", function () {
+        quiz.querySelectorAll('.feedback').forEach(fb => {
+          fb.textContent = '';
+          fb.style.color = '';
+        });
+
+        const selected = Array.from(inputs)
+          .filter(i => i.checked)
+          .map(i => i.value);
+
+        const sortedSelected = selected.sort();
+        const sortedCorrect = correct.sort();
+
+        inputs.forEach(input => {
+          const fb = input.parentElement.querySelector(".feedback");
+          const val = input.value;
+          if (input.checked) {
+            if (correct.includes(val)) {
+              fb.textContent = '✔️ Correct';
+              fb.style.color = 'green';
+            } else {
+              fb.textContent = '✖️ Wrong';
+              fb.style.color = 'red';
+            }
+          } else {
+            if (type === "multi" && correct.includes(val)) {
+              fb.textContent = '✖️ Missed';
+              fb.style.color = 'orange';
+            }
+          }
+        });
+
+        if (arraysEqual(sortedSelected, sortedCorrect)) {
+          console.log("🎉 All correct for quiz", quiz.dataset.quizId);
+        }
+      });
+
+      // ✅ Clear Answer functionality
+      clearBtn.addEventListener("click", function () {
+        inputs.forEach(input => input.checked = false);
+        quiz.querySelectorAll('.feedback').forEach(span => {
+          span.textContent = '';
+          span.style.color = '';
+        });
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

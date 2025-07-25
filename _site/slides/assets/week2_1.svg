@@ -1,0 +1,15 @@
+<svg width="100mm" height="100mm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path style="fill:#7a4a0a;fill-opacity:.125;stroke:#000;stroke-width:.5" d="m13.23 28.77c3.73-6.48 3.85-6.6 17.43-13.39 13.57-6.79 21.03-4.9 28.06 1.28 7.18 6.31-5.32 24.21 4.95 28.25 10.27 4.04 21.02 9.68 16.69 22.38-3.03 8.88-10.64 17.47-19.63 20.18-11.92 3.6-18.66.18-28.43-6.97-7.18-5.25-11.77-13.52-11.37-24.4.25-6.93-10.8-21.95-7.7-27.33z"/>
+  <text style="font-size:3.18px" x="44.49" y="52.35" xml:space="preserve">
+    <tspan style="fill:#000" x="44.49" y="52.35">CV</tspan>
+  </text>
+  <text style="font-size:3.18px" x="69.5" y="13.4" xml:space="preserve">
+    <tspan style="fill:#000" x="69.5" y="13.4">Control</tspan>
+    <tspan style="fill:#000" x="69.5" y="17.37">Surface</tspan>
+  </text>
+  <path style="fill:none;stroke:#000;stroke-width:.2" d="m67.99 14.93-7.84 2.39"/>
+  <path style="fill:#000;stroke:#000;stroke-width:.2" d="m61.51 16.16-1.04 1.15h2.61"/>
+  <path style="fill:none;stroke:#000;stroke-width:.2" d="m28.96 77.64-1.14 8.12"/>
+  <path style="fill:#000;stroke:#000;stroke-width:.2" d="m27.35 84.03.61 1.43 1.1-2.37"/>
+  <text style="font-size:3.18px;fill:#000" x="25.84" y="88.12" xml:space="preserve">n̂</text>
+</svg>
