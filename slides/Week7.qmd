@@ -1,0 +1,556 @@
+---
+title: Fundamentals of Convective Heat Transfer
+subtitle: Week-07 (Live Session)
+author: Durga Prasad Pydi
+date: 06-09-2025
+format: 
+    revealjs:
+        theme: [default,custom.scss]
+        width: 1920
+        height: 1080
+        css: styles.css
+        slide-number: true
+        lightbox: true
+        crossrefs-hover: true
+        html-math-method: mathml
+lightbox: true
+---
+
+## Contents
+
+-   Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall heat flux
+-   Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall temperature
+-   Heat transfer in plane Couette flow
+-   Solved Problems
+
+## Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall heat flux
+
+### Problem Description
+
+![Illustration of the problem](./assets/week7_1.excalidraw.svg){#fig-qconst-pipe fig-align="center"}
+
+-   Graetz number: $Gz=\frac{Re_D Pr}{x/D}=\frac{D^2/\alpha}{x/u_m}$ where $D$ is the inner diameter of the pipe
+-   Thermal boundary layer development has to be taken into account for larger values of $Gz$
+-   Temperature profile is given by 
+$$
+    \frac{T(x,r)-T_i}{\frac{q''_wr_0}{k}} = \frac{4x/r_0}{Re_DPr}+\frac{r^2}{r_0^2}-\frac{1}{4}\frac{r^4}{r_0^4}-\frac{7}{24}+\sum_{n=1}^{\infty} C_n R_n e^{-\frac{\lambda_n^2 x/r_0}{Re_D Pr}}
+$$
+
+## Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall heat flux
+
+### Nusselt number
+
+::::: columns
+::: {.column width="50%"}
+$$
+Nu = \frac{2}{\frac{11}{24}+\sum_{n=1}^{\infty} C_n R_n(1) e^{-\frac{\lambda_n^2 x/r_0}{Re_D Pr}}}
+$$
+:::
+
+::: {.column width="50%"}
+
+|  n  | $\lambda_n^2$ | $R_n(1)$  |   $C_n$   |
+|:---:|:-------------:|:---------:|:---------:|
+|  1  |    25.6796    | -0.492597 | 0.403483  |
+|  2  |    83.8618    | 0.395508  | -0.175111 |
+|  3  |    174.167    | -0.345872 | 0.105594  |
+|  4  |    296.536    | 0.314047  | -0.732804 |
+|  5  |    450.947    | -0.291252 | 0.0550357 |
+|  6  |    637.387    | 0.273808  | -0.043483 |
+|  7  |    855.850    | -0.259852 | 0.035597  |
+
+: Eigen values and constants for uniform wall heat flux case {#tbl-qconstLambda}
+:::
+:::::
+
+## Problem 1 {.scrollable}
+
+Consider water at 20^0^C flowing through a pipe of diameter 25mm and length 2m with a mass flow rate of 10g/s. If the pipe is heated electrically resulting in a uniform wall heat flux of 0.1W/cm^2^. (Take kinematic viscosity of water as $10^{-6}$ m^2^/s, thermal conductivity as 0.6 W/mK, Prandlt number as 7).
+
+1.  Determine the overall heat transferred to water
+2.  Determine the mean outlet temperature of water
+3.  Plot the wall temperature as a function of length of the pipe
+
+. . .
+
+**Solution**
+
+Given D=0.025m, L=2m, $\dot{\mathrm{m}}$=0.01 kg/s, q"=1000 W/m^2^, $\nu=10^{-6}$ m^2^/s, $\kappa$=0.6W/mK, Pr=7, $T_{in}$=20 ^0^ C
+
+. . .
+
+Overall heat transfer, $Q = q'' \pi D L$
+
+. . .
+
+We have, $Q = \dot{\mathrm{m}} c_p (T_{out}-T_{in}) \implies T_{out}=\frac{Q}{\dot{\mathrm{m}} c_p}+T_{in}$
+
+. . .
+
+The temperature profile is given by 
+$$
+\frac{T(x,r)-T_i}{\frac{q''_wr_0}{k}} = \frac{4x/r_0}{Re_DPr}+\frac{r^2}{r_0^2}-\frac{1}{4}\frac{r^4}{r_0^4}-\frac{7}{24}+\sum_{n=1}^{\infty} C_n R_n e^{-\frac{\lambda_n^2 x/r_0}{Re_D Pr}}
+$$
+
+. . .
+
+Wall temperature can be obtained by setting $r=r_0$ in the above equation and using @tbl-qconstLambda
+
+. . .
+
+Mean temperature can be found through 
+$$
+T_m (x) = T_{in} + \frac{4x/r_0}{Re_DPr} \frac{q_{w}''r_0}{\kappa}
+$$
+
+. . .
+
+![Plot of temperature variation along the length of the pipe](./assets/problem1_plot.svg){#fig-prob1 fig-align="center"}
+
+. . .
+
+Observe that as length increases, the temperature profile approaches linear which is inline with our discussions from the last week for thermally fully developed region
+
+. . .
+
+Answers: 157.08 W, 23.756 ^0^ C
+
+## Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall temperature
+
+### Problem Description
+
+![Illustration of the problem](./assets/week7/week7_2.svg){#fig-Tconst-pipe fig-align="center"}
+
+$$
+\frac{T(x,r)-T_w}{T_i-T_w} = \sum_{n=0}^{\infty} C_n R_n(\eta) e^{-\frac{\lambda_n^2x/r_0}{Re_D Pr}}, \quad C_n = -\frac{2}{\lambda_n \left(\frac{\partial R_n}{\partial \lambda_n}\right)_{\eta=1}}
+$$
+
+## Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall temperature
+
+::::: columns
+::: {.column width="50%"}
+
+|  n  | $\lambda_n$ |   $C_n$   |  $G_n$  |
+|:---:|:-----------:|:---------:|:-------:|
+|  0  |  2.7043644  | +1.46622  | 0.74879 |
+|  1  |  6.679032   | -0.802476 | 0.54383 |
+|  2  |  10.67338   | +0.587094 | 0.46288 |
+|  3  |  14.67108   | -0.474897 | 0.41518 |
+|  4  |  18.66987   | +0.404402 | 0.38237 |
+
+: Eigenvalues and constants for uniform wall temperature case {#tbl-TconstLambda}
+:::
+
+::: {.column width="50%"}
+
+|  $\xi$   |   $Nu$   | $\overline{Nu}$ |
+|:--------:|:--------:|:---------------:|
+|    0     | $\infty$ |    $\infty$     |
+|  0.001   |   12.8   |      19.29      |
+|   0.01   |    6     |      8.92       |
+|   0.1    |   3.71   |      4.64       |
+|   0.2    |   3.66   |      4.15       |
+| $\infty$ |   3.66   |      3.66       |
+
+: Local and average Nusselt numbers {#tbl-nuLocGlobal}
+:::
+:::::
+
+$$
+\overline{Nu}_D(x) = - \frac{1}{\frac{2x/r_0}{Re_D Pr}} ln(\theta_m), \quad \theta_m = \frac{T_m(x)-T_w}{T_i-T_w}=8 \sum_{n=0}^{\infty} G_n \frac{e^{-\frac{\lambda_n^2 x/r_0}{Re_DPr}}}{\lambda_n^2}
+$$
+
+## Problem 2 {.scrollable}
+
+As an application of the results obtained in this chapter for laminar flows in circular ducts under constant wall temperature boundary condition, consider an oil heat exchanger, in which the length of the tubes is 200 diameters long. The Prandtl number of the oil is given as 100, and the Reynolds number of the flow in the tubes is 1000:
+
+a\. Is it possible that the flow in the tubes in this heat exchanger can be assumed to be fully developed?
+
+b\. Find the value of the local Nusselt number at the end of the tubes by assuming hydrodynamically fully developed and thermally developing flow in the tubes.
+
+c\. Assuming that the average Nusselt number is approximately twice the local value at the end of the tubes, estimate the error that could have been introduced if fully developed conditions were used.
+
+. . .
+
+**Solution**
+
+Given: $Re_D=1000$, $Pr=100$, $L=200D$
+
+. . .
+
+Fully developed condition, we evaluate $Gz=\frac{L/D}{Re_D Pr}<<1$
+
+. . .
+
+Local Nusselt Number is given by
+
+$$
+Nu_D(x) = \frac{\sum_{n=0}^{\infty}G_ne^{-\frac{-\lambda_n^2x/r_0}{Re_DPr}}}{2\sum_{n=0}^{\infty}\frac{G_n}{\lambda_n^2}e^{-\frac{-\lambda_n^2x/r_0}{Re_DPr}}}
+$$
+
+At the end of tube substitute $x/r_0=2L/D$ and evaluate local Nusselt number using @tbl-TconstLambda
+
+. . .
+
+If $\overline{Nu}_{fd}$ is the average Nusselt number under fully developed conditions, the error induced is
+
+$$
+\Delta = 1-\frac{2*Nu_D(L)}{\overline{Nu}_{fd}}
+$$
+
+. . .
+
+Answers: 7.71, -321%
+
+## Heat Transfer in Plane Couette Flow
+
+### Isothermal top and bottom walls
+
+![Illustration of the problem](./assets/week7/week7_3.svg){#fig-CouetteFlow fig-align="center"}
+
+The problem is characterised by $Pr, Ec,Br$ numbers defined as
+
+$$
+Pr = \frac{\nu}{\alpha}, \quad Ec = \frac{U^{2}}{c_{p}(T_{H}-T_{o})}, \quad Br=Pr Ec
+$$
+
+$$
+\begin{align}
+Nu_o &= -2\left( 1+\frac{Ec Pr}{2}\right), \quad Nu_H = 2\left( 1- \frac{Ec Pr}{2} \right) \\
+\frac{T(y)-T_o}{T_H-T_o} &= \frac{y}{H} + \frac{Ec Pr}{2}\left(\frac{y}{H} - \frac{y^2}{H^2} \right)
+\end{align}
+$$
+
+## Heat transfer in plane Couette flow
+
+### Isothermal top and adiabatic bottom walls
+
+![Illustration of problem](./assets/week7/week7_4.svg){#fig-CouetteflowAdiabatic fig-align="center"}
+
+Nusselt number, $Nu=-4$ for the top wall
+
+No heat transfer from the bottom wall, temperature of which is given by $$
+T_{o} = T_{H}+\frac{\mu U^{2}}{2 \kappa}
+$$
+
+## Problem 3 {.scrollable}
+
+A 100-mm diameter journal rotates at 3000 rpm in a bearing with a 0.5-mm oil film of engine oil (μ=0.1 Pa·s, k=0.13 W/m·K, $\rho=$ 870 kg/m^3^). The shaft is maintained at 80°C, and the bearing is well insulated. Calculate the maximum temperature in the oil film due to viscous heating. 
+![Illustration of journal bearing](./assets/journal_bearing.png)
+
+. . .
+
+**Solution** Given: $D=0.1$m , $h=0.5\times 10^{-3}$m, $N=3000$ rpm, $\mu=0.1$ Pa.s, $\kappa=0.13$ W/m.K , $T_{H}=80$°C and $\rho=870 kg / m^{3}$
+
+. . .
+
+Assume the flow between shaft and bearing as plane Couette (valid only if $\frac{h}{R} \ll 1$)
+
+Determine the velocity of the top plate, $U=\frac{\pi ND}{60}$
+
+. . .
+
+Check if the flow is laminar, $\mathrm{Re}=\frac{\rho Uh}{\mu}<2300$
+
+. . .
+
+The bearing is insulated, so maximum temperature would occur at the surface of the bearing, and is given by $$
+T_{max}=T_{H}+\frac{\mu U^{2}}{2\kappa}
+$$
+
+. . .
+
+Answers: $U=15.71$ m/s, $\mathrm{Re}=68.33$, $T_{max}=174.92$ °C
+
+## Problem 4 {.scrollable}
+Consider the flow of a constant-property fluid at a mass flow rate $\dot{\mathrm{m}}$ in an electrically heated tube of diameter $d$ and length $L$. The heat flux to the fluid along the length of the tube is given as
+$$
+q_{w}''= q_{0}''\sin \frac{\pi x}{L}
+$$
+where $q_{0}''$ is a given constant. Determine the variation of the tube surface temperature along the length of the tube. Assume that the heat transfer coefficient is constant and known.
+
+. . .
+
+**Solution**
+
+![Problem illustration](./assets/week7_problem4.excalidraw.svg){#fig-problem4}
+
+. . .
+
+Derive the energy equation for a small control volume as shown in the above image
+
+. . .
+
+$$
+\dot{m} c_{p} dT_{m} = h(T_{w}(x)-T_{m}(x)) = q_{w}''dx
+$$
+
+. . .
+
+Integrate the above equation to find $T_{m}(x)$
+
+. . .
+
+$$
+T_{m}(x) = T_{mi}+\frac{L}{\pi} \frac{q_{0}''}{\dot{m}c_{p}}\left( 1-\cos \frac{\pi x}{L} \right)
+$$
+
+. . .
+
+Since $h$ is specified as constant, we can use the relation to find $T_{w}(x)$
+$$
+q_{w}'' = h(T_{w}-T_{m}) = q_{0}''\sin \frac{\pi x}{L}
+$$
+
+. . .
+
+Answer: $T_{w}(x) = T_{mi}+\frac{L}{\pi} \frac{q_{0}''}{\dot{m} c_{p}} \left( 1-\cos \frac{\pi x}{L} \right)+\frac{q_{0}''}{h} \sin \frac{\pi x}{L}$
+
+## Problem 5
+Consider the laminar flow of an oil inside a duct with a Reynolds number of 1000. The length of the duct is 2.5 m and the diameter is 2 cm. The duct is heated electrically by the use of its walls as an electrical resistance. Properties of the oil at the average oil temperature are $\rho=870 kg / m^{3}$, $c_{p}=1.959 kJ / kg.K$, $\mu=0.004 Pa.s$ and $\kappa=0.128 W / m.K$. Obtain the local Nusselt number at the end of the duct.
+
+. . .
+
+**Solution**
+
+Given: $\mathrm{Re}=1000$, $L=2.5m$, $D=0.02m$, $\rho=870 kg / m^{3}$, $c_{p}=1959 J / kg.K$, $\mu=0.004 Pa.s$ and $\kappa=0.128 W / m.K$
+
+. . .
+
+Is the flow thermally fully developed?
+
+. . .
+
+$Gz=\frac{\mathrm{Re}PrD}{L}=\frac{1000*0.004*1959*0.02}{0.128*2.5}=489.75 \gg 1$ thermally developing flow 
+
+constant wall flux or wall temperature?
+
+. . .
+
+Electrical resistance heating can be assumed to be constant wall heat flux, hence Nusselt number is given by 
+$$
+Nu_{D} = \frac{2}{\frac{11}{24}+\sum_{n=1}^{\infty}C_{n}R_{n}(1)e^{-2\lambda_{n}^{2}/Gz}}
+$$
+where the values of $C_{n},R_{n}(1),\lambda_{n}^{2}$ can be taken from @tbl-qconstLambda
+
+. . .
+
+Answers: 14.286
+
+Observe that this value is way higher than the fully developed case of 4.36
+
+## Problem 6{.scrollable}
+Air at 1 atm and 20°C is to be heated at a rate of 0.04 kg/min in a circular pipe of 5 cm ID and 6 m length by maintaining a constant heat flux at the pipe wall. What is the required wall heat flux if the maximum local difference between the pipe wall and mean fluid temperatures is to be equal or less than 10°C? Also, determine the exit air temperature.
+
+. . .
+
+**Solution**
+
+Given: $\dot{m}=\frac{1}{1500} kg / s$, $D=0.05 m$, $L=6 m$, $T_{w}-T_{m}\leq 10 ^{0}C$ 
+
+Assume the following property values taken for air at $20^{0}C$ 
+
+$\rho=1.2047 kg / m^{3}$, $\mu=1.8205\times 10^{-5} Pa.s$, $c_{p} = 1006.1 J / kg K$, $\kappa=0.0256 W / m K$ 
+
+. . .
+
+We have, $q''=h(T_{w}-T_{m})$ 
+
+Assuming fully developed flow
+
+. . .
+
+$Nu=\frac{hD}{\kappa} \implies h=\frac{Nu \kappa }{D}$ 
+
+. . .
+
+Exit temperature can be determined from overall energy balance
+$$
+Q = q'' \pi DL = \dot{m}c_{p}(T_{out}-T_{in})
+$$
+
+. . .
+
+$q''\geq 22.32 W / m^{2}$, $T_{out} \geq 51.36 ^{0} C$ 
+
+Is the flow thermally fully developed?
+
+. . .
+
+$Gz=\frac{\mathrm{Re}Pr}{L / D}$
+
+where $\mathrm{Re}=\frac{\rho UD}{\mu}=\frac{4\dot{m}}{\pi D \mu}$
+
+$\mathrm{Re}=943.1<2300$ (laminar assumption is valid !!!)
+
+we have $Gz= 5.56$ , hence fully developed assumption should be reasonable. However, the $T_{out}\gg T_{in}$ and the properties of air can change between these values violating the assumptions taken while deriving the value of Nusselt number. Hence the results from the problem should be treated with caution
+
+## Problem 7{.scrollable}
+Consider the fully developed flow of a very viscous fluid in a circular pipe of radius, $r_{0}$. Obtain an expression for the Nusselt number if the boundary condition is given as
+$$
+\text{at } r=r_{0}:T=T_{w}<T_{m}
+$$
+where $T_{m}$ is the mean fluid temperature
+
+. . .
+
+**Solution**
+
+Governing equation for fully developed highly viscous flow is 
+$$
+\frac{1}{r} \frac{d}{dr}\left( r \frac{dT}{dr}  \right) + \frac{\mu}{\rho c_{p}}\left( \frac{du}{dr} \right)^{2}=0
+$$
+
+Non-dimensionalise the above equation with $r^{*}=\frac{r}{r_{0}}$, $\theta(r^{*})=\frac{T-T_{w}}{T_{mi}-T_{w}}$, and $\frac{u}{u_{m}}(r^{*})=2(1-r^{*2})$
+
+. . .
+
+The non-dimensional equation is given by 
+$$
+\frac{1}{r^{*}} \frac{d}{dr^{*}} \left( r^{*}\frac{d\theta}{dr^{*}}  \right)+16Br. r^{*2} = 0
+$$
+where $Br=\frac{u_{m}^{2}\mu}{\rho c_{p}\alpha(T_{mi}-T_{w})}$
+
+. . .
+
+Boundary conditions are : 
+
+. . . 
+
+$$
+\begin{align}
+r^{*}=0&: \frac{d\theta}{dr^{*}} =0 \\
+r^{*}=1 &: \theta=0
+\end{align}
+$$
+we can solve the governing equation with the above boundary conditions we get
+
+. . .
+
+$$
+\theta(r^{*}) = Br(1-r^{*4})
+$$
+
+Compute the mean temperature from the above expression using, 
+$$
+\theta_{m}(r^{*}) = \frac{\int_{0}^{1} u(r^{*})\theta(r^{*})r^{*}dr^{*}}{\int_{0}^{1}u(r^{*})r^{*}dr^{*}}
+$$
+
+. . .
+
+On solving, we get 
+$$
+\theta_{m} = \frac{5}{6}Br
+$$
+
+. . .
+
+Now we evaluate Nu, using 
+$$
+Nu_{r_{0}} = \frac{\left. -\frac{d\theta}{dr^{*}} \right|_{r^{*}=1} }{\theta_{m}}
+$$
+
+. . .
+
+And, $Nu_{D} = 2Nu_{r_{0}}$
+
+. . .
+
+Answers: 9.6
+
+## Problem 8{.scrollable}
+Consider the fully developed flow of a very viscous fluid between two parallel isothermal plates separated by a distance of $2d$. If the temperatures of the plates are $T_{H},T_{C}$ for hot an cold plates respectively. Determine Nusselt number for both the plates. Also derive the relation for the limiting case when $T_{H}=T_{C}$. 
+
+. . .
+
+**Solution**
+
+The governing equation for energy balance is 
+$$
+\alpha \frac{d^{2}T}{dy^{2}}+\frac{\mu}{\rho c_{p}}\left( \frac{du}{dy}  \right) ^{2}=0
+$$
+where the fully developed velocity profile for parallel plate flow is given by
+$$
+u=\frac{3}{2}u_{m}\left( 1-\left( \frac{y}{d} \right)^{2} \right)
+$$
+
+. . .
+
+Boundary conditions are:
+
+. . .
+
+$$
+\begin{align}
+y=-d & : T=T_{C} \\
+y=d & : T=T_{H}
+\end{align}
+$$
+
+. . .
+
+Non-dimensional the governing equations such that 
+$$
+\begin{align}
+Y  & =\frac{y}{d} \\
+\theta & = \frac{T-T_{C}}{T_{H}-T_{C}} \\
+U & =\frac{u}{u_{m}}
+\end{align}
+$$
+
+. . .
+
+$$
+\begin{align}
+\frac{d^{2}\theta}{dY^{2}} +9Br & =0 \\
+\theta(Y=-1) & =0 \\
+\theta(Y=1) & =1
+\end{align}
+$$
+
+Solve the above equation to get temperature profile
+
+Here $Br=\frac{\mu u_{m}^{2}}{\rho c_{p}(T_{H}-T_{C})}$ 
+
+. . .
+
+$$
+\theta(Y) = -\frac{3\,\mathrm{Br}\,Y^4}{4}+\frac{Y}{2}+\frac{3\,\mathrm{Br}}{4}+\frac{1}{2}
+$$
+
+Evaluate the mean temperature using
+$$
+\theta_{m}= \frac{\int_{-1}^{1} U\theta dY}{\int_{-1}^{1}U dY}
+$$
+
+. . .
+
+On solving, we get, $\theta_{m}=\frac{1}{2}+\frac{24Br}{35}$
+
+Determine the Nusselt numbers using
+$$
+\begin{align}
+Nu_{H} & = \frac{-\left. \frac{d\theta}{dY} \right|_{Y=1}}{\theta_{m}} \\
+Nu_{C} & = \frac{+\left. \frac{d\theta}{dY} \right|_{Y=-1}}{\theta_{m}}
+\end{align}
+$$
+
+. . .
+
+On solving we get 
+$$
+\begin{align}
+Nu_{H} & = \frac{3\,\mathrm{Br}-\frac{1}{2}}{\frac{24\,\mathrm{Br}}{35}+\frac{1}{2}} \\
+Nu_{C} & =\frac{3\,\mathrm{Br}+\frac{1}{2}}{\frac{24\,\mathrm{Br}}{35}+\frac{1}{2}}
+\end{align}
+$$
+
+. . .
+
+Under the limiting case of $T_{H}=T_{C}\implies Br\to \infty$
+
+. . .
+
+Answers: $Nu_{H}=Nu_{C}=\frac{35}{8} \approx 4.375$ which is higher than 3.66 (the solution for isothermal no heating scenario)
+
+## Thank You!{.center}
