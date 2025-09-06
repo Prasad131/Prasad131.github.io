@@ -20,6 +20,20 @@
               "icon": "lucide-file",
               "title": "Week7"
             }
+          },
+          {
+            "id": "8f430a94d6cbac87",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "http://localhost:6728/#/problem-8",
+                "title": "Fundamentals of Convective Heat Transfer",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Fundamentals of Convective Heat Transfer"
+            }
           }
         ]
       }
@@ -174,12 +188,14 @@
   },
   "active": "5d69f1d70a69bda8",
   "lastOpenFiles": [
+    "slides/Week7.qmd",
+    "slides/Week7.quarto_ipynb",
     "slides/Week7_files/mediabag",
+    "slides/Week7_files/figure-revealjs",
     "slides/assets/week7.m",
     "slides/assets/sample_matlab.ipynb",
     "slides/assets/week7.asv",
     "slides/assets/week7.mlx",
-    "slides/Week7.qmd",
     "slides/assets/journal_bearing.png",
     "slides/assets/problem1_plot.svg",
     "slides/assets/week7.ipynb",
@@ -188,8 +204,6 @@
     "Week7 .excalidraw.md",
     "slides/assets/week7_1.excalidraw.svg",
     "slides/assets/week7/problem5.ipynb",
-    "slides/Week7_files/libs/revealjs/dist/theme/quarto-6b6b2e0f9d40e74da6e83da32f0a6dd9.css",
-    "slides/Week7_files/libs/revealjs/dist/theme/quarto-51fd88db6b324ad400334ca38ee6bf8f.css",
     "slides/assets/week7_problem4.excalidraw.md",
     "slides/assets/week7_problem4.svg",
     "slides/assets/week7_problem4.excalidraw.svg",

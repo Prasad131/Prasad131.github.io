@@ -89,7 +89,7 @@ We have, $Q = \dot{\mathrm{m}} c_p (T_{out}-T_{in}) \implies T_{out}=\frac{Q}{\d
 
 The temperature profile is given by 
 $$
-\frac{T(x,r)-T_i}{\frac{q''_wr_0}{k}} = \frac{4x/r_0}{Re_DPr}+\frac{r^2}{r_0^2}-\frac{1}{4}\frac{r^4}{r_0^4}-\frac{7}{24}+\sum_{n=1}^{\infty} C_n R_n e^{-\frac{\lambda_n^2 x/r_0}{Re_D Pr}}
+\frac{T(x,r)-T_i}{\frac{q''_wr_0}{k}} = \frac{4x/r_0}{Re_DPr}+\frac{r^2}{r_0^2}-\frac{1}{4}\frac{r^4}{r_0^4}-\frac{7}{24}+\sum_{n=1}^{\infty} C_n R_n(1) e^{-\frac{\lambda_n^2 x/r_0}{Re_D Pr}}
 $$
 
 . . .
@@ -113,7 +113,7 @@ Observe that as length increases, the temperature profile approaches linear whic
 
 . . .
 
-Answers: 157.08 W, 23.756 ^0^ C
+Answers: 157.08 W, 31.946 ^0^ C
 
 ## Hydrodynamically developed and thermally developing flow through circular pipe with uniform wall temperature
 
@@ -178,7 +178,7 @@ Given: $Re_D=1000$, $Pr=100$, $L=200D$
 
 . . .
 
-Fully developed condition, we evaluate $Gz=\frac{L/D}{Re_D Pr}<<1$
+Developing condition, we evaluate $1/Gz=\frac{L/D}{Re_D Pr}<<1$
 
 . . .
 
@@ -282,7 +282,7 @@ Derive the energy equation for a small control volume as shown in the above imag
 . . .
 
 $$
-\dot{m} c_{p} dT_{m} = h(T_{w}(x)-T_{m}(x)) = q_{w}''dx
+\dot{m} c_{p} dT_{m} = h(T_{w}(x)-T_{m}(x))dx = q_{w}''dx
 $$
 
 . . .
@@ -371,7 +371,7 @@ $$
 
 . . .
 
-$q''\geq 22.32 W / m^{2}$, $T_{out} \geq 51.36 ^{0} C$ 
+$q''\leq 22.32 W / m^{2}$, $T_{out} \leq 51.36 ^{0} C$ 
 
 Is the flow thermally fully developed?
 
@@ -398,10 +398,10 @@ where $T_{m}$ is the mean fluid temperature
 
 Governing equation for fully developed highly viscous flow is 
 $$
-\frac{1}{r} \frac{d}{dr}\left( r \frac{dT}{dr}  \right) + \frac{\mu}{\rho c_{p}}\left( \frac{du}{dr} \right)^{2}=0
+\frac{1}{r} \frac{d}{dr}\left( r \frac{dT}{dr}  \right) + \frac{\mu}{\rho c_{p}}\left( \frac{du^*}{dr} \right)^{2}=0
 $$
 
-Non-dimensionalise the above equation with $r^{*}=\frac{r}{r_{0}}$, $\theta(r^{*})=\frac{T-T_{w}}{T_{mi}-T_{w}}$, and $\frac{u}{u_{m}}(r^{*})=2(1-r^{*2})$
+Non-dimensionalise the above equation with $r^{*}=\frac{r}{r_{0}}$, $\theta(r^{*})=\frac{T-T_{w}}{T_{mi}-T_{w}}$, and $u=\frac{u^*}{u_{m}}(r^{*})=2(1-r^{*2})$
 
 . . .
 
@@ -530,7 +530,7 @@ On solving, we get, $\theta_{m}=\frac{1}{2}+\frac{24Br}{35}$
 Determine the Nusselt numbers using
 $$
 \begin{align}
-Nu_{H} & = \frac{-\left. \frac{d\theta}{dY} \right|_{Y=1}}{\theta_{m}} \\
+Nu_{H} & = \frac{-\left. \frac{d\theta}{dY} \right|_{Y=1}}{\theta_{m}-1} \\
 Nu_{C} & = \frac{+\left. \frac{d\theta}{dY} \right|_{Y=-1}}{\theta_{m}}
 \end{align}
 $$
@@ -540,8 +540,8 @@ $$
 On solving we get 
 $$
 \begin{align}
-Nu_{H} & = \frac{3\,\mathrm{Br}-\frac{1}{2}}{\frac{24\,\mathrm{Br}}{35}+\frac{1}{2}} \\
-Nu_{C} & =\frac{3\,\mathrm{Br}+\frac{1}{2}}{\frac{24\,\mathrm{Br}}{35}+\frac{1}{2}}
+Nu_{H} & = \frac{3\,\mathrm{Br}-\frac{1}{2}}{\frac{24\,\mathrm{Br}}{35}-\frac{1}{2}} \\
+Nu_{C} & = \frac{3\,\mathrm{Br}+\frac{1}{2}}{\frac{24\,\mathrm{Br}}{35}+\frac{1}{2}}
 \end{align}
 $$
 
@@ -551,6 +551,7 @@ Under the limiting case of $T_{H}=T_{C}\implies Br\to \infty$
 
 . . .
 
-Answers: $Nu_{H}=Nu_{C}=\frac{35}{8} \approx 4.375$ which is higher than 3.66 (the solution for isothermal no heating scenario)
+Answers: $Nu_{H}=Nu_{C}=\frac{35}{8} \approx 4.375$
+
 
 ## Thank You!{.center}
