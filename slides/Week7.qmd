@@ -502,7 +502,7 @@ $$
 
 $$
 \begin{align}
-\frac{d^{2}\theta}{dY^{2}} +9Br & =0 \\
+\frac{d^{2}\theta}{dY^{2}} +9Br y^2 & =0 \\
 \theta(Y=-1) & =0 \\
 \theta(Y=1) & =1
 \end{align}
