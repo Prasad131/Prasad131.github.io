@@ -14,28 +14,24 @@ format:
         crossrefs-hover: true
         html-math-method: mathml
         toc: true
+        toc-depth: 2
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Appendix
+      key: app
 lightbox: true
 ---
 
-## Assumptions 
+## Assumptions
 
-:::: {.columns}
-
-::: {.column width=60%}
-
-- Steady, laminar, 2D flow 
-- Viscous dissipation term is neglected
-- Boundary layer approximation is valid ($\delta_T/H \ll 1$)
-- Temperature difference between plate and flud is small enough to assume constant properties of the fluid
-- Flow is incompressible - however, density will vary with location. The assumption is valid because the change in density is due to changes in temperature field
-:::
-
-::: {.column width=40%}
+-   Steady, laminar, 2D flow
+-   Viscous dissipation term is neglected
+-   Boundary layer approximation is valid ($\delta_T/H \ll 1$)
+-   Temperature difference between plate and flud is small enough to assume constant properties of the fluid
+-   Flow is incompressible - however, density will vary with location. The assumption is valid because the change in density is due to changes in temperature field
 
 ![Illustration of natural convection over a vertical heated plate](./assets/Week8_1.excalidraw.svg){#fig-natconvplate}
-:::
-
-::::
 
 ## Boussinesq Approximation
 
@@ -51,10 +47,9 @@ X-momentum equation is neglected under boundary layer approximation, hence y-mom
 
 $$
 u \frac{ \partial v }{ \partial x } +v \frac{ \partial v }{ \partial y } = \nu \frac{ \partial^{2} v }{ \partial x^{2} }+ \beta g(T-T_{\infty})
-$$
-where $\beta=-\frac{1}{\rho}\left.\frac{ \partial \rho }{ \partial T }\right|_{P}$ is the volumetric expansion coefficient of the fluid
+$$ where $\beta=-\frac{1}{\rho}\left.\frac{ \partial \rho }{ \partial T }\right|_{P}$ is the volumetric expansion coefficient of the fluid
 
-Energy equation becomes 
+Energy equation becomes
 
 $$
 u \frac{ \partial T }{ \partial x } +v \frac{ \partial T }{ \partial y } = \alpha \frac{ \partial^{2} T }{ \partial x^{2} } 
@@ -69,7 +64,7 @@ y & \sim & H  & v & \sim & \frac{\alpha H}{\delta_{T}^{2}}
 \end{align}
 $$
 
-non-dimensional numbers governing the flow physics are 
+non-dimensional numbers governing the flow physics are
 
 $$
 \begin{align}
@@ -110,7 +105,7 @@ $$
 
 which gives us an estimate of the boundary layer thickness as $\frac{\delta_{T}}{H} \sim Ra_{H}^{-1/4}$
 
-Heat transfer coefficient is given by, 
+Heat transfer coefficient is given by,
 
 $$
 \begin{align}
@@ -124,7 +119,6 @@ If we define Nusselt number, $Nu_{H}=\frac{hH}{\kappa}$
 $$
 \implies Nu \sim \frac{H}{\delta_{T}} \sim Ra_{H}^{1/4}
 $$
-
 
 ## Nusselt number for $Pr\ll 1$
 
@@ -144,7 +138,7 @@ $$
 
 which gives us an estimate of the boundary layer thickness as $\frac{\delta_{T}}{H} \sim Ra_{H}^{-1/4}Pr^{-1/4}$
 
-Heat transfer coefficient is given by, 
+Heat transfer coefficient is given by,
 
 $$
 \begin{align}
@@ -163,17 +157,15 @@ where Boussinesq number, $Bo_{H} = Ra_{H}Pr$
 
 ## Nusselt number for $Pr\ll 1$ and close to wall
 
-:::: {.columns}
-
-::: {.column width=50%}
-
-Very close to the wall, inertial forces are small, hence viscous and buoyancy forces balance each other, say $\delta_{\nu}$ is the thickness of this thin region 
+::::: columns
+::: {.column width="50%"}
+Very close to the wall, inertial forces are small, hence viscous and buoyancy forces balance each other, say $\delta_{\nu}$ is the thickness of this thin region
 
 $$
 \implies \nu \frac{ \partial^{2}v }{ \partial x^{2} } \sim g\beta(T-T_{\infty})
 $$
 
-we obtain, 
+we obtain,
 
 $$
 \frac{\delta_{\nu}}{H} \sim Gr_{H}^{-1/4}
@@ -184,14 +176,196 @@ where $Gr_{H}=\frac{Ra_{H}}{Pr}$
 and, we have $\frac{\delta_{\nu}}{\delta_{T}} \sim Pr^{1/2}$
 :::
 
-::: {.column width=50%}
-
+::: {.column width="50%"}
 ![Illustration of viscous region close to the wall](./assets/Week8_2.excalidraw.svg){#fig-closewall fig-align="center"}
+:::
+:::::
+
+## Non-dimensionalising Governing Equations
+
+Non-dimensional parameters $$
+x^{*} = \frac{x}{H}, y^{*}=\frac{y}{H}
+$$
+
+$$
+u^{*} = \frac{u}{U_{ref}}, v^{*} = \frac{v}{U_{ref}}
+$$
+
+$$
+\theta = \frac{T-T_{\infty}}{T_{w}-T_{\infty}}
+$$
+
+Continuity
+
+$$
+\frac{ \partial u^{*} }{ \partial  x^{*} } + \frac{ \partial v^{*} }{ \partial y^{*} }=0 
+$$
+
+Y-Momentum equation
+
+$$
+u^{*} \frac{ \partial v^{*} }{ \partial x^{*} } + v^{*} \frac{ \partial v^{*} }{ \partial y^{*} } = \frac{1}{\mathrm{Re}_{H}} \frac{ \partial^{2} v^{*} }{ \partial x^{*2} } + \frac{g\beta(T_{w}-T_{\infty})H}{U_{ref}^{2}} \theta 
+$$
+
+Energy equation
+
+$$
+u^{*} \frac{ \partial \theta }{ \partial x^{*} } + v^{*} \frac{ \partial \theta }{ \partial y^{*} } = \frac{1}{\mathrm{Re}_{H}Pr} \frac{ \partial^{2} \theta }{ \partial x^{*2} }  
+$$
+
+We define Grashof number, $Gr_{H}=\frac{g\beta(T_{w}-T_{\infty})H}{U_{ref}^{2}}\theta$ and Richardson number, $Ri_{H}=\frac{Gr_{H}}{\mathrm{Re}_{H}^{2}}$
+
+## Richardson Number, $Ri_{H}$
+
+$$
+Ri_{H}=\frac{Gr_{H}}{\mathrm{Re}_{H}^{2}}
+$$
+
+| Criteria   | Type of convection |
+|------------|--------------------|
+| $Ri \gg 1$ | Natural            |
+| $Ri \ll 1$ | Forced             |
+| $Ri = 1$   | Mixed / Combined   |
+
+Conventionally we choose, $\mathrm{Re}_{H} = \sqrt{ Gr_{H} }$ such that $Ri_{H} = 1$
+
+Summary of scaling laws
+
+| $Pr$ | $\delta_{T}$ | Wall to velocity peak | Thickness of wall jet | Velocity scale | $Nu$ |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+| $\gg 1$ | $H Ra_{H}^{-1/4}$ | $H Ra_{H}^{-1/4}$ | $Pr^{1/2}HRa_{H}^{-1/4}$ | $\frac{\alpha}{H} Ra_{H}^{1/2}$ | $Ra_{H}^{1/4}$ |
+| $\ll 1$ | $Pr^{-1/4}HRa_{H}^{-1/4}$ | $Pr^{1/4}HRa_{H}^{-1/4}$ | $Pr^{-1/4}HRa_{H}^{-1/4}$ | $\frac{\alpha}{H}Pr^{1/2}Ra_{H}^{1/2}$ | $Pr^{1/4}Ra_{H}^{1/4}$ |
+
+## Similarity Equations - Constant Wall Temperature
+
+:::: {.columns}
+
+:::{.column width=50%}
+
+Similarity variable, $\eta=\frac{x}{\delta_{T}}$ for $Pr>1$ 
+
+where $\delta_{T} \sim y Ra_{y}^{-1/4}$
+
+Choosing non-dimensional temperature and velocity as 
+
+$\theta(\eta,Pr)=\frac{T-T_{\infty}}{T_{w}-T_{\infty}}$, $v=\frac{\alpha}{y}Ra_{y}^{1/2} f'(\eta,Pr)$
+
+where $Ra_{y}=\frac{g\beta \Delta Ty^{3}}{\alpha \nu}$ and $\Delta T=T_{w}-T_{\infty}$
+
+The similarity equation becomes 
+
+$$
+\begin{align}
+\frac{1}{Pr} \left( \frac{f'^{2}}{2}-\frac{3}{4} f f'' \right) & =-f'''+\theta \\
+\theta''-\frac{3}{4}f \theta' & =0
+\end{align}
+$$
+
+:::
+
+:::{.column width=50%}
+
+![Illustration of similarity law](./assets/Week8_3.excalidraw.svg){#fig-similarityuwt}
+:::
+
+::::
+
+and boundary conditions are
+
+$$
+\begin{align}
+\text{at x = 0} &   & u & =0  & \implies & \eta=0 & f=0\\
+  &  & v & =0 &  &  & f'=0 \\
+ &  & T & =T_{w} &  &  & \theta=1\\
+\text{at x} \to \infty  &  & v & =0  & \implies & \eta\to \infty & f'=0 \\
+ &  & T & =T_{\infty} &  &  & \theta=0
+\end{align}
+$$
+
+
+## Nusselt number correlations
+
+
+:::: {.columns}
+
+:::{.column width=60%}
+
+For constant wall temperature
+
+$$
+\begin{align}
+h  & = -\frac{k}{y} Ra_{y}^{1/4}\theta'(0) \\
+Nu  & = -Ra_{y}^{1/4}\theta'(0) \\
+\overline{Nu}  & = \frac{4}{3} Nu_{y}|_{y=H}
+\end{align}
+$$
+For $Pr\to \infty, \overline{Nu}=0.671Ra_{H}^{1/4}$, and for $Pr\to 0$, $\overline{Nu}=0.8(Ra_{H}Pr)^{1/4}$
+
+
+Extending similar analysis to uniform wall heat flux case gives us 
+
+$$
+\begin{align}
+Pr\to \infty &  & Nu & =0.616 Ra_{*y}^{1/5} \\
+Pr \to 0  &  & Nu  & = 0.644 (Ra_{*y}Pr)^{1/5}
+\end{align}
+$$
+where $Ra_{*y} = \frac{g\beta q''_{w}y^{4}}{\alpha \nu \kappa}$
+
+:::
+
+:::{.column width=40%}
+
+![Temperature and heat flux profiles under different boundary conditions](./assets/Week8_4.excalidraw.svg){#fig-temphfprofiles}
 
 :::
 
 ::::
 
+# Problems 
 
-## Non-dimensional Governing Equations
+## Estimation of heat transfer coefficient - constant wall temperature
 
+A vertical wall of an oven is 60 cm long and is covered with a metal sheet maintained at 170°C. Air temperature inside the oven is 90°C and the pressure is atmospheric. Calculate the local heat-transfer coefficient at the end of the wall and the average heat transfer coefficient over the wall. 
+
+Look up appropriate properties from @app-airprops
+
+
+## Estimation of heat transfer coefficient - uniform wall heat flux
+
+A vertical wall of an oven is 60 cm long and it is covered with a metal plate that is heated electrically. The wall heat flux is 15 W/m2 on the plate. The inside air temperature is 90°C and pressure is atmospheric; Pr = 1 is assumed. Calculate 
+a. The local heat-transfer coefficient at the end of the plate
+b. Average heat-transfer coefficient over the plate
+
+Look up appropriate properties from @app-airprops
+
+
+## Free vs Forced Convective Heat Transfer 
+
+A 1m^2^ vertical plate is maintained at 100°C and exposed to air at atmospheric pressure and 20°C. Compare free convection heat transfer with that from forcing air over the plate at a velocity equal to the maximum velocity that occurs in the free convection boundary layer. Comment on the results.
+
+
+## Position of maximum velocity
+
+Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate. At what position in the boundary layer does this velocity occur?
+
+
+## Surface temperature estimation in uniform heat flux scenario
+
+A transformer and oil bath are contained in a tank of 1 m inside diameter and 1.5 m height. The electrical losses are dissipated to the surroundings by free convection from the outer surface of the tank. It is to be assumed that the area of the base of the tank does not transmit heat to the surroundings. If the air temperature is 26°C, what is the estimated surface temperature, assuming an electrical loss of 1.8 kW?
+
+
+## Air Properties{.scrollable}
+
+::: {#app-airprops}
+
+```{python}
+import pandas as pd
+from IPython.display import HTML
+df = pd.read_csv("./assets/air_props.csv")
+HTML(df.to_html(index=False))
+```
+:::
+
+
+# Thank You {.center}

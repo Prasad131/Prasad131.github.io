@@ -1,37 +1,56 @@
 {
   "main": {
-    "id": "049c7fc413e2e3c8",
+    "id": "878d2557fa414429",
     "type": "split",
     "children": [
       {
-        "id": "8a7c27d569364a83",
+        "id": "c96c844d3d974936",
         "type": "tabs",
         "children": [
           {
-            "id": "f0fbaca98acea6c5",
+            "id": "e1616fdbdabe14a1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "slides/Week8.qmd",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Week8"
+            }
+          },
+          {
+            "id": "06de18d967dec25d",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "http://localhost:7409/#/nusselt-number-for-prgg-1",
+                "title": "Fundamentals of Convective Heat Transfer",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Fundamentals of Convective Heat Transfer"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "fb1a8210d38827cc",
+    "id": "7cedcb5eb78726d5",
     "type": "split",
     "children": [
       {
-        "id": "23bb5fea0b38fb39",
+        "id": "8ddc869d6b4e359d",
         "type": "tabs",
         "children": [
           {
-            "id": "9ebf2cde1b884de4",
+            "id": "f8d545de5bb8e13c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +63,7 @@
             }
           },
           {
-            "id": "875efeca6a946337",
+            "id": "fa02696d7b62f350",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +80,7 @@
             }
           },
           {
-            "id": "14a54599b2379ba6",
+            "id": "8cea5eac92c4bfe8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -74,27 +93,24 @@
       }
     ],
     "direction": "horizontal",
-<<<<<<< HEAD
-    "width": 287.50390243530273
-=======
-    "width": 304.5
->>>>>>> 2084d5ecb0b80f4e3492dd394c60525a4bbcbd53
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "2a8b8775474f6abd",
+    "id": "d9beac6d818f7f71",
     "type": "split",
     "children": [
       {
-        "id": "9103bf7cdc12098a",
+        "id": "a384ed0ca72ea78c",
         "type": "tabs",
         "children": [
           {
-            "id": "61c0dcd1efe13072",
+            "id": "d9ed5e0a0c46dda7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "slides/Week7.qmd",
+                "file": "slides/Week8.qmd",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +120,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Week7"
+              "title": "Backlinks for Week8"
             }
           },
           {
-            "id": "7f3f7ae027237679",
+            "id": "f6fd0306174e79cc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "slides/Week7.qmd",
+                "file": "slides/Week8.qmd",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Week7"
+              "title": "Outgoing links from Week8"
             }
           },
           {
-            "id": "69de039101c90e41",
+            "id": "911e73d64807c0a4",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,18 +153,18 @@
             }
           },
           {
-            "id": "0657f96a2fe9686f",
+            "id": "08cced254a344d3a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "slides/Week7.qmd",
-                "followCursor": true,
-                "showSearch": true,
+                "file": "slides/Week8.qmd",
+                "followCursor": false,
+                "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Week7"
+              "title": "Outline of Week8"
             }
           }
         ]
@@ -160,43 +176,31 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "qmd-as-md-obsidian:Toggle Quarto Preview": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "qmd-as-md-obsidian:Toggle Quarto Preview": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "f0fbaca98acea6c5",
+  "active": "06de18d967dec25d",
   "lastOpenFiles": [
-    "slides/Week8.qmd",
     "slides/Week8_files/mediabag",
-    "slides/assets/Week8_2.excalidraw.svg",
-    "slides/assets/Week8_2.excalidraw.md",
-    "slides/Week8_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css",
-    "slides/Week8_files/libs/quarto-contrib/glightbox/lightbox.css",
-    "slides/Week8_files/libs/quarto-contrib/glightbox/glightbox.min.js",
-    "slides/Week8_files/libs/quarto-contrib/glightbox/glightbox.min.css",
-    "slides/Week8_files/libs/quarto-contrib/glightbox",
-    "slides/Week8_files/libs/quarto-contrib",
+    "slides/Week8_files/figure-revealjs",
+    "slides/Week8.quarto_ipynb",
+    "slides/assets/week8.ipynb",
+    "slides/Week8.qmd",
+    "slides/assets/air_props.csv",
+    "slides/assets/Week8_4.excalidraw.md",
+    "slides/assets/Week8_4.excalidraw.svg",
+    "slides/assets/Week8_3.excalidraw.md",
+    "slides/assets/Week8_3.excalidraw.svg",
     "slides/assets/Week8_1.excalidraw.md",
     "slides/assets/Week8_1.excalidraw.svg",
-    "slides/Week7.qmd",
-    "slides/Week7.quarto_ipynb",
-    "slides/assets/journal_bearing.png",
-    "slides/assets/problem1_plot.svg",
-    "slides/assets/week7_1.excalidraw.md",
-    "Week7 .excalidraw.md",
-    "slides/assets/week7_1.excalidraw.svg",
-    "slides/assets/week7_problem4.excalidraw.md",
-    "slides/assets/week7_problem4.svg",
-    "slides/assets/week7_problem4.excalidraw.svg",
-    "slides/assets/week7/journal_bearing.png",
-    "slides/assets/week7/Screenshot 2025-09-05 at 7.51.00 PM.png",
-    "slides/assets/week7/week7_4.svg"
+    "slides/Week8_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css"
   ]
 }
