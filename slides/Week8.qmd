@@ -333,7 +333,7 @@ Look up appropriate properties from @app-airprops
 
 ## Estimation of heat transfer coefficient - uniform wall heat flux
 
-A vertical wall of an oven is 60 cm long and it is covered with a metal plate that is heated electrically. The wall heat flux is 15 W/m2 on the plate. The inside air temperature is 90°C and pressure is atmospheric; Pr = 1 is assumed. Calculate 
+A vertical wall of an oven is 60 cm long and it is covered with a metal plate that is heated electrically. The wall heat flux is 15 W/m^2^ on the plate. The inside air temperature is 90°C and pressure is atmospheric; Pr = 1 is assumed. Calculate 
 a. The local heat-transfer coefficient at the end of the plate
 b. Average heat-transfer coefficient over the plate
 
@@ -342,18 +342,12 @@ Look up appropriate properties from @app-airprops
 
 ## Free vs Forced Convective Heat Transfer 
 
-A 1m^2^ vertical plate is maintained at 100°C and exposed to air at atmospheric pressure and 20°C. Compare free convection heat transfer with that from forcing air over the plate at a velocity equal to the maximum velocity that occurs in the free convection boundary layer. Comment on the results.
+A 1m vertical plate is maintained at 100°C and exposed to air at atmospheric pressure and 20°C. Compare free convection heat transfer with that from forcing air over the plate at a velocity equal to the maximum velocity that occurs in the free convection boundary layer. Comment on the results.
 
 
 ## Position of maximum velocity
 
-Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate. At what position in the boundary layer does this velocity occur?
-
-
-## Surface temperature estimation in uniform heat flux scenario
-
-A transformer and oil bath are contained in a tank of 1 m inside diameter and 1.5 m height. The electrical losses are dissipated to the surroundings by free convection from the outer surface of the tank. It is to be assumed that the area of the base of the tank does not transmit heat to the surroundings. If the air temperature is 26°C, what is the estimated surface temperature, assuming an electrical loss of 1.8 kW?
-
+Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate with constant surface temperature. At what position in the boundary layer does this velocity occur?
 
 ## Air Properties{.scrollable}
 
@@ -368,4 +362,4 @@ HTML(df.to_html(index=False))
 :::
 
 
-# Thank You {.center}
+# Thank You {.center .unlisted}

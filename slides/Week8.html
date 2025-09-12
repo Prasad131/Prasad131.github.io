@@ -167,10 +167,8 @@ Durga Prasad Pydi
 <li><a href="#/estimation-of-heat-transfer-coefficient---uniform-wall-heat-flux" id="/toc-estimation-of-heat-transfer-coefficient---uniform-wall-heat-flux">Estimation of heat transfer coefficient - uniform wall heat flux</a></li>
 <li><a href="#/free-vs-forced-convective-heat-transfer" id="/toc-free-vs-forced-convective-heat-transfer">Free vs Forced Convective Heat Transfer</a></li>
 <li><a href="#/position-of-maximum-velocity" id="/toc-position-of-maximum-velocity">Position of maximum velocity</a></li>
-<li><a href="#/surface-temperature-estimation-in-uniform-heat-flux-scenario" id="/toc-surface-temperature-estimation-in-uniform-heat-flux-scenario">Surface temperature estimation in uniform heat flux scenario</a></li>
 <li><a href="#/air-properties" id="/toc-air-properties">Air Properties</a></li>
 </ul></li>
-<li><a href="#/thank-you" id="/toc-thank-you">Thank You</a></li>
 </ul>
 </nav>
 </section>
@@ -493,317 +491,313 @@ Figure&nbsp;4: Temperature and heat flux profiles under different boundary condi
 </section>
 <section id="estimation-of-heat-transfer-coefficient---uniform-wall-heat-flux" class="slide level2">
 <h2>Estimation of heat transfer coefficient - uniform wall heat flux</h2>
-<p>A vertical wall of an oven is 60 cm long and it is covered with a metal plate that is heated electrically. The wall heat flux is 15 W/m2 on the plate. The inside air temperature is 90°C and pressure is atmospheric; Pr = 1 is assumed. Calculate a. The local heat-transfer coefficient at the end of the plate b. Average heat-transfer coefficient over the plate</p>
+<p>A vertical wall of an oven is 60 cm long and it is covered with a metal plate that is heated electrically. The wall heat flux is 15 W/m<sup>2</sup> on the plate. The inside air temperature is 90°C and pressure is atmospheric; Pr = 1 is assumed. Calculate a. The local heat-transfer coefficient at the end of the plate b. Average heat-transfer coefficient over the plate</p>
 <p>Look up appropriate properties from <a href="#/app-airprops" class="quarto-xref">Appendix&nbsp;1</a></p>
 </section>
 <section id="free-vs-forced-convective-heat-transfer" class="slide level2">
 <h2>Free vs Forced Convective Heat Transfer</h2>
-<p>A 1m<sup>2</sup> vertical plate is maintained at 100°C and exposed to air at atmospheric pressure and 20°C. Compare free convection heat transfer with that from forcing air over the plate at a velocity equal to the maximum velocity that occurs in the free convection boundary layer. Comment on the results.</p>
+<p>A 1m vertical plate is maintained at 100°C and exposed to air at atmospheric pressure and 20°C. Compare free convection heat transfer with that from forcing air over the plate at a velocity equal to the maximum velocity that occurs in the free convection boundary layer. Comment on the results.</p>
 </section>
 <section id="position-of-maximum-velocity" class="slide level2">
 <h2>Position of maximum velocity</h2>
-<p>Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate. At what position in the boundary layer does this velocity occur?</p>
-</section>
-<section id="surface-temperature-estimation-in-uniform-heat-flux-scenario" class="slide level2">
-<h2>Surface temperature estimation in uniform heat flux scenario</h2>
-<p>A transformer and oil bath are contained in a tank of 1 m inside diameter and 1.5 m height. The electrical losses are dissipated to the surroundings by free convection from the outer surface of the tank. It is to be assumed that the area of the base of the tank does not transmit heat to the surroundings. If the air temperature is 26°C, what is the estimated surface temperature, assuming an electrical loss of 1.8 kW?</p>
+<p>Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate with constant surface temperature. At what position in the boundary layer does this velocity occur?</p>
 </section>
 <section id="air-properties" class="slide level2 scrollable">
 <h2>Air Properties</h2>
 <div id="app-airprops" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-app">
 <div aria-describedby="app-airprops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="b0f27562" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="46362151" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th">Temp (°C)</th>
-<th data-quarto-table-cell-role="th">ρ (kg/m³)</th>
-<th data-quarto-table-cell-role="th">cp (kJ/kg·K)</th>
-<th data-quarto-table-cell-role="th">k (W/m·K)</th>
-<th data-quarto-table-cell-role="th">β (×10³ 1/K)</th>
-<th data-quarto-table-cell-role="th">μ (×10⁻⁵ kg/m·s)</th>
-<th data-quarto-table-cell-role="th">ν (×10⁶ m²/s)</th>
-<th data-quarto-table-cell-role="th">α (×10⁶ m²/s)</th>
+<th data-quarto-table-cell-role="th">Temperature_C</th>
+<th data-quarto-table-cell-role="th">rho_kg_per_m3</th>
+<th data-quarto-table-cell-role="th">cp_kJ_per_kgK</th>
+<th data-quarto-table-cell-role="th">k_W_per_mK</th>
+<th data-quarto-table-cell-role="th">P_x103_1_per_K</th>
+<th data-quarto-table-cell-role="th">mu_x105_kg_per_ms</th>
+<th data-quarto-table-cell-role="th">nu_x106_m2_per_s</th>
+<th data-quarto-table-cell-role="th">alpha_x106_m2_per_s</th>
 <th data-quarto-table-cell-role="th">Pr</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>-150</td>
-<td>2.79</td>
-<td>1.03</td>
-<td>0.01</td>
+<td>2.7930</td>
+<td>1.026</td>
+<td>0.0120</td>
 <td>8.21</td>
 <td>0.87</td>
 <td>3.11</td>
 <td>4.19</td>
-<td>0.74</td>
+<td>0.740</td>
 </tr>
 <tr class="even">
 <td>-100</td>
-<td>1.98</td>
-<td>1.01</td>
-<td>0.02</td>
+<td>1.9800</td>
+<td>1.009</td>
+<td>0.0165</td>
 <td>5.82</td>
 <td>1.18</td>
 <td>5.96</td>
 <td>8.28</td>
-<td>0.72</td>
+<td>0.720</td>
 </tr>
 <tr class="odd">
 <td>-50</td>
-<td>1.53</td>
-<td>1.01</td>
-<td>0.02</td>
+<td>1.5340</td>
+<td>1.005</td>
+<td>0.0206</td>
 <td>4.51</td>
 <td>1.47</td>
 <td>9.55</td>
 <td>13.40</td>
-<td>0.72</td>
+<td>0.715</td>
 </tr>
 <tr class="even">
 <td>0</td>
-<td>1.29</td>
-<td>1.01</td>
-<td>0.02</td>
+<td>1.2930</td>
+<td>1.005</td>
+<td>0.0242</td>
 <td>3.67</td>
 <td>1.72</td>
 <td>13.30</td>
 <td>18.70</td>
-<td>0.71</td>
+<td>0.711</td>
 </tr>
 <tr class="odd">
 <td>20</td>
-<td>1.20</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>1.2045</td>
+<td>1.005</td>
+<td>0.0257</td>
 <td>3.43</td>
 <td>1.82</td>
 <td>15.11</td>
 <td>21.40</td>
-<td>0.71</td>
+<td>0.713</td>
 </tr>
 <tr class="even">
 <td>40</td>
-<td>1.13</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>1.1267</td>
+<td>1.009</td>
+<td>0.0271</td>
 <td>3.20</td>
 <td>1.91</td>
 <td>16.97</td>
 <td>23.90</td>
-<td>0.71</td>
+<td>0.711</td>
 </tr>
 <tr class="odd">
 <td>60</td>
-<td>1.06</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>1.0595</td>
+<td>1.009</td>
+<td>0.0285</td>
 <td>3.00</td>
 <td>2.00</td>
 <td>18.90</td>
 <td>26.70</td>
-<td>0.71</td>
+<td>0.709</td>
 </tr>
 <tr class="even">
 <td>80</td>
-<td>0.99</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>0.9908</td>
+<td>1.009</td>
+<td>0.0299</td>
 <td>2.83</td>
 <td>2.10</td>
 <td>20.94</td>
 <td>29.60</td>
-<td>0.71</td>
+<td>0.708</td>
 </tr>
 <tr class="odd">
 <td>100</td>
-<td>0.95</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>0.9458</td>
+<td>1.013</td>
+<td>0.0314</td>
 <td>2.68</td>
 <td>2.18</td>
 <td>23.06</td>
 <td>32.80</td>
-<td>0.70</td>
+<td>0.704</td>
 </tr>
 <tr class="even">
 <td>120</td>
-<td>0.90</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>0.8980</td>
+<td>1.013</td>
+<td>0.0328</td>
 <td>2.55</td>
 <td>2.27</td>
 <td>25.23</td>
 <td>36.10</td>
-<td>0.70</td>
+<td>0.700</td>
 </tr>
 <tr class="odd">
 <td>140</td>
-<td>0.85</td>
-<td>1.01</td>
-<td>0.03</td>
+<td>0.8535</td>
+<td>1.013</td>
+<td>0.0343</td>
 <td>2.43</td>
 <td>2.35</td>
 <td>27.55</td>
 <td>39.70</td>
-<td>0.69</td>
+<td>0.694</td>
 </tr>
 <tr class="even">
 <td>160</td>
-<td>0.82</td>
-<td>1.02</td>
-<td>0.04</td>
+<td>0.8150</td>
+<td>1.017</td>
+<td>0.0358</td>
 <td>2.32</td>
 <td>2.43</td>
 <td>29.85</td>
 <td>41.00</td>
-<td>0.69</td>
+<td>0.693</td>
 </tr>
 <tr class="odd">
 <td>180</td>
-<td>0.78</td>
-<td>1.02</td>
-<td>0.04</td>
+<td>0.7785</td>
+<td>1.022</td>
+<td>0.0372</td>
 <td>2.21</td>
 <td>2.51</td>
 <td>32.29</td>
 <td>46.70</td>
-<td>0.69</td>
+<td>0.690</td>
 </tr>
 <tr class="even">
 <td>200</td>
-<td>0.75</td>
-<td>1.03</td>
-<td>0.04</td>
+<td>0.7475</td>
+<td>1.026</td>
+<td>0.0386</td>
 <td>2.11</td>
 <td>2.58</td>
 <td>34.63</td>
 <td>50.50</td>
-<td>0.69</td>
+<td>0.685</td>
 </tr>
 <tr class="odd">
 <td>250</td>
-<td>0.67</td>
-<td>1.03</td>
-<td>0.04</td>
+<td>0.6745</td>
+<td>1.034</td>
+<td>0.0421</td>
 <td>1.91</td>
 <td>2.78</td>
 <td>41.17</td>
 <td>60.30</td>
-<td>0.68</td>
+<td>0.680</td>
 </tr>
 <tr class="even">
 <td>300</td>
-<td>0.62</td>
-<td>1.05</td>
-<td>0.04</td>
+<td>0.6157</td>
+<td>1.047</td>
+<td>0.0390</td>
 <td>1.75</td>
 <td>2.95</td>
 <td>47.85</td>
 <td>70.30</td>
-<td>0.68</td>
+<td>0.680</td>
 </tr>
 <tr class="odd">
 <td>350</td>
-<td>0.57</td>
-<td>1.06</td>
-<td>0.05</td>
+<td>0.5662</td>
+<td>1.055</td>
+<td>0.0485</td>
 <td>1.61</td>
 <td>3.12</td>
 <td>55.05</td>
 <td>81.10</td>
-<td>0.68</td>
+<td>0.680</td>
 </tr>
 <tr class="even">
 <td>400</td>
-<td>0.52</td>
-<td>1.07</td>
-<td>0.05</td>
+<td>0.5242</td>
+<td>1.068</td>
+<td>0.0516</td>
 <td>1.49</td>
 <td>3.28</td>
 <td>62.53</td>
 <td>91.90</td>
-<td>0.68</td>
+<td>0.680</td>
 </tr>
 <tr class="odd">
 <td>450</td>
-<td>0.49</td>
-<td>1.08</td>
-<td>0.05</td>
-<td>0.00</td>
+<td>0.4875</td>
+<td>1.080</td>
+<td>0.0543</td>
+<td>1.38</td>
 <td>3.44</td>
 <td>70.54</td>
 <td>103.10</td>
-<td>0.69</td>
+<td>0.685</td>
 </tr>
 <tr class="even">
 <td>500</td>
-<td>0.46</td>
-<td>1.09</td>
-<td>0.06</td>
-<td>0.00</td>
+<td>0.4564</td>
+<td>1.092</td>
+<td>0.0570</td>
+<td>1.29</td>
 <td>3.86</td>
-<td>78.48</td>
+<td>70.48</td>
 <td>114.20</td>
-<td>0.69</td>
+<td>0.690</td>
 </tr>
 <tr class="odd">
 <td>600</td>
-<td>0.40</td>
-<td>1.11</td>
-<td>0.06</td>
-<td>0.00</td>
+<td>0.4041</td>
+<td>1.114</td>
+<td>0.0621</td>
+<td>1.15</td>
 <td>3.58</td>
 <td>95.57</td>
 <td>138.20</td>
-<td>0.69</td>
+<td>0.690</td>
 </tr>
 <tr class="even">
 <td>700</td>
-<td>0.36</td>
-<td>1.14</td>
-<td>0.07</td>
-<td>0.00</td>
+<td>0.3625</td>
+<td>1.135</td>
+<td>0.0667</td>
+<td>1.03</td>
 <td>4.12</td>
 <td>113.70</td>
 <td>162.20</td>
-<td>0.70</td>
+<td>0.700</td>
 </tr>
 <tr class="odd">
 <td>800</td>
-<td>0.33</td>
-<td>1.16</td>
-<td>0.07</td>
-<td>0.00</td>
+<td>0.3287</td>
+<td>0.156</td>
+<td>0.0706</td>
+<td>0.93</td>
 <td>4.37</td>
 <td>132.80</td>
 <td>185.80</td>
-<td>0.72</td>
+<td>0.715</td>
 </tr>
 <tr class="even">
 <td>900</td>
-<td>0.30</td>
-<td>1.17</td>
-<td>0.07</td>
-<td>0.00</td>
-<td>4.39</td>
+<td>0.3021</td>
+<td>1.172</td>
+<td>0.0741</td>
+<td>0.85</td>
+<td>4.59</td>
 <td>152.50</td>
 <td>210.00</td>
-<td>0.73</td>
+<td>0.725</td>
 </tr>
 <tr class="odd">
 <td>1000</td>
-<td>0.28</td>
-<td>1.19</td>
-<td>0.08</td>
-<td>0.00</td>
+<td>0.2770</td>
+<td>1.185</td>
+<td>0.0770</td>
+<td>0.79</td>
 <td>4.80</td>
 <td>175.00</td>
 <td>235.00</td>
-<td>0.74</td>
+<td>0.735</td>
 </tr>
 </tbody>
 </table>
@@ -816,7 +810,7 @@ Appendix&nbsp;1
 </figure>
 </div>
 </section></section>
-<section id="thank-you" class="title-slide slide level1 center">
+<section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>
 
 </section>
