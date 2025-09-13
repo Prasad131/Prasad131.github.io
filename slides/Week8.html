@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="Week8_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Week8_files/libs/clipboard/clipboard.min.js"></script>
 <script src="Week8_files/libs/quarto-html/tabby.min.js"></script>
 <script src="Week8_files/libs/quarto-html/popper.min.js"></script>
 <script src="Week8_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -126,9 +126,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
-  
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -167,7 +164,6 @@ Durga Prasad Pydi
 <li><a href="#/estimation-of-heat-transfer-coefficient---uniform-wall-heat-flux" id="/toc-estimation-of-heat-transfer-coefficient---uniform-wall-heat-flux">Estimation of heat transfer coefficient - uniform wall heat flux</a></li>
 <li><a href="#/free-vs-forced-convective-heat-transfer" id="/toc-free-vs-forced-convective-heat-transfer">Free vs Forced Convective Heat Transfer</a></li>
 <li><a href="#/position-of-maximum-velocity" id="/toc-position-of-maximum-velocity">Position of maximum velocity</a></li>
-<li><a href="#/air-properties" id="/toc-air-properties">Air Properties</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -502,310 +498,317 @@ Figure&nbsp;4: Temperature and heat flux profiles under different boundary condi
 <h2>Position of maximum velocity</h2>
 <p>Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate with constant surface temperature. At what position in the boundary layer does this velocity occur?</p>
 </section>
-<section id="air-properties" class="slide level2 scrollable">
+<section id="air-properties" class="slide level2 scrollable unlisted">
 <h2>Air Properties</h2>
 <div id="app-airprops" class="quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-app">
 <div aria-describedby="app-airprops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="46362151" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<table class="dataframe caption-top" data-border="1">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 9%">
+</colgroup>
 <thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th">Temperature_C</th>
-<th data-quarto-table-cell-role="th">rho_kg_per_m3</th>
-<th data-quarto-table-cell-role="th">cp_kJ_per_kgK</th>
-<th data-quarto-table-cell-role="th">k_W_per_mK</th>
-<th data-quarto-table-cell-role="th">P_x103_1_per_K</th>
-<th data-quarto-table-cell-role="th">mu_x105_kg_per_ms</th>
-<th data-quarto-table-cell-role="th">nu_x106_m2_per_s</th>
-<th data-quarto-table-cell-role="th">alpha_x106_m2_per_s</th>
-<th data-quarto-table-cell-role="th">Pr</th>
+<tr class="header">
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi></mi><mn>0</mn></msup><mi>C</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">T[^{0}C]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>k</mi><mi>g</mi><mi>/</mi><msup><mi>m</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\rho [kg / m^{3}]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>k</mi><mi>J</mi><mi>/</mi><mi>k</mi><mi>g</mi><mi>.</mi><mi>K</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">c_{p}[kJ / kg.K]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>W</mi><mi>/</mi><mi>m</mi><mi>.</mi><mi>K</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\kappa[W /m.K]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>×</mi><msup><mn>10</mn><mn>3</mn></msup><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\beta[\times 10^{3} K^{-1}]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>×</mi><msup><mn>10</mn><mn>5</mn></msup><mi>k</mi><mi>g</mi><mi>/</mi><mi>m</mi><mi>.</mi><mi>s</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mu[\times 10^{5} kg / m.s]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>×</mi><msup><mn>10</mn><mn>6</mn></msup><msup><mi>m</mi><mn>2</mn></msup><mi>/</mi><mi>s</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\nu[\times 10^{6} m^{2} / s]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>×</mi><msup><mn>10</mn><mn>6</mn></msup><msup><mi>m</mi><mn>2</mn></msup><mi>/</mi><mi>s</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\alpha[\times 10^{6} m^{2} / s]</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">Pr</annotation></semantics></math></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>-150</td>
-<td>2.7930</td>
-<td>1.026</td>
-<td>0.0120</td>
-<td>8.21</td>
-<td>0.87</td>
-<td>3.11</td>
-<td>4.19</td>
-<td>0.740</td>
+<td style="text-align: center;">-150</td>
+<td style="text-align: center;">2.793</td>
+<td style="text-align: center;">1.026</td>
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">8.21</td>
+<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">3.11</td>
+<td style="text-align: center;">4.19</td>
+<td style="text-align: center;">0.74</td>
 </tr>
 <tr class="even">
-<td>-100</td>
-<td>1.9800</td>
-<td>1.009</td>
-<td>0.0165</td>
-<td>5.82</td>
-<td>1.18</td>
-<td>5.96</td>
-<td>8.28</td>
-<td>0.720</td>
+<td style="text-align: center;">-100</td>
+<td style="text-align: center;">1.98</td>
+<td style="text-align: center;">1.009</td>
+<td style="text-align: center;">0.0165</td>
+<td style="text-align: center;">5.82</td>
+<td style="text-align: center;">1.18</td>
+<td style="text-align: center;">5.96</td>
+<td style="text-align: center;">8.28</td>
+<td style="text-align: center;">0.72</td>
 </tr>
 <tr class="odd">
-<td>-50</td>
-<td>1.5340</td>
-<td>1.005</td>
-<td>0.0206</td>
-<td>4.51</td>
-<td>1.47</td>
-<td>9.55</td>
-<td>13.40</td>
-<td>0.715</td>
+<td style="text-align: center;">-50</td>
+<td style="text-align: center;">1.534</td>
+<td style="text-align: center;">1.005</td>
+<td style="text-align: center;">0.0206</td>
+<td style="text-align: center;">4.51</td>
+<td style="text-align: center;">1.47</td>
+<td style="text-align: center;">9.55</td>
+<td style="text-align: center;">13.4</td>
+<td style="text-align: center;">0.715</td>
 </tr>
 <tr class="even">
-<td>0</td>
-<td>1.2930</td>
-<td>1.005</td>
-<td>0.0242</td>
-<td>3.67</td>
-<td>1.72</td>
-<td>13.30</td>
-<td>18.70</td>
-<td>0.711</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1.293</td>
+<td style="text-align: center;">1.005</td>
+<td style="text-align: center;">0.0242</td>
+<td style="text-align: center;">3.67</td>
+<td style="text-align: center;">1.72</td>
+<td style="text-align: center;">13.3</td>
+<td style="text-align: center;">18.7</td>
+<td style="text-align: center;">0.711</td>
 </tr>
 <tr class="odd">
-<td>20</td>
-<td>1.2045</td>
-<td>1.005</td>
-<td>0.0257</td>
-<td>3.43</td>
-<td>1.82</td>
-<td>15.11</td>
-<td>21.40</td>
-<td>0.713</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1.2045</td>
+<td style="text-align: center;">1.005</td>
+<td style="text-align: center;">0.0257</td>
+<td style="text-align: center;">3.43</td>
+<td style="text-align: center;">1.82</td>
+<td style="text-align: center;">15.11</td>
+<td style="text-align: center;">21.4</td>
+<td style="text-align: center;">0.713</td>
 </tr>
 <tr class="even">
-<td>40</td>
-<td>1.1267</td>
-<td>1.009</td>
-<td>0.0271</td>
-<td>3.20</td>
-<td>1.91</td>
-<td>16.97</td>
-<td>23.90</td>
-<td>0.711</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">1.1267</td>
+<td style="text-align: center;">1.009</td>
+<td style="text-align: center;">0.0271</td>
+<td style="text-align: center;">3.2</td>
+<td style="text-align: center;">1.91</td>
+<td style="text-align: center;">16.97</td>
+<td style="text-align: center;">23.9</td>
+<td style="text-align: center;">0.711</td>
 </tr>
 <tr class="odd">
-<td>60</td>
-<td>1.0595</td>
-<td>1.009</td>
-<td>0.0285</td>
-<td>3.00</td>
-<td>2.00</td>
-<td>18.90</td>
-<td>26.70</td>
-<td>0.709</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">1.0595</td>
+<td style="text-align: center;">1.009</td>
+<td style="text-align: center;">0.0285</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">18.9</td>
+<td style="text-align: center;">26.7</td>
+<td style="text-align: center;">0.709</td>
 </tr>
 <tr class="even">
-<td>80</td>
-<td>0.9908</td>
-<td>1.009</td>
-<td>0.0299</td>
-<td>2.83</td>
-<td>2.10</td>
-<td>20.94</td>
-<td>29.60</td>
-<td>0.708</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">0.9908</td>
+<td style="text-align: center;">1.009</td>
+<td style="text-align: center;">0.0299</td>
+<td style="text-align: center;">2.83</td>
+<td style="text-align: center;">2.1</td>
+<td style="text-align: center;">20.94</td>
+<td style="text-align: center;">29.6</td>
+<td style="text-align: center;">0.708</td>
 </tr>
 <tr class="odd">
-<td>100</td>
-<td>0.9458</td>
-<td>1.013</td>
-<td>0.0314</td>
-<td>2.68</td>
-<td>2.18</td>
-<td>23.06</td>
-<td>32.80</td>
-<td>0.704</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0.9458</td>
+<td style="text-align: center;">1.013</td>
+<td style="text-align: center;">0.0314</td>
+<td style="text-align: center;">2.68</td>
+<td style="text-align: center;">2.18</td>
+<td style="text-align: center;">23.06</td>
+<td style="text-align: center;">32.8</td>
+<td style="text-align: center;">0.704</td>
 </tr>
 <tr class="even">
-<td>120</td>
-<td>0.8980</td>
-<td>1.013</td>
-<td>0.0328</td>
-<td>2.55</td>
-<td>2.27</td>
-<td>25.23</td>
-<td>36.10</td>
-<td>0.700</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">0.898</td>
+<td style="text-align: center;">1.013</td>
+<td style="text-align: center;">0.0328</td>
+<td style="text-align: center;">2.55</td>
+<td style="text-align: center;">2.27</td>
+<td style="text-align: center;">25.23</td>
+<td style="text-align: center;">36.1</td>
+<td style="text-align: center;">0.7</td>
 </tr>
 <tr class="odd">
-<td>140</td>
-<td>0.8535</td>
-<td>1.013</td>
-<td>0.0343</td>
-<td>2.43</td>
-<td>2.35</td>
-<td>27.55</td>
-<td>39.70</td>
-<td>0.694</td>
+<td style="text-align: center;">140</td>
+<td style="text-align: center;">0.8535</td>
+<td style="text-align: center;">1.013</td>
+<td style="text-align: center;">0.0343</td>
+<td style="text-align: center;">2.43</td>
+<td style="text-align: center;">2.35</td>
+<td style="text-align: center;">27.55</td>
+<td style="text-align: center;">39.7</td>
+<td style="text-align: center;">0.694</td>
 </tr>
 <tr class="even">
-<td>160</td>
-<td>0.8150</td>
-<td>1.017</td>
-<td>0.0358</td>
-<td>2.32</td>
-<td>2.43</td>
-<td>29.85</td>
-<td>41.00</td>
-<td>0.693</td>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">0.815</td>
+<td style="text-align: center;">1.017</td>
+<td style="text-align: center;">0.0358</td>
+<td style="text-align: center;">2.32</td>
+<td style="text-align: center;">2.43</td>
+<td style="text-align: center;">29.85</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">0.693</td>
 </tr>
 <tr class="odd">
-<td>180</td>
-<td>0.7785</td>
-<td>1.022</td>
-<td>0.0372</td>
-<td>2.21</td>
-<td>2.51</td>
-<td>32.29</td>
-<td>46.70</td>
-<td>0.690</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">0.7785</td>
+<td style="text-align: center;">1.022</td>
+<td style="text-align: center;">0.0372</td>
+<td style="text-align: center;">2.21</td>
+<td style="text-align: center;">2.51</td>
+<td style="text-align: center;">32.29</td>
+<td style="text-align: center;">46.7</td>
+<td style="text-align: center;">0.69</td>
 </tr>
 <tr class="even">
-<td>200</td>
-<td>0.7475</td>
-<td>1.026</td>
-<td>0.0386</td>
-<td>2.11</td>
-<td>2.58</td>
-<td>34.63</td>
-<td>50.50</td>
-<td>0.685</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">0.7475</td>
+<td style="text-align: center;">1.026</td>
+<td style="text-align: center;">0.0386</td>
+<td style="text-align: center;">2.11</td>
+<td style="text-align: center;">2.58</td>
+<td style="text-align: center;">34.63</td>
+<td style="text-align: center;">50.5</td>
+<td style="text-align: center;">0.685</td>
 </tr>
 <tr class="odd">
-<td>250</td>
-<td>0.6745</td>
-<td>1.034</td>
-<td>0.0421</td>
-<td>1.91</td>
-<td>2.78</td>
-<td>41.17</td>
-<td>60.30</td>
-<td>0.680</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">0.6745</td>
+<td style="text-align: center;">1.034</td>
+<td style="text-align: center;">0.0421</td>
+<td style="text-align: center;">1.91</td>
+<td style="text-align: center;">2.78</td>
+<td style="text-align: center;">41.17</td>
+<td style="text-align: center;">60.3</td>
+<td style="text-align: center;">0.68</td>
 </tr>
 <tr class="even">
-<td>300</td>
-<td>0.6157</td>
-<td>1.047</td>
-<td>0.0390</td>
-<td>1.75</td>
-<td>2.95</td>
-<td>47.85</td>
-<td>70.30</td>
-<td>0.680</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">0.6157</td>
+<td style="text-align: center;">1.047</td>
+<td style="text-align: center;">0.039</td>
+<td style="text-align: center;">1.75</td>
+<td style="text-align: center;">2.95</td>
+<td style="text-align: center;">47.85</td>
+<td style="text-align: center;">70.3</td>
+<td style="text-align: center;">0.68</td>
 </tr>
 <tr class="odd">
-<td>350</td>
-<td>0.5662</td>
-<td>1.055</td>
-<td>0.0485</td>
-<td>1.61</td>
-<td>3.12</td>
-<td>55.05</td>
-<td>81.10</td>
-<td>0.680</td>
+<td style="text-align: center;">350</td>
+<td style="text-align: center;">0.5662</td>
+<td style="text-align: center;">1.055</td>
+<td style="text-align: center;">0.0485</td>
+<td style="text-align: center;">1.61</td>
+<td style="text-align: center;">3.12</td>
+<td style="text-align: center;">55.05</td>
+<td style="text-align: center;">81.1</td>
+<td style="text-align: center;">0.68</td>
 </tr>
 <tr class="even">
-<td>400</td>
-<td>0.5242</td>
-<td>1.068</td>
-<td>0.0516</td>
-<td>1.49</td>
-<td>3.28</td>
-<td>62.53</td>
-<td>91.90</td>
-<td>0.680</td>
+<td style="text-align: center;">400</td>
+<td style="text-align: center;">0.5242</td>
+<td style="text-align: center;">1.068</td>
+<td style="text-align: center;">0.0516</td>
+<td style="text-align: center;">1.49</td>
+<td style="text-align: center;">3.28</td>
+<td style="text-align: center;">62.53</td>
+<td style="text-align: center;">91.9</td>
+<td style="text-align: center;">0.68</td>
 </tr>
 <tr class="odd">
-<td>450</td>
-<td>0.4875</td>
-<td>1.080</td>
-<td>0.0543</td>
-<td>1.38</td>
-<td>3.44</td>
-<td>70.54</td>
-<td>103.10</td>
-<td>0.685</td>
+<td style="text-align: center;">450</td>
+<td style="text-align: center;">0.4875</td>
+<td style="text-align: center;">1.08</td>
+<td style="text-align: center;">0.0543</td>
+<td style="text-align: center;">1.38</td>
+<td style="text-align: center;">3.44</td>
+<td style="text-align: center;">70.54</td>
+<td style="text-align: center;">103.1</td>
+<td style="text-align: center;">0.685</td>
 </tr>
 <tr class="even">
-<td>500</td>
-<td>0.4564</td>
-<td>1.092</td>
-<td>0.0570</td>
-<td>1.29</td>
-<td>3.86</td>
-<td>70.48</td>
-<td>114.20</td>
-<td>0.690</td>
+<td style="text-align: center;">500</td>
+<td style="text-align: center;">0.4564</td>
+<td style="text-align: center;">1.092</td>
+<td style="text-align: center;">0.057</td>
+<td style="text-align: center;">1.29</td>
+<td style="text-align: center;">3.86</td>
+<td style="text-align: center;">70.48</td>
+<td style="text-align: center;">114.2</td>
+<td style="text-align: center;">0.69</td>
 </tr>
 <tr class="odd">
-<td>600</td>
-<td>0.4041</td>
-<td>1.114</td>
-<td>0.0621</td>
-<td>1.15</td>
-<td>3.58</td>
-<td>95.57</td>
-<td>138.20</td>
-<td>0.690</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">0.4041</td>
+<td style="text-align: center;">1.114</td>
+<td style="text-align: center;">0.0621</td>
+<td style="text-align: center;">1.15</td>
+<td style="text-align: center;">3.58</td>
+<td style="text-align: center;">95.57</td>
+<td style="text-align: center;">138.2</td>
+<td style="text-align: center;">0.69</td>
 </tr>
 <tr class="even">
-<td>700</td>
-<td>0.3625</td>
-<td>1.135</td>
-<td>0.0667</td>
-<td>1.03</td>
-<td>4.12</td>
-<td>113.70</td>
-<td>162.20</td>
-<td>0.700</td>
+<td style="text-align: center;">700</td>
+<td style="text-align: center;">0.3625</td>
+<td style="text-align: center;">1.135</td>
+<td style="text-align: center;">0.0667</td>
+<td style="text-align: center;">1.03</td>
+<td style="text-align: center;">4.12</td>
+<td style="text-align: center;">113.7</td>
+<td style="text-align: center;">162.2</td>
+<td style="text-align: center;">0.7</td>
 </tr>
 <tr class="odd">
-<td>800</td>
-<td>0.3287</td>
-<td>0.156</td>
-<td>0.0706</td>
-<td>0.93</td>
-<td>4.37</td>
-<td>132.80</td>
-<td>185.80</td>
-<td>0.715</td>
+<td style="text-align: center;">800</td>
+<td style="text-align: center;">0.3287</td>
+<td style="text-align: center;">0.156</td>
+<td style="text-align: center;">0.0706</td>
+<td style="text-align: center;">0.93</td>
+<td style="text-align: center;">4.37</td>
+<td style="text-align: center;">132.8</td>
+<td style="text-align: center;">185.8</td>
+<td style="text-align: center;">0.715</td>
 </tr>
 <tr class="even">
-<td>900</td>
-<td>0.3021</td>
-<td>1.172</td>
-<td>0.0741</td>
-<td>0.85</td>
-<td>4.59</td>
-<td>152.50</td>
-<td>210.00</td>
-<td>0.725</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">0.3021</td>
+<td style="text-align: center;">1.172</td>
+<td style="text-align: center;">0.0741</td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">4.59</td>
+<td style="text-align: center;">152.5</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">0.725</td>
 </tr>
 <tr class="odd">
-<td>1000</td>
-<td>0.2770</td>
-<td>1.185</td>
-<td>0.0770</td>
-<td>0.79</td>
-<td>4.80</td>
-<td>175.00</td>
-<td>235.00</td>
-<td>0.735</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">0.277</td>
+<td style="text-align: center;">1.185</td>
+<td style="text-align: center;">0.077</td>
+<td style="text-align: center;">0.79</td>
+<td style="text-align: center;">4.8</td>
+<td style="text-align: center;">175</td>
+<td style="text-align: center;">235</td>
+<td style="text-align: center;">0.735</td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-app quarto-uncaptioned" id="app-airprops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Appendix&nbsp;1
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-app" id="app-airprops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Appendix&nbsp;1: Air Properties as a function of temperature
 </figcaption>
 </figure>
 </div>

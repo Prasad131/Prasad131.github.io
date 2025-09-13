@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "Week8"
             }
-          },
-          {
-            "id": "06de18d967dec25d",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "http://localhost:7409/#/nusselt-number-for-prgg-1",
-                "title": "Fundamentals of Convective Heat Transfer",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Fundamentals of Convective Heat Transfer"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,7 +172,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "06de18d967dec25d",
+  "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
     "slides/Week8_files/mediabag",
     "slides/Week8_files/figure-revealjs",
