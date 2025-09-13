@@ -2,7 +2,7 @@
 title: Fundamentals of Convective Heat Transfer
 subtitle: Week-08 (Live Session)
 author: Durga Prasad Pydi
-date: 13-09-2025
+date: 2025-09-13
 format: 
     revealjs:
         theme: [default,custom.scss]
