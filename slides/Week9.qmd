@@ -2,7 +2,7 @@
 title: Fundamentals of Convective Heat Transfer
 subtitle: Week-08 (Live Session)
 author: Durga Prasad Pydi
-date: 2025-09-13
+date: 2025-09-20
 format: 
     revealjs:
         theme: [default,custom.scss]
@@ -64,4 +64,8 @@ $$
 
 and $\overline{Nu}=\frac{4}{3} Nu_{local}$
 
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)
 
