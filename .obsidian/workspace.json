@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/Week8.qmd",
+                "file": "slides/Week9.qmd",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week8"
+              "title": "Week9"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -174,18 +173,22 @@
   },
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
-    "slides/Week8_files/mediabag",
-    "slides/Week8_files/figure-revealjs",
-    "slides/Week8.quarto_ipynb",
-    "slides/assets/week8.ipynb",
-    "slides/Week8.qmd",
-    "slides/assets/air_props.csv",
+    "slides/Week9_files/mediabag",
+    "slides/Week9_files/libs/quarto-contrib/glightbox/lightbox.css",
+    "slides/Week9_files/libs/quarto-contrib/glightbox/glightbox.min.js",
+    "slides/Week9_files/libs/quarto-contrib/glightbox/glightbox.min.css",
+    "slides/Week9_files/libs/quarto-contrib/glightbox",
+    "slides/Week9_files/libs/quarto-contrib",
+    "slides/Week9_files/libs/quarto-html/tippy.umd.min.js",
+    "slides/Week9_files/libs/quarto-html/tabby.min.js",
+    "slides/Week9_files/libs/quarto-html/tippy.css",
+    "slides/Week9_files/libs/quarto-html/popper.min.js",
+    "slides/Week9_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css",
     "slides/assets/Week8_4.excalidraw.md",
     "slides/assets/Week8_4.excalidraw.svg",
     "slides/assets/Week8_3.excalidraw.md",
     "slides/assets/Week8_3.excalidraw.svg",
     "slides/assets/Week8_1.excalidraw.md",
-    "slides/assets/Week8_1.excalidraw.svg",
-    "slides/Week8_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css"
+    "slides/assets/Week8_1.excalidraw.svg"
   ]
 }

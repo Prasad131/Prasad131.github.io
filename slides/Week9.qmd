@@ -1,0 +1,67 @@
+---
+title: Fundamentals of Convective Heat Transfer
+subtitle: Week-08 (Live Session)
+author: Durga Prasad Pydi
+date: 2025-09-13
+format: 
+    revealjs:
+        theme: [default,custom.scss]
+        width: 1920
+        height: 1080
+        css: styles.css
+        slide-number: true
+        lightbox: true
+        crossrefs-hover: true
+        html-math-method: mathml
+        toc: true
+        toc-depth: 2
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Appendix
+      key: app
+lightbox: true
+---
+
+## Assumptions
+
+-   Steady, laminar, 2D flow
+-   Viscous dissipation term is neglected
+-   Boundary layer approximation is valid ($\delta_T/H \ll 1$)
+-   Temperature difference between plate and flud is small enough to assume constant properties of the fluid
+-   Flow is incompressible - however, density will vary with location. The assumption is valid because the change in density is due to changes in temperature field
+
+![Illustration of natural convection over a vertical heated plate](./assets/Week8_1.excalidraw.svg){#fig-natconvplate}
+
+## Integral equations 
+
+**Momentum Integral Equation**
+
+$$
+\frac{d}{dy} \int_{0}^{\delta} \rho v^{2} dx = -\mu \left.\frac{ \partial v }{ \partial x } \right|_{x=0} + \int_{0}^{\delta}\rho g \beta (T-T_{\infty}) dx
+$$
+
+**Energy Integral Equation**
+
+$$
+\frac{d}{dy} \int_{0}^{\delta_{T} \approx \delta} v (T-T_{\infty})dx = -\alpha \left. \frac{ \partial T }{ \partial x }  \right|_{x=0}
+$$
+
+Approximating velocity and temperature with, $\frac{v}{v_{0}}=\frac{x}{\delta}\left( 1-\frac{x}{\delta} \right)^{2}$ and $\frac{T-T_{\infty}}{T_{w}-T_{\infty}}=\left( 1-\frac{x}{\delta} \right)^{2}$, and solving for $\delta, v$ from integral equations, we obtain,
+
+$$
+v_{0}=5.17 \frac{\nu}{y} (Pr+\frac{20}{21})^{-1/2}Gr_{y}^{1/2}
+$$
+
+and
+
+$$
+\begin{align}
+h(y) & =\frac{2\kappa}{y} \frac{1}{3.93} (\frac{20}{21} \frac{1}{Pr} +1)^{-1/4}Ra_{y}^{1/4} \\
+Nu_{local} & =0.508 \left( \frac{20}{21} \frac{1}{Pr} +1 \right)^{-1/4} Ra_{y}^{1/4}
+\end{align}
+$$
+
+and $\overline{Nu}=\frac{4}{3} Nu_{local}$
+
+
