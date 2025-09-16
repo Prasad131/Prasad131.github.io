@@ -64,6 +64,20 @@ $$
 
 and $\overline{Nu}=\frac{4}{3} Nu_{local}$
 
+# Problems 
+
+## Integral Solution for Uniform Heat Flux
+
+Determine the local Nusselt number for the boundary layer natural convection along a $q''=\text{constant}$ vertical wall by performing an integral analysis using the profiles
+
+$$
+\begin{align}
+T-T_{\infty}=\Delta T\left( 1-\frac{x}{\delta_{T}} \right)^{2}, &  & v=V \frac{x}{\delta}\left( 1-\frac{x}{\delta} \right)^{2}
+\end{align}
+$$
+
+and taking $\delta=\delta_{T}$. Determine the expression for wall temperature profile.
+
 
 # Thank You {.center .unlisted}
 

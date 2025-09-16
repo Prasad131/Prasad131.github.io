@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -173,6 +174,7 @@
   },
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
+    "slides/assets/week9/intSol_stratified.nb",
     "slides/Week9_files/mediabag",
     "slides/Week9_files/libs/quarto-contrib/glightbox/lightbox.css",
     "slides/Week9_files/libs/quarto-contrib/glightbox/glightbox.min.js",
@@ -183,7 +185,6 @@
     "slides/Week9_files/libs/quarto-html/tabby.min.js",
     "slides/Week9_files/libs/quarto-html/tippy.css",
     "slides/Week9_files/libs/quarto-html/popper.min.js",
-    "slides/Week9_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css",
     "slides/assets/Week8_4.excalidraw.md",
     "slides/assets/Week8_4.excalidraw.svg",
     "slides/assets/Week8_3.excalidraw.md",
