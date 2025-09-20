@@ -1,0 +1,240 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8646,        232]
+NotebookOptionsPosition[      7320,        201]
+NotebookOutlinePosition[      7715,        217]
+CellTagsIndexPosition[      7672,        214]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "In many analyses of natural convection heat transfer problems, the vertical \
+wall heating a fluid or dividing two differentially heated fluids is modeled \
+as isothermal. This is an approximation valid in some cases and invalid in \
+others. To be isothermal, while bathed by natural convection in boundary \
+layer flow, a vertical solid wall must be thick enough. Comparing the thermal \
+conductance to vertical conduction through the wall ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["k", "w"], 
+     RowBox[{"W", "/", "H"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "eedc0ade-caca-40fd-8dfa-5c7c63f9310d"],
+ ") with the thermal conductance to lateral heat transfer through the same \
+wall (and the fluid boundary layer, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"kH", " ", "/", " ", 
+    SubscriptBox["\[Delta]", "T"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "52927aad-63cc-4552-96a3-1ad2ff5037d6"],
+ "), determine below what range of wall widths, W, the \[OpenCurlyQuote]\
+\[OpenCurlyQuote]isothermal wall\[CloseCurlyQuote]\[CloseCurlyQuote] \
+assumption becomes inadequate ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    SubscriptBox["k", "w"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "87270ee8-3b12-48c4-b53a-96c48e648641"],
+ ", H, k, and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Delta]", "T"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "536e2b59-9e0d-4ddb-849e-e01612541e6b"],
+ " are the wall thermal conductivity, wall height, fluid thermal \
+conductivity, and thermal boundary layer thickness, respectively). For a wall \
+of fixed geometry (W,H), is the isothermal wall assumption getting better or \
+worse as ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Ra", "H"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0cf935e2-f21d-47b8-8cdc-87319f9d4a08"],
+ " increases?"
+}], "Text",
+ CellChangeTimes->{{3.9673525011478252`*^9, 
+  3.967352606628201*^9}},ExpressionUUID->"616ba7a9-90b2-4564-bc6e-\
+4472e7961a92"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vertCond", " ", "=", " ", 
+   RowBox[{
+    SubscriptBox["k", "w"], 
+    FractionBox["W", "H"]}]}], ";", " ", 
+  RowBox[{"horzCond", " ", "=", " ", 
+   RowBox[{"k", " ", 
+    FractionBox["H", 
+     SubscriptBox["\[Delta]", "T"]]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.967352626017174*^9, 3.96735266383526*^9}, {
+  3.967353636940884*^9, 3.9673536472837563`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"e8700436-14d5-42dc-92e0-1a31435b0525"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"isothermalCriteria", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"vertCond", "/", "horzCond"}], "<", "1"}]}]], "Input",
+ CellChangeTimes->{{3.967352665936857*^9, 3.967352685981943*^9}, {
+  3.967353671356082*^9, 3.967353699932686*^9}, {3.9673540007113867`*^9, 
+  3.96735404326807*^9}, {3.967354566661248*^9, 3.967354599938052*^9}, {
+  3.967354894258974*^9, 3.9673549029787807`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"05d912a2-2b35-4de5-9875-afaa1e76cc70"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"W", " ", 
+    SubscriptBox["k", "w"], " ", 
+    SubscriptBox["\[Delta]", "T"]}], 
+   RowBox[{
+    SuperscriptBox["H", "2"], " ", "k"}]], "<", "1"}]], "Output",
+ CellChangeTimes->{
+  3.9673526864304047`*^9, 3.967353038841568*^9, 3.96735370387262*^9, 
+   3.967354002324115*^9, {3.967354032951078*^9, 3.967354054788064*^9}, {
+   3.967354569860878*^9, 3.9673546003722773`*^9}, {3.967354881710679*^9, 
+   3.9673549035311604`*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"f7a46f42-9525-4b57-9235-7b1c44cf3e24"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"assumptions", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox["\[Delta]", "T"], " ", "->", " ", 
+    RowBox[{
+     SubscriptBox["C", "1"], " ", "H", " ", 
+     SuperscriptBox[
+      SubscriptBox["Ra", "H"], 
+      RowBox[{
+       RowBox[{"-", "1"}], "/", "4"}]]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.967352726083468*^9, 3.96735278637584*^9}, {
+  3.967353024174818*^9, 3.967353024293358*^9}, {3.967353909481627*^9, 
+  3.9673539327132177`*^9}, {3.967354674437702*^9, 3.967354678521111*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"8fd7e59d-da20-4a07-92eb-cb6b07839246"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SubscriptBox["\[Delta]", "T"], "\[Rule]", 
+   FractionBox[
+    RowBox[{"H", " ", 
+     SubscriptBox["C", "1"]}], 
+    SubsuperscriptBox["Ra", "H", 
+     RowBox[{"1", "/", "4"}]]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.967352788644908*^9, 3.967353038845634*^9, 3.967353719288828*^9, {
+   3.9673539219061127`*^9, 3.967353950699482*^9}, {3.9673540051636877`*^9, 
+   3.967354034476192*^9}, {3.967354574661618*^9, 3.967354601990713*^9}, 
+   3.967354679254726*^9, {3.967354881730394*^9, 3.967354907095141*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"e2d2d378-b8b1-4c46-aca8-c1bbfbd0cb51"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"isothermalCriteria", "/.", "assumptions"}]], "Input",
+ CellChangeTimes->{{3.967353630223822*^9, 3.9673536339406147`*^9}, {
+  3.9673540076393013`*^9, 3.967354012477476*^9}, {3.9673540777534246`*^9, 
+  3.967354083644556*^9}, {3.967354585230144*^9, 3.96735465324164*^9}, {
+  3.9673546858065233`*^9, 3.96735469226173*^9}, {3.96735491475066*^9, 
+  3.967354976550613*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"b8e0b915-3d2a-49d5-8713-9411dfb6592b"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"W", " ", 
+    SubscriptBox["C", "1"], " ", 
+    SubscriptBox["k", "w"]}], 
+   RowBox[{"H", " ", "k", " ", 
+    SubsuperscriptBox["Ra", "H", 
+     RowBox[{"1", "/", "4"}]]}]], "<", "1"}]], "Output",
+ CellChangeTimes->{{3.9673540128107557`*^9, 3.967354084105405*^9}, {
+   3.967354579940143*^9, 3.9673546927404833`*^9}, {3.967354881838284*^9, 
+   3.967354946120315*^9}, 3.967354976928905*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"0c4721ba-ae58-494c-ad9a-5e382212bf29"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"maxThickness", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"W", "/", 
+    RowBox[{"isothermalCriteria", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "//", 
+   RowBox[{
+    RowBox[{"#", "/.", "assumptions"}], "&"}]}]}]], "Input",
+ CellChangeTimes->{{3.967354992556756*^9, 3.967355024068852*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"14c46439-9c71-43a0-aee7-16252073d01c"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"H", " ", "k", " ", 
+   SubsuperscriptBox["Ra", "H", 
+    RowBox[{"1", "/", "4"}]]}], 
+  RowBox[{
+   SubscriptBox["C", "1"], " ", 
+   SubscriptBox["k", "w"]}]]], "Output",
+ CellChangeTimes->{{3.9673550148182497`*^9, 3.967355024383575*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"8cbabc1a-d333-44ea-b5e6-2b48179f160a"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e33fb98d-e802-41ad-a202-46484f8159d0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 2113, 51, 280, "Text",ExpressionUUID->"616ba7a9-90b2-4564-bc6e-4472e7961a92"],
+Cell[2670, 73, 478, 12, 67, "Input",ExpressionUUID->"e8700436-14d5-42dc-92e0-1a31435b0525"],
+Cell[CellGroupData[{
+Cell[3173, 89, 477, 8, 44, "Input",ExpressionUUID->"05d912a2-2b35-4de5-9875-afaa1e76cc70"],
+Cell[3653, 99, 554, 13, 67, "Output",ExpressionUUID->"f7a46f42-9525-4b57-9235-7b1c44cf3e24"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4244, 117, 611, 14, 46, "Input",ExpressionUUID->"8fd7e59d-da20-4a07-92eb-cb6b07839246"],
+Cell[4858, 133, 631, 14, 71, "Output",ExpressionUUID->"e2d2d378-b8b1-4c46-aca8-c1bbfbd0cb51"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5526, 152, 469, 7, 44, "Input",ExpressionUUID->"b8e0b915-3d2a-49d5-8713-9411dfb6592b"],
+Cell[5998, 161, 519, 12, 72, "Output",ExpressionUUID->"0c4721ba-ae58-494c-ad9a-5e382212bf29"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6554, 178, 391, 9, 44, "Input",ExpressionUUID->"14c46439-9c71-43a0-aee7-16252073d01c"],
+Cell[6948, 189, 356, 9, 72, "Output",ExpressionUUID->"8cbabc1a-d333-44ea-b5e6-2b48179f160a"]
+}, Open  ]]
+}
+]
+*)
+

@@ -208,6 +208,12 @@ An electrical wire of diameter D= 1 mm is suspended horizontally in air of tempe
 
 [Solution](./assets/week9/hotWire.pdf)
 
+
+## Effect of wall thickness on the validity of isothermal wall assumption
+
+In many analyses of natural convection heat transfer problems, the vertical wall heating a fluid or dividing two differentially heated fluids is modeled as isothermal. This is an approximation valid in some cases and invalid in others. To be isothermal, while bathed by natural convection in boundary layer flow, a vertical solid wall must be thick enough. Comparing the thermal conductance to vertical conduction through the wall ($k_{w} W / H$) with the thermal conductance to lateral heat transfer through the same wall (and the fluid boundary layer, $kH / \delta_{T}$, determine below what range of wall widths, $W$, the ''isothermal wall'' assumption becomes inadequate ($k_{w},H,k,\delta_{T}$ are the wall thermal conductivity, wall height, fluid thermal conductivity, and thermal boundary layer thickness, respectively). For a wall of fixed geometry ($W,H$), is the isothermal wall assumption getting better or worse as $Ra_{H}$ increases?
+
+[Solution](./assets/week9/isothermalValidity.pdf) 
 ## Heat Transfer Calculation in Mixed Convection 
 
 Air at atmospheric pressure and 20°C is forced through a horizontal 1 in. diameter tube at an average velocity at 0.3 m/s. Tube wall is maintained at a constant temperature of 140°C. Calculate the heat-transfer coefficient for this situation if tube is 12 in. long. (For correlations refer @fig-mixedconvcorr)
