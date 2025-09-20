@@ -156,7 +156,9 @@ $$
 
 and taking $\delta=\delta_{T}$. Determine the expression for wall temperature profile.
 
-## Integral Solution in Stratified Ambient
+[Solution](./assets/week9/intSol_uhf.pdf)
+
+## Integral Solution in Stratified Ambient {.scrollable}
 
 Consider the integral analysis of laminar natural convection along a vertical wall bathed by a linearly stratified fluid as shown alongside. Starting with equations below, 
 
@@ -184,9 +186,13 @@ b) Solve these equations in the limit of $Pr\to \infty$ by setting $b\to1$
 
 c) Compare your estimate with the literature ($\overline{Nu}=0.337 Ra_{L}^{1/4}$)
 
+[Solution](./assets/week9/intSol_stratified.pdf)
+
 ## Cooling a bottle - horizontal or vertical?
 
 You have a bottle of water at room temperature, and you would like to drink it cold as soon as possible. The bottle has a height/diameter ratio of about 5. You place the bottle in the refrigerator; however, you have the option of positioning the bottle (1) vertically or (2) horizontally. The refrigerator cools by natural convection (it does not employ forced circulation). Which way should you position the bottle? Describe the goodness of your decision by calculating the ratio $h_{1} / h_{2}$, where $h$ refers to the heat transfer coefficient. 
+
+[Solution](./assets/week9/bottle.pdf)
 
 ## Effect of orientation on heat transfer from flat plates
 
@@ -194,14 +200,20 @@ A long, rectangular metallic blade has width H= 4 cm and temperature Tw = 40^0^C
 
 ![](./assets/Week9_8.excalidraw.svg) 
 
+[Solution](./assets/week9/blade.pdf)
+
 
 ## Heat Transfer Calculation in Mixed Convection 
 
 Air at atmospheric pressure and 20°C is forced through a horizontal 1 in. diameter tube at an average velocity at 0.3 m/s. Tube wall is maintained at a constant temperature of 140°C. Calculate the heat-transfer coefficient for this situation if tube is 12 in. long. (For correlations refer @fig-mixedconvcorr)
 
+[Solution](./assets/week9/mixedConv.pdf)
+
 ## Heat Transfer in an enclosure between two parallel plates
 
 Air at atmospheric pressure is enclosed between two vertical plates of length 1m each separated by 2 cm. The temperatures of the plates are 60°C and 100°C, respectively. Calculate the heat flux across the space. (use appropriate correlations from the slides)
+
+[Solution](./assets/week9/parallelPlates.pdf)
 
 # Thank You {.center .unlisted}
 
