@@ -202,6 +202,11 @@ A long, rectangular metallic blade has width H= 4 cm and temperature Tw = 40^0^C
 
 [Solution](./assets/week9/blade.pdf)
 
+## Heat transfer from horizontal cylinders 
+
+An electrical wire of diameter D= 1 mm is suspended horizontally in air of temperature 20^0^C. The Joule heating of the wire is responsible for the heat generation rate q'= 0.01 W/cm per unit length in the axial direction. The wire can be modeled as a cylinder with isothermal surface. Sufficiently far from the wire, the ambient air is motionless. Calculate the temperature difference that is established between the wire and the ambient air. (Note: This calculation requires a trial-and-error procedure; expect a relatively small Rayleigh number.) 
+
+[Solution](./assets/week9/hotWire.pdf)
 
 ## Heat Transfer Calculation in Mixed Convection 
 
