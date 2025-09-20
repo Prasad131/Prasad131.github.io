@@ -11,3 +11,7 @@
 .green {
   color: #009E73;
 }
+
+.vtop td, .vtop th {
+  vertical-align: top;
+}

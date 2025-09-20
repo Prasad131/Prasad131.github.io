@@ -6,14 +6,14 @@
 <script src="Week9_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Week9_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Week9_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Week9_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Week9_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Week9_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="Week9_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="Week9_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+  <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Durga Prasad Pydi">
-  <meta name="dcterms.date" content="2025-09-13">
+  <meta name="dcterms.date" content="2025-09-20">
   <title>Fundamentals of Convective Heat Transfer</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -133,7 +133,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Fundamentals of Convective Heat Transfer</h1>
-  <p class="subtitle">Week-08 (Live Session)</p>
+  <p class="subtitle">Week-09 (Live Session)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -143,13 +143,28 @@ Durga Prasad Pydi
 </div>
 </div>
 
-  <p class="date">2025-09-13</p>
+  <p class="date">2025-09-20</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/assumptions" id="/toc-assumptions">Assumptions</a></li>
 <li><a href="#/integral-equations" id="/toc-integral-equations">Integral equations</a></li>
+<li><a href="#/correlations---vertical-plates" id="/toc-correlations---vertical-plates">Correlations - Vertical Plates</a></li>
+<li><a href="#/correlations---horizontal-plates" id="/toc-correlations---horizontal-plates">Correlations - Horizontal Plates</a></li>
+<li><a href="#/correlations---cylinders" id="/toc-correlations---cylinders">Correlations - Cylinders</a></li>
+<li><a href="#/correlations---sphere" id="/toc-correlations---sphere">Correlations - Sphere</a></li>
+<li><a href="#/correlations---mixed-convection" id="/toc-correlations---mixed-convection">Correlations - Mixed Convection</a></li>
+<li><a href="#/correlations---between-parallel-walls" id="/toc-correlations---between-parallel-walls">Correlations - Between Parallel Walls</a></li>
+<li><a href="#/problems" id="/toc-problems">Problems</a>
+<ul>
+<li><a href="#/integral-solution-for-uniform-heat-flux" id="/toc-integral-solution-for-uniform-heat-flux">Integral Solution for Uniform Heat Flux</a></li>
+<li><a href="#/integral-solution-in-stratified-ambient" id="/toc-integral-solution-in-stratified-ambient">Integral Solution in Stratified Ambient</a></li>
+<li><a href="#/cooling-a-bottle---horizontal-or-vertical" id="/toc-cooling-a-bottle---horizontal-or-vertical">Cooling a bottle - horizontal or vertical?</a></li>
+<li><a href="#/effect-of-orientation-on-heat-transfer-from-flat-plates" id="/toc-effect-of-orientation-on-heat-transfer-from-flat-plates">Effect of orientation on heat transfer from flat plates</a></li>
+<li><a href="#/heat-transfer-calculation-in-mixed-convection" id="/toc-heat-transfer-calculation-in-mixed-convection">Heat Transfer Calculation in Mixed Convection</a></li>
+<li><a href="#/heat-transfer-in-an-enclosure-between-two-parallel-plates" id="/toc-heat-transfer-in-an-enclosure-between-two-parallel-plates">Heat Transfer in an enclosure between two parallel plates</a></li>
+</ul></li>
 </ul>
 </nav>
 </section>
@@ -195,6 +210,275 @@ Nu_{local} &amp; =0.508 \left( \frac{20}{21} \frac{1}{Pr} +1 \right)^{-1/4} Ra_{
 \end{align}
 </annotation></semantics></math></p>
 <p>and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>N</mi><mi>u</mi></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>N</mi><msub><mi>u</mi><mrow><mi>l</mi><mi>o</mi><mi>c</mi><mi>a</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\overline{Nu}=\frac{4}{3} Nu_{local}</annotation></semantics></math></p>
+</section>
+<section id="correlations---vertical-plates" class="slide level2">
+<h2>Correlations - Vertical Plates</h2>
+<div class="vtop">
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Geometry</th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>c</mi></msub><annotation encoding="application/x-tex">L_{c}</annotation></semantics></math></th>
+<th style="text-align: center;">Range of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Ra</annotation></semantics></math></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">Nu</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="./assets/Week9_1.excalidraw.svg"></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>4</mn></msup><mo>−</mo><msup><mn>10</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^{4}-10^{9}</annotation></semantics></math><br><br><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>10</mn></msup><mo>−</mo><msup><mn>10</mn><mn>13</mn></msup></mrow><annotation encoding="application/x-tex">10^{10}-10^{13}</annotation></semantics></math><br><br>Entire Range</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mn>0.59</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">Nu=0.59 Ra_{L}^{1/4}</annotation></semantics></math><br><br><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mn>0.1</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">Nu = 0.1 Ra_{L}^{1/3}</annotation></semantics></math><br><br><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.825</mn><mo>+</mo><mfrac><mrow><mn>0.387</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>6</mn></mrow></msubsup></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>0.492</mn><mrow><mi>P</mi><mi>r</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>9</mn><mi>/</mi><mn>16</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>8</mn><mi>/</mi><mn>27</mn></mrow></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Nu = \left(0.825 + \frac{0.387Ra_{L}^{1/6}}{\left( 1+\left( \frac{0.492}{Pr} \right)^{9/16} \right)^{8/27}}\right)^{2}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="./assets/Week9_2.excalidraw.svg"></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math></td>
+<td style="text-align: center;"></td>
+<td>Use vertical plate equations for the upper surface of a cold plate and lower surface of a hot plate<br><br>Replace <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math> by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>cos</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">g \cos \theta</annotation></semantics></math> for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mn>60</mn><mn>0</mn></msup><mo>≤</mo><mi>θ</mi><mo>≤</mo><msup><mn>60</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">-60^{0}\leq\theta \leq 60^{0}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="correlations---horizontal-plates" class="slide level2">
+<h2>Correlations - Horizontal Plates</h2>
+<div class="vtop">
+<table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Geometry</th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>c</mi></msub><annotation encoding="application/x-tex">L_{c}</annotation></semantics></math></th>
+<th style="text-align: center;">Range of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Ra</annotation></semantics></math></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">Nu</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="./assets/Week9_3.excalidraw.svg"></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mi>A</mi><mi>p</mi></mfrac><annotation encoding="application/x-tex">\frac{A}{p}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>4</mn></msup><mo>−</mo><msup><mn>10</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">10^{4}-10^{7}</annotation></semantics></math><br><br><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>7</mn></msup><mo>−</mo><msup><mn>10</mn><mn>11</mn></msup></mrow><annotation encoding="application/x-tex">10^{7}-10^{11}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mn>0.59</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">Nu = 0.59Ra_{L}^{1/4}</annotation></semantics></math><br><br><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mn>0.1</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">Nu = 0.1 Ra_{L}^{1/3}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="./assets/Week9_4.excalidraw.svg"></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mi>A</mi><mi>p</mi></mfrac><annotation encoding="application/x-tex">\frac{A}{p}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mn>5</mn></msup><mo>−</mo><msup><mn>10</mn><mn>11</mn></msup></mrow><annotation encoding="application/x-tex">10^{5}-10^{11}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mn>0.27</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">Nu = 0.27 Ra_{L}^{1/4}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="correlations---cylinders" class="slide level2">
+<h2>Correlations - Cylinders</h2>
+<div class="vtop">
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Geometry</th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>c</mi></msub><annotation encoding="application/x-tex">L_{c}</annotation></semantics></math></th>
+<th style="text-align: center;">Range of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Ra</annotation></semantics></math></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">Nu</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="./assets/Week9_5.excalidraw.svg"></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math></td>
+<td style="text-align: center;"></td>
+<td>A vertical cylinder can be treated as a vertical plate when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>≥</mo><mfrac><mrow><mn>35</mn><mi>L</mi></mrow><mrow><mi>G</mi><msubsup><mi>r</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow></mfrac></mrow><annotation encoding="application/x-tex">D\geq \frac{35L}{Gr_{L}^{1/4}}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="./assets/Week9_6.excalidraw.svg"></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><msub><mi>a</mi><mi>D</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">Ra_{D}\leq 10^{12}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.6</mn><mo>+</mo><mfrac><mrow><mn>0.387</mn><mi>R</mi><msubsup><mi>a</mi><mi>D</mi><mrow><mn>1</mn><mi>/</mi><mn>6</mn></mrow></msubsup></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>0.559</mn><mrow><mi>P</mi><mi>r</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>9</mn><mi>/</mi><mn>16</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>8</mn><mi>/</mi><mn>27</mn></mrow></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Nu = \left(0.6+\frac{0.387Ra_{D}^{1/6}}{\left( 1+\left( \frac{0.559}{Pr} \right)^{9/16} \right)^{8/27}}\right)^{2}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="correlations---sphere" class="slide level2">
+<h2>Correlations - Sphere</h2>
+<div class="vtop">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Geometry</th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>c</mi></msub><annotation encoding="application/x-tex">L_{c}</annotation></semantics></math></th>
+<th>Range of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Ra</annotation></semantics></math></th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">Nu</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img data-src="./assets/Week9_7.excalidraw.svg"></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><msub><mi>a</mi><mi>D</mi></msub><mo>≤</mo><msup><mn>10</mn><mn>11</mn></msup></mrow><annotation encoding="application/x-tex">Ra_{D}\leq 10^{11}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>r</mi><mo>≥</mo><mn>0.7</mn></mrow><annotation encoding="application/x-tex">Pr \geq 0.7</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mn>2</mn><mo>+</mo><mfrac><mrow><mn>0.589</mn><mi>R</mi><msubsup><mi>a</mi><mi>D</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>0.469</mn><mrow><mi>P</mi><mi>r</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>9</mn><mi>/</mi><mn>16</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>4</mn><mi>/</mi><mn>9</mn></mrow></msup></mfrac></mrow><annotation encoding="application/x-tex">Nu = 2+\frac{0.589Ra_{D}^{1/4}}{\left( 1+\left( \frac{0.469}{Pr} \right)^{9/16} \right)^{4/9}}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="correlations---mixed-convection" class="slide level2 scrollable">
+<h2>Correlations - Mixed Convection</h2>
+<div id="fig-mixedconvcorr" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-mixedconvcorr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./assets/mixedConvCorrelations.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Regimes of free, forced, and mixed-convection flow through horizontal circular ducts with UWT boundary condition - From Metais, B. and Eckert, E. R. G., J. Heat Transfer, 86C, 295, 1964."><img data-src="./assets/mixedConvCorrelations.png"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mixedconvcorr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Regimes of free, forced, and mixed-convection flow through horizontal circular ducts with UWT boundary condition - From Metais, B. and Eckert, E. R. G., J. Heat Transfer, 86C, 295, 1964.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="correlations---between-parallel-walls" class="slide level2">
+<h2>Correlations - Between Parallel Walls</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 38%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math></th>
+<th style="text-align: center;">Range of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Ra</annotation></semantics></math></th>
+<th style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">Nu</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mn>0</mn></msup><annotation encoding="application/x-tex">90^{0}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><msup><mn>10</mn><mn>4</mn></msup><mo>−</mo><msup><mn>10</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">4\times 10^{4} - 10^{8}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.28</mn><mi>R</mi><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>H</mi><mi>L</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">0.28 Ra^{1/4}\left( \frac{H}{L} \right)^{-1/4}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>0</mn><mn>0</mn></msup><annotation encoding="application/x-tex">0^{0}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mo>−</mo><mn>7.97</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">5\times 10^{8}-7.97 \times 10^{8}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.069</mn><mi>R</mi><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><mi>P</mi><msup><mi>r</mi><mn>0.074</mn></msup></mrow><annotation encoding="application/x-tex">0.069 Ra^{1/3}Pr^{0.074}</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>30</mn><mn>0</mn></msup><annotation encoding="application/x-tex">30^{0}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mo>−</mo><mn>7.97</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">5\times 10^{8}-7.97 \times 10^{8}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.065</mn><mi>R</mi><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><mi>P</mi><msup><mi>r</mi><mn>0.074</mn></msup></mrow><annotation encoding="application/x-tex">0.065 Ra^{1/3}Pr^{0.074}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mn>0</mn></msup><annotation encoding="application/x-tex">45^{0}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mo>−</mo><mn>7.97</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">5\times 10^{8}-7.97 \times 10^{8}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.059</mn><mi>R</mi><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><mi>P</mi><msup><mi>r</mi><mn>0.074</mn></msup></mrow><annotation encoding="application/x-tex">0.059 Ra^{1/3}Pr^{0.074}</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>60</mn><mn>0</mn></msup><annotation encoding="application/x-tex">60^{0}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mo>−</mo><mn>7.97</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">5\times 10^{8}-7.97 \times 10^{8}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.057</mn><mi>R</mi><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><mi>P</mi><msup><mi>r</mi><mn>0.074</mn></msup></mrow><annotation encoding="application/x-tex">0.057 Ra^{1/3}Pr^{0.074}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>90</mn><mn>0</mn></msup><annotation encoding="application/x-tex">90^{0}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mo>−</mo><mn>7.97</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">5\times 10^{8}-7.97 \times 10^{8}</annotation></semantics></math></td>
+<td style="text-align: center;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.049</mn><mi>R</mi><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><mi>P</mi><msup><mi>r</mi><mn>0.074</mn></msup></mrow><annotation encoding="application/x-tex">0.049 Ra^{1/3}Pr^{0.074}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:30%;">
+<p><a href="./assets/Week9_9.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="./assets/Week9_9.excalidraw.svg"></a></p>
+</div></div>
+<p>For air the simplified correlations are given below</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>N</mi><msub><mi>u</mi><mi>L</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0.18</mn><mi>G</mi><msubsup><mi>r</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>H</mi><mi>L</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>9</mn></mrow></msup></mtd><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>3</mn></msup><mo>&lt;</mo><mi>G</mi><msub><mi>r</mi><mi>L</mi></msub><mo>&lt;</mo><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>4</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>N</mi><msub><mi>u</mi><mi>L</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0.65</mn><mi>G</mi><msubsup><mi>r</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>H</mi><mi>L</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>9</mn></mrow></msup></mtd><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>4</mn></msup><mo>&lt;</mo><mi>G</mi><msub><mi>r</mi><mi>L</mi></msub><mo>&lt;</mo><mn>11</mn><mo>×</mo><msup><mn>10</mn><mn>6</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+Nu_{L}  &amp; = 0.18 Gr_{L}^{1/4} \left( \frac{H}{L} \right)^{-1/9}  &amp;  &amp; 2\times 10^{3} &lt; Gr_{L} &lt; 2 \times 10^{4} \\
+Nu_{L}  &amp; =0.65 Gr_{L}^{1/3} \left( \frac{H}{L} \right)^{-1/9}  &amp;  &amp; 2 \times 10^{4} &lt; Gr_{L} &lt; 11\times 10^{6}
+\end{align}
+</annotation></semantics></math></p>
+</section>
+<section>
+<section id="problems" class="title-slide slide level1 center">
+<h1>Problems</h1>
+
+</section>
+<section id="integral-solution-for-uniform-heat-flux" class="slide level2">
+<h2>Integral Solution for Uniform Heat Flux</h2>
+<p>Determine the local Nusselt number for the boundary layer natural convection along a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mi>″</mi><mo>=</mo><mtext mathvariant="normal">constant</mtext></mrow><annotation encoding="application/x-tex">q''=\text{constant}</annotation></semantics></math> vertical wall by performing an integral analysis using the profiles</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>T</mi><mo>−</mo><msub><mi>T</mi><mi>∞</mi></msub><mo>=</mo><mi>Δ</mi><mi>T</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><mi>x</mi><msub><mi>δ</mi><mi>T</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"></mtd><mtd columnalign="right" style="text-align: right"><mi>v</mi><mo>=</mo><mi>V</mi><mfrac><mi>x</mi><mi>δ</mi></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><mi>x</mi><mi>δ</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+T-T_{\infty}=\Delta T\left( 1-\frac{x}{\delta_{T}} \right)^{2}, &amp;  &amp; v=V \frac{x}{\delta}\left( 1-\frac{x}{\delta} \right)^{2}
+\end{align}
+</annotation></semantics></math></p>
+<p>and taking <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><msub><mi>δ</mi><mi>T</mi></msub></mrow><annotation encoding="application/x-tex">\delta=\delta_{T}</annotation></semantics></math>. Determine the expression for wall temperature profile.</p>
+</section>
+<section id="integral-solution-in-stratified-ambient" class="slide level2">
+<h2>Integral Solution in Stratified Ambient</h2>
+<p>Consider the integral analysis of laminar natural convection along a vertical wall bathed by a linearly stratified fluid as shown alongside. Starting with equations below,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>y</mi></mrow></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msubsup><msup><mi>v</mi><mn>2</mn></msup><mi>d</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>−</mi><mi>ν</mi><msub><mrow><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>+</mo><mi>g</mi><mi>β</mi><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>−</mo><msub><mi>T</mi><mi>∞</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">
+\frac{d}{dy}\left( \int_{0}^{\delta(y)} v^{2} dx\right) = -\nu \left. \frac{ \partial v }{ \partial x }  \right|_{x=0} + g \beta \int_{0}^{\delta(y)} (T-T_{\infty}) dx
+</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>y</mi></mrow></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msubsup><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>−</mo><msub><mi>T</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>d</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>−</mi><mi>α</mi><msub><mrow><mfrac><mrow><mi>∂</mi><mi>T</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">
+\frac{d}{dy} \left( \int_{0}^{\delta(y)}v (T-T_{0}) dx \right) = -\alpha \left. \frac{ \partial T }{ \partial x }  \right|_{x=0} 
+</annotation></semantics></math></p>
+<p>with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>−</mo><msub><mi>T</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>w</mi></msub><mo>−</mo><msub><mi>T</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><mi>x</mi><mi>δ</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">T-T_{0}=(T_{w}-T_{0}) \left( 1-\frac{x}{\delta} \right)^{2}</annotation></semantics></math> , <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><msub><mi>v</mi><mn>0</mn></msub><mfrac><mi>x</mi><mi>δ</mi></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><mi>x</mi><mi>δ</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">v=v_{0} \frac{x}{\delta} \left (1-\frac{x}{\delta}\right)^{2}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub><mo>=</mo><msub><mi>T</mi><mn>00</mn></msub><mo>+</mo><mi>γ</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">T_{0}=T_{00}+\gamma y</annotation></semantics></math></p>
+<ol type="a">
+<li>Derive the integral momentum and energy equations in terms of the following non-dimensional parameters</li>
+</ol>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>δ</mi><mi>*</mi><mo>=</mo><mfrac><mi>δ</mi><mrow><mi>H</mi><mi>R</mi><msubsup><mi>a</mi><mi>H</mi><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"></mtd><mtd columnalign="right" style="text-align: right"><mi>y</mi><mi>*</mi><mo>=</mo><mfrac><mi>y</mi><mi>H</mi></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>v</mi><mi>*</mi><mo>=</mo><mfrac><mi>v</mi><mrow><mfrac><mi>α</mi><mi>H</mi></mfrac><mi>R</mi><msubsup><mi>a</mi><mi>H</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msubsup></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"></mtd><mtd columnalign="right" style="text-align: right"><mi>R</mi><msub><mi>a</mi><mi>H</mi></msub><mo>=</mo><mfrac><mrow><mi>g</mi><mi>β</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>w</mi></msub><mo>−</mo><msub><mi>T</mi><mn>00</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>H</mi><mn>3</mn></msup></mrow><mrow><mi>α</mi><mi>ν</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>b</mi><mo>=</mo><mfrac><mrow><mi>γ</mi><mi>H</mi></mrow><mrow><msub><mi>T</mi><mi>w</mi></msub><mo>−</mo><msub><mi>T</mi><mn>00</mn></msub></mrow></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+\delta* = \frac{\delta}{H Ra_{H}^{-1/4}} &amp;  &amp; y* = \frac{y}{H} \\
+v* = \frac{v}{\frac{\alpha}{H}Ra_{H}^{1/2}} &amp;  &amp; Ra_{H}= \frac{g \beta (T_{w}-T_{00})H^{3}}{\alpha \nu} \\
+b = \frac{\gamma H}{T_{w}-T_{00}}
+\end{align}
+</annotation></semantics></math></p>
+<ol start="2" type="a">
+<li><p>Solve these equations in the limit of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>r</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">Pr\to \infty</annotation></semantics></math> by setting <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">b\to1</annotation></semantics></math></p></li>
+<li><p>Compare your estimate with the literature (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>N</mi><mi>u</mi></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mn>0.337</mn><mi>R</mi><msubsup><mi>a</mi><mi>L</mi><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\overline{Nu}=0.337 Ra_{L}^{1/4}</annotation></semantics></math>)</p></li>
+</ol>
+</section>
+<section id="cooling-a-bottle---horizontal-or-vertical" class="slide level2">
+<h2>Cooling a bottle - horizontal or vertical?</h2>
+<p>You have a bottle of water at room temperature, and you would like to drink it cold as soon as possible. The bottle has a height/diameter ratio of about 5. You place the bottle in the refrigerator; however, you have the option of positioning the bottle (1) vertically or (2) horizontally. The refrigerator cools by natural convection (it does not employ forced circulation). Which way should you position the bottle? Describe the goodness of your decision by calculating the ratio <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mn>1</mn></msub><mi>/</mi><msub><mi>h</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">h_{1} / h_{2}</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math> refers to the heat transfer coefficient.</p>
+</section>
+<section id="effect-of-orientation-on-heat-transfer-from-flat-plates" class="slide level2">
+<h2>Effect of orientation on heat transfer from flat plates</h2>
+<p>A long, rectangular metallic blade has width H= 4 cm and temperature Tw = 40<sup>0</sup>C. It is surrounded on both sides by atmospheric air at T<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mi>∞</mi></msub><annotation encoding="application/x-tex">_{\infty}</annotation></semantics></math>= 20<sup>0</sup>C. The long side of the blade is always horizontal. Calculate the total heat transfer rate per unit of blade length when the short side of its rectangular shape (H) is (a) vertical, (b) inclined at 45<sup>0</sup> relative to the vertical, and (c) horizontal. Comment on the effect that blade orientation has on the total heat transfer rate.</p>
+<p><a href="./assets/Week9_8.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="./assets/Week9_8.excalidraw.svg"></a></p>
+</section>
+<section id="heat-transfer-calculation-in-mixed-convection" class="slide level2">
+<h2>Heat Transfer Calculation in Mixed Convection</h2>
+<p>Air at atmospheric pressure and 20°C is forced through a horizontal 1 in. diameter tube at an average velocity at 0.3 m/s. Tube wall is maintained at a constant temperature of 140°C. Calculate the heat-transfer coefficient for this situation if tube is 12 in. long. (For correlations refer <a href="#/fig-mixedconvcorr" class="quarto-xref">Figure&nbsp;2</a>)</p>
+</section>
+<section id="heat-transfer-in-an-enclosure-between-two-parallel-plates" class="slide level2">
+<h2>Heat Transfer in an enclosure between two parallel plates</h2>
+<p>Air at atmospheric pressure is enclosed between two vertical plates of length 1m each separated by 2 cm. The temperatures of the plates are 60°C and 100°C, respectively. Calculate the heat flux across the space. (use appropriate correlations from the slides)</p>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center unlisted">
+<h1>Thank You</h1>
+<p>Go to <a href="../index.html">Home</a></p>
 
 </section>
     </div>

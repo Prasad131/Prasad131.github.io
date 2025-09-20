@@ -1,6 +1,6 @@
 ---
 title: Fundamentals of Convective Heat Transfer
-subtitle: Week-08 (Live Session)
+subtitle: Week-09 (Live Session)
 author: Durga Prasad Pydi
 date: 2025-09-20
 format: 
@@ -33,7 +33,7 @@ lightbox: true
 
 ![Illustration of natural convection over a vertical heated plate](./assets/Week8_1.excalidraw.svg){#fig-natconvplate}
 
-## Integral equations 
+## Integral equations
 
 **Momentum Integral Equation**
 
@@ -64,7 +64,85 @@ $$
 
 and $\overline{Nu}=\frac{4}{3} Nu_{local}$
 
-# Problems 
+## Correlations - Vertical Plates
+
+::: vtop
+
+| Geometry | $L_{c}$ | Range of $Ra$ | $Nu$ |
+|:----------:|:----------:|:----------:|--------------------------------------|
+| ![](./assets/Week9_1.excalidraw.svg) | $L$ | $10^{4}-10^{9}$<br><br>$10^{10}-10^{13}$<br><br>Entire Range | $Nu=0.59 Ra_{L}^{1/4}$<br><br>$Nu = 0.1 Ra_{L}^{1/3}$<br><br>$Nu = \left(0.825 + \frac{0.387Ra_{L}^{1/6}}{\left( 1+\left( \frac{0.492}{Pr} \right)^{9/16} \right)^{8/27}}\right)^{2}$ |
+| ![](./assets/Week9_2.excalidraw.svg) | $L$ |  | Use vertical plate equations for the upper surface of a cold plate and lower surface of a hot plate<br><br>Replace $g$ by $g \cos \theta$ for $-60^{0}\leq\theta \leq 60^{0}$ |
+:::
+
+## Correlations - Horizontal Plates
+
+::: vtop
+
+| Geometry | $L_{c}$ | Range of $Ra$ | $Nu$ |
+|:---------------------------:|:----------:|:----------:|--------------------------------------|
+| ![](./assets/Week9_3.excalidraw.svg) | $\frac{A}{p}$ | $10^{4}-10^{7}$<br><br>$10^{7}-10^{11}$ | $Nu = 0.59Ra_{L}^{1/4}$<br><br>$Nu = 0.1 Ra_{L}^{1/3}$ |
+| ![](./assets/Week9_4.excalidraw.svg) | $\frac{A}{p}$ | $10^{5}-10^{11}$ | $Nu = 0.27 Ra_{L}^{1/4}$ |
+:::
+
+## Correlations - Cylinders
+
+::: vtop
+
+| Geometry | $L_{c}$ | Range of $Ra$ | $Nu$ |
+|:----------:|:----------:|:----------:|------------------------------------|
+| ![](./assets/Week9_5.excalidraw.svg) | $L$ |  | A vertical cylinder can be treated as a vertical plate when $D\geq \frac{35L}{Gr_{L}^{1/4}}$ |
+| ![](./assets/Week9_6.excalidraw.svg) | $D$ | $Ra_{D}\leq 10^{12}$ | $Nu = \left(0.6+\frac{0.387Ra_{D}^{1/6}}{\left( 1+\left( \frac{0.559}{Pr} \right)^{9/16} \right)^{8/27}}\right)^{2}$ |
+:::
+
+## Correlations - Sphere
+
+::: vtop
+
+| Geometry | $L_{c}$ | Range of $Ra$ | $Nu$ |
+|-------------|-------------|-------------|---------------------------------|
+| ![](./assets/Week9_7.excalidraw.svg) | $D$ | $Ra_{D}\leq 10^{11}$, $Pr \geq 0.7$ | $Nu = 2+\frac{0.589Ra_{D}^{1/4}}{\left( 1+\left( \frac{0.469}{Pr} \right)^{9/16} \right)^{4/9}}$ |
+:::
+
+## Correlations - Mixed Convection {.scrollable}
+
+![Regimes of free, forced, and mixed-convection flow through horizontal circular ducts with UWT boundary condition - From Metais, B. and Eckert, E. R. G., J. Heat Transfer, 86C, 295, 1964. ](./assets/mixedConvCorrelations.png){#fig-mixedconvcorr}
+
+## Correlations - Between Parallel Walls
+
+:::: {.columns}
+
+::: {.column width=70%}
+
+| $\theta$ |            Range of $Ra$            |                       $Nu$                       |
+| :------: | :---------------------------------: | :----------------------------------------------: |
+| $90^{0}$ |      $4\times 10^{4} - 10^{8}$      | $0.28 Ra^{1/4}\left( \frac{H}{L} \right)^{-1/4}$ |
+| $0^{0}$  | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.069 Ra^{1/3}Pr^{0.074}$            |
+| $30^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.065 Ra^{1/3}Pr^{0.074}$            |
+| $45^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.059 Ra^{1/3}Pr^{0.074}$            |
+| $60^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.057 Ra^{1/3}Pr^{0.074}$            |
+| $90^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.049 Ra^{1/3}Pr^{0.074}$            |
+
+:::
+
+::: {.column width=30% }
+
+![](./assets/Week9_9.excalidraw.svg) 
+
+:::
+
+::::
+
+
+For air the simplified correlations are given below
+
+$$
+\begin{align}
+Nu_{L}  & = 0.18 Gr_{L}^{1/4} \left( \frac{H}{L} \right)^{-1/9}  &  & 2\times 10^{3} < Gr_{L} < 2 \times 10^{4} \\
+Nu_{L}  & =0.65 Gr_{L}^{1/3} \left( \frac{H}{L} \right)^{-1/9}  &  & 2 \times 10^{4} < Gr_{L} < 11\times 10^{6}
+\end{align}
+$$
+
+# Problems
 
 ## Integral Solution for Uniform Heat Flux
 
@@ -78,8 +156,53 @@ $$
 
 and taking $\delta=\delta_{T}$. Determine the expression for wall temperature profile.
 
+## Integral Solution in Stratified Ambient
+
+Consider the integral analysis of laminar natural convection along a vertical wall bathed by a linearly stratified fluid as shown alongside. Starting with equations below, 
+
+$$
+\frac{d}{dy}\left( \int_{0}^{\delta(y)} v^{2} dx\right) = -\nu \left. \frac{ \partial v }{ \partial x }  \right|_{x=0} + g \beta \int_{0}^{\delta(y)} (T-T_{\infty}) dx
+$$
+
+$$
+\frac{d}{dy} \left( \int_{0}^{\delta(y)}v (T-T_{0}) dx \right) = -\alpha \left. \frac{ \partial T }{ \partial x }  \right|_{x=0} 
+$$
+
+with  $T-T_{0}=(T_{w}-T_{0}) \left( 1-\frac{x}{\delta} \right)^{2}$ , $v=v_{0} \frac{x}{\delta} \left (1-\frac{x}{\delta}\right)^{2}$  and $T_{0}=T_{00}+\gamma y$ 
+
+a) Derive the integral momentum and energy equations in terms of the following non-dimensional parameters
+
+$$
+\begin{align}
+\delta* = \frac{\delta}{H Ra_{H}^{-1/4}} &  & y* = \frac{y}{H} \\
+v* = \frac{v}{\frac{\alpha}{H}Ra_{H}^{1/2}} &  & Ra_{H}= \frac{g \beta (T_{w}-T_{00})H^{3}}{\alpha \nu} \\
+b = \frac{\gamma H}{T_{w}-T_{00}}
+\end{align}
+$$
+
+b) Solve these equations in the limit of $Pr\to \infty$ by setting $b\to1$
+
+c) Compare your estimate with the literature ($\overline{Nu}=0.337 Ra_{L}^{1/4}$)
+
+## Cooling a bottle - horizontal or vertical?
+
+You have a bottle of water at room temperature, and you would like to drink it cold as soon as possible. The bottle has a height/diameter ratio of about 5. You place the bottle in the refrigerator; however, you have the option of positioning the bottle (1) vertically or (2) horizontally. The refrigerator cools by natural convection (it does not employ forced circulation). Which way should you position the bottle? Describe the goodness of your decision by calculating the ratio $h_{1} / h_{2}$, where $h$ refers to the heat transfer coefficient. 
+
+## Effect of orientation on heat transfer from flat plates
+
+A long, rectangular metallic blade has width H= 4 cm and temperature Tw = 40^0^C. It is surrounded on both sides by atmospheric air at T$_{\infty}$= 20^0^C. The long side of the blade is always horizontal. Calculate the total heat transfer rate per unit of blade length when the short side of its rectangular shape (H) is (a) vertical, (b) inclined at 45^0^ relative to the vertical, and (c) horizontal. Comment on the effect that blade orientation has on the total heat transfer rate.
+
+![](./assets/Week9_8.excalidraw.svg) 
+
+
+## Heat Transfer Calculation in Mixed Convection 
+
+Air at atmospheric pressure and 20°C is forced through a horizontal 1 in. diameter tube at an average velocity at 0.3 m/s. Tube wall is maintained at a constant temperature of 140°C. Calculate the heat-transfer coefficient for this situation if tube is 12 in. long. (For correlations refer @fig-mixedconvcorr)
+
+## Heat Transfer in an enclosure between two parallel plates
+
+Air at atmospheric pressure is enclosed between two vertical plates of length 1m each separated by 2 cm. The temperatures of the plates are 60°C and 100°C, respectively. Calculate the heat flux across the space. (use appropriate correlations from the slides)
 
 # Thank You {.center .unlisted}
 
 Go to [Home](../index.html)
-
