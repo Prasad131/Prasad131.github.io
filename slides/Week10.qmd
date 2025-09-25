@@ -79,13 +79,22 @@ Which of the following is the reason for checker boarding problem?
 
 . . .
 
+:::: {.columns}
+
+::: {.column width=60%}
 The major reason for checker boarding problem is the decoupling due to central differencing in both continuity and momentum equations. The central differencing allows for oscillating solutions, where both continuity and momentum equations will be satisfied while it is not physically possible. 
 
-. . .
-
 Staggered grid allows to couple these two, so even if one of them is not physical, the solver looks for other solutions and will eventually converges to a physically consistent solution
+:::
 
-## 
+::: {.column width=40%}
+![](./assets/Week10_1.excalidraw.svg)
+:::
+
+::::
+
+## Discretising the advection term
+
 
 # Thank You {.center .unlisted}
 

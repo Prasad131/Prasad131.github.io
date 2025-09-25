@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "slides/Week8.qmd",
+                "file": "slides/Week10.qmd",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Week8"
+              "title": "Backlinks for Week10"
             }
           },
           {
@@ -175,16 +175,17 @@
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
     "slides/Week10_files/mediabag",
+    "slides/assets/Week10_1.excalidraw.md",
+    "slides/Week10_files/libs/quarto-contrib/glightbox/lightbox.css",
+    "slides/Week10_files/libs/quarto-contrib/glightbox/glightbox.min.js",
+    "slides/Week10_files/libs/quarto-contrib/glightbox/glightbox.min.css",
+    "slides/Week10_files/libs/quarto-contrib/glightbox",
+    "slides/Week10_files/libs/quarto-contrib",
+    "slides/Week10.qmd",
+    "slides/assets/Week10_1.excalidraw.svg",
     "slides/Week10_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css",
     "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro.css",
     "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.woff",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.ttf",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.eot",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.woff",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.ttf",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.eot",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.woff",
-    "slides/Week10_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.ttf",
     "slides/assets/Week9_9.excalidraw.md",
     "slides/assets/Week9_9.excalidraw.svg",
     "slides/assets/mixedConvCorrelations.png",
@@ -202,7 +203,6 @@
     "slides/assets/Week9_3.excalidraw.md",
     "slides/assets/Week9_3.excalidraw.svg",
     "slides/assets/Week9_2.excalidraw.md",
-    "slides/assets/Week9_2.excalidraw.svg",
     "slides/assets/Week9_1.excalidraw.md",
     "slides/assets/Week8_4.excalidraw.md",
     "slides/assets/Week8_3.excalidraw.md",

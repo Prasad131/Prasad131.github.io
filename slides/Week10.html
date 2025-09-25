@@ -6,7 +6,10 @@
 <script src="Week10_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Week10_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Week10_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Week10_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="Week10_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Week10_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="Week10_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="Week10_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Durga Prasad Pydi">
@@ -148,7 +151,7 @@ Durga Prasad Pydi
 <li><a href="#/basics-of-finite-difference-method" id="/toc-basics-of-finite-difference-method">Basics of Finite Difference Method</a></li>
 <li><a href="#/problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term" id="/toc-problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term">Problem - 1D Unsteady Heat Conduction with volumetric heat generation term</a></li>
 <li><a href="#/checker-boarding-problem" id="/toc-checker-boarding-problem">Checker boarding problem</a></li>
-
+<li><a href="#/discretising-the-advection-term" id="/toc-discretising-the-advection-term">Discretising the advection term</a></li>
 </ul>
 </nav>
 </section>
@@ -195,14 +198,17 @@ f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^
 <li><label><input type="checkbox">storing velocity and pressure at the same grid points</label></li>
 </ul>
 <div class="fragment">
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>The major reason for checker boarding problem is the decoupling due to central differencing in both continuity and momentum equations. The central differencing allows for oscillating solutions, where both continuity and momentum equations will be satisfied while it is not physically possible.</p>
-</div>
-<div class="fragment">
 <p>Staggered grid allows to couple these two, so even if one of them is not physical, the solver looks for other solutions and will eventually converges to a physically consistent solution</p>
+</div><div class="column" style="width:40%;">
+<p><a href="./assets/Week10_1.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="./assets/Week10_1.excalidraw.svg"></a></p>
+</div></div>
 </div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="discretising-the-advection-term" class="slide level2">
+<h2>Discretising the advection term</h2>
 </section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>
@@ -691,6 +697,38 @@ f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>
