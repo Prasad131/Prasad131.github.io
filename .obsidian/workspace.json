@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/Week9.qmd",
+                "file": "slides/Week10.qmd",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week9"
+              "title": "Week10"
             }
           }
         ]
@@ -174,13 +174,13 @@
   },
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
+    "slides/Week9.qmd",
     "slides/Week9_files/mediabag",
     "slides/assets/week9/isothermalValidity.nb",
     "slides/assets/week9/1",
     "slides/assets/week9/FileList[folderPath,\"*.nb\"]",
     "slides/assets/week9/exportNotebooks.nb",
     "slides/assets/Week9_9.excalidraw.md",
-    "slides/Week9.qmd",
     "slides/assets/Week9_9.excalidraw.svg",
     "slides/assets/week9/parallelPlates.nb",
     "slides/assets/week9/velocityProfiles.ipynb",

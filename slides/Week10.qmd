@@ -1,0 +1,32 @@
+---
+title: Fundamentals of Convective Heat Transfer
+subtitle: Week-09 (Live Session)
+author: Durga Prasad Pydi
+date: 2025-09-20
+format: 
+    revealjs:
+        theme: [default,custom.scss]
+        width: 1920
+        height: 1080
+        css: styles.css
+        slide-number: true
+        lightbox: true
+        crossrefs-hover: true
+        html-math-method: mathml
+        toc: true
+        toc-depth: 2
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Appendix
+      key: app
+lightbox: true
+---
+
+## Basics of Finite Difference Method
+
+
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)
