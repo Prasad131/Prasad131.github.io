@@ -6,8 +6,8 @@
 <script src="Week10_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Week10_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Week10_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Week10_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="Week10_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Durga Prasad Pydi">
   <meta name="dcterms.date" content="2025-09-27">
@@ -146,6 +146,9 @@ Durga Prasad Pydi
 <h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/basics-of-finite-difference-method" id="/toc-basics-of-finite-difference-method">Basics of Finite Difference Method</a></li>
+<li><a href="#/problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term" id="/toc-problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term">Problem - 1D Unsteady Heat Conduction with volumetric heat generation term</a></li>
+<li><a href="#/checker-boarding-problem" id="/toc-checker-boarding-problem">Checker boarding problem</a></li>
+
 </ul>
 </nav>
 </section>
@@ -175,6 +178,31 @@ f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^
 <p>Second-order central difference: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><msub><mi>T</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi>T</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>j</mi></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>T</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>+</mo><msub><mi>T</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>j</mi></mrow></msub></mrow><mrow><mi>Δ</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Δ</mi><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \frac{ \partial^{2} T_{i,j} }{ \partial x^{2} }=\frac{T_{i+1,j}-2T_{i,j}+T_{i-1,j}}{\Delta x^{2}}+O(\Delta x^{2})
 </annotation></semantics></math></p>
+</section>
+<section id="problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term" class="slide level2">
+<h2>Problem - 1D Unsteady Heat Conduction with volumetric heat generation term</h2>
+<p>Discretise the below equation with first order backward time and second-order central differencing in spatial domain</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>T</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>α</mi><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>T</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>q</mi><mi>‴</mi></mrow><mrow><mi>ρ</mi><msub><mi>c</mi><mi>p</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\frac{ \partial T }{ \partial t } = \alpha \frac{ \partial^{2} T }{ \partial x^{2} }  + \frac{q'''}{\rho c_{p}}
+</annotation></semantics></math></p>
+</section>
+<section id="checker-boarding-problem" class="slide level2">
+<h2>Checker boarding problem</h2>
+<p>Which of the following is the reason for checker boarding problem?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">second-order central differencing of pressure term in momentum equations</label></li>
+<li><label><input type="checkbox">second-order central differencing of velocity term in continuity equation</label></li>
+<li><label><input type="checkbox">storing velocity and pressure at the same grid points</label></li>
+</ul>
+<div class="fragment">
+<p>The major reason for checker boarding problem is the decoupling due to central differencing in both continuity and momentum equations. The central differencing allows for oscillating solutions, where both continuity and momentum equations will be satisfied while it is not physically possible.</p>
+</div>
+<div class="fragment">
+<p>Staggered grid allows to couple these two, so even if one of them is not physical, the solver looks for other solutions and will eventually converges to a physically consistent solution</p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 </section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>

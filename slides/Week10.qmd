@@ -60,6 +60,32 @@ $$
 \frac{ \partial^{2} T_{i,j} }{ \partial x^{2} }=\frac{T_{i+1,j}-2T_{i,j}+T_{i-1,j}}{\Delta x^{2}}+O(\Delta x^{2})
 $$ 
 
+## Problem - 1D Unsteady Heat Conduction with volumetric heat generation term 
+
+Discretise the below equation with first order backward time and second-order central differencing in spatial domain
+
+$$
+\frac{ \partial T }{ \partial t } = \alpha \frac{ \partial^{2} T }{ \partial x^{2} }  + \frac{q'''}{\rho c_{p}}
+$$
+
+
+## Checker boarding problem 
+
+Which of the following is the reason for checker boarding problem? 
+ 
+- [ ] second-order central differencing of pressure term in momentum equations
+- [ ] second-order central differencing of velocity term in continuity equation
+- [ ] storing velocity and pressure at the same grid points
+
+. . .
+
+The major reason for checker boarding problem is the decoupling due to central differencing in both continuity and momentum equations. The central differencing allows for oscillating solutions, where both continuity and momentum equations will be satisfied while it is not physically possible. 
+
+. . .
+
+Staggered grid allows to couple these two, so even if one of them is not physical, the solver looks for other solutions and will eventually converges to a physically consistent solution
+
+## 
 
 # Thank You {.center .unlisted}
 
