@@ -1,8 +1,8 @@
 ---
 title: Fundamentals of Convective Heat Transfer
-subtitle: Week-09 (Live Session)
+subtitle: Week-10 (Live Session)
 author: Durga Prasad Pydi
-date: 2025-09-20
+date: 2025-09-27
 format: 
     revealjs:
         theme: [default,custom.scss]
@@ -25,6 +25,40 @@ lightbox: true
 
 ## Basics of Finite Difference Method
 
+Consider a second order differential equations as follows
+
+$$
+A \phi_{xx}+B \phi_{xy}+C \phi_{yy} + D \phi_{x} +  E \phi_{y}+F \phi = G(x,y)
+$$
+$$
+\begin{align}
+B^{2}-4AC = 0 &  & \text{parabolic} \\
+B^{2}-4AC < 0  &  & \text{elliptic} &  & \text{equilibrium problems} \\
+B^{2}-4AC > 0  &  & \text{hyperbolic} &  & \text{time marching problems}
+\end{align}
+$$
+
+Taylor Series expansion 
+
+$$
+f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^{2}}{2!} \frac{ \partial^{2} f }{ \partial x^{2} } + \frac{\Delta x^{3}}{3!}\frac{ \partial^{3} f }{ \partial x^{3} } +\dots
+$$
+
+First-order forward difference: 
+
+$$
+\frac{ \partial T_{i,j} }{ \partial x }=\frac{T_{i+1,j}-T_{i,j}}{\Delta x}+O(\Delta x)
+$$
+
+First-order backward difference: 
+$$
+\frac{ \partial T_{i,j} }{ \partial x }=\frac{T_{i,j}-T_{i-1,j}}{\Delta x}+O(\Delta x)
+$$
+
+Second-order central difference: 
+$$
+\frac{ \partial^{2} T_{i,j} }{ \partial x^{2} }=\frac{T_{i+1,j}-2T_{i,j}+T_{i-1,j}}{\Delta x^{2}}+O(\Delta x^{2})
+$$ 
 
 
 # Thank You {.center .unlisted}
