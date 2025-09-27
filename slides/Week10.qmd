@@ -127,7 +127,7 @@ MAC algorithm:
 
 1. Discretise $\frac{Du}{Dt}=- \frac{\nabla p}{\rho}+\nu \nabla^{2}u$ 
 2. Taking $p$ from previous time step solve the above equation to get $\tilde{u}$ (predicted velocity)
-3. Compute actual velocity $u=\tilde{u}+k p'$, by solving $\nabla.u=\nabla.\tilde{u}+k\nabla p'=0$ 
+3. Compute actual velocity $u=\tilde{u}+k \nabla p'$, by solving $\nabla.u=\nabla.\tilde{u}+k\nabla^2 p'=0$ 
 4. Update pressure values as $p^{n+1}=p^{n}+p'$ where $p^{n}=p$ . 
 
 To accelerate convergence, the value of $k$ need to be reduced. Similarly, increasing $k$ can lead to a stable convergence
