@@ -152,6 +152,16 @@ Durga Prasad Pydi
 <li><a href="#/problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term" id="/toc-problem---1d-unsteady-heat-conduction-with-volumetric-heat-generation-term">Problem - 1D Unsteady Heat Conduction with volumetric heat generation term</a></li>
 <li><a href="#/checker-boarding-problem" id="/toc-checker-boarding-problem">Checker boarding problem</a></li>
 <li><a href="#/discretising-the-advection-term" id="/toc-discretising-the-advection-term">Discretising the advection term</a></li>
+<li><a href="#/problem---marker-and-cell-algorithm-mac" id="/toc-problem---marker-and-cell-algorithm-mac">Problem - Marker and cell algorithm (MAC)</a></li>
+<li><a href="#/boundary-conditions" id="/toc-boundary-conditions">Boundary Conditions</a></li>
+<li><a href="#/problems" id="/toc-problems">Problems</a>
+<ul>
+<li><a href="#/couette-flow" id="/toc-couette-flow">Couette Flow</a></li>
+<li><a href="#/channel-flow-parallel-plates" id="/toc-channel-flow-parallel-plates">Channel flow (parallel plates)</a></li>
+<li><a href="#/steady-diffusion" id="/toc-steady-diffusion">Steady Diffusion</a></li>
+<li><a href="#/advection---diffusion-upwind-scheme" id="/toc-advection---diffusion-upwind-scheme">Advection - Diffusion (upwind scheme)</a></li>
+<li><a href="#/advection---diffusion-central-scheme" id="/toc-advection---diffusion-central-scheme">Advection - Diffusion (central scheme)</a></li>
+</ul></li>
 </ul>
 </nav>
 </section>
@@ -188,6 +198,7 @@ f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>T</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>α</mi><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>T</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>q</mi><mi>‴</mi></mrow><mrow><mi>ρ</mi><msub><mi>c</mi><mi>p</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \frac{ \partial T }{ \partial t } = \alpha \frac{ \partial^{2} T }{ \partial x^{2} }  + \frac{q'''}{\rho c_{p}}
 </annotation></semantics></math></p>
+<p><a href="./assets/week10/discretise.pdf">Solution</a></p>
 </section>
 <section id="checker-boarding-problem" class="slide level2">
 <h2>Checker boarding problem</h2>
@@ -209,7 +220,121 @@ f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^
 </section>
 <section id="discretising-the-advection-term" class="slide level2">
 <h2>Discretising the advection term</h2>
+<p>Advection term <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><mi>∂</mi><mi>u</mi><mi>ϕ</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><annotation encoding="application/x-tex">\frac{ \partial u \phi }{ \partial x }</annotation></semantics></math> needs to be discretised on a 1D grid point <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>∂</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mi>ϕ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo>−</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>Δ</mi><mi>x</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>ϕ</mi><mi>i</mi></msub><mi>.</mi><mfrac><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow></mrow><mn>2</mn></mfrac><mo>+</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mi>.</mi><mfrac><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow></mrow><mn>2</mn></mfrac></mtd><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">upwind scheme</mtext></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>−</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac></mtd><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">central difference</mtext></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">upwind</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">central</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac><mo>+</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>−</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac><mo>+</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi><mfrac><mrow><msub><mi>ϕ</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>ϕ</mi><mi>i</mi></msub></mrow><mn>2</mn></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+\frac{ \partial (u \phi) }{ \partial x }  &amp; = \frac{\left( u_{i+\frac{1}{2}} .\phi_{i+\frac{1}{2}}-u_{i-\frac{1}{2}}.\phi_{i-\frac{1}{2}}\right)}{\Delta x} \\
+u_{i+\frac{1}{2}}.\phi_{i+\frac{1}{2}}  &amp; =\phi_{i}. \frac{ u_{i+\frac{1}{2}}+|u_{i+\frac{1}{2}}|}{2}+\phi_{i+1}.\frac{ u_{i+\frac{1}{2}}-|u_{i+\frac{1}{2}}|}{2} &amp;  &amp; \text{upwind scheme} \\
+ &amp;=u_{i+\frac{1}{2}} .\frac{\phi_{i}+\phi_{i+1}}{2}+|u_{i+\frac{1}{2}}|. \frac{\phi_{i}-\phi_{i+1}}{2} \\
+ &amp; =u_{i+\frac{1}{2}} .\frac{\phi_{i}+\phi_{i+1}}{2} &amp;  &amp; \text{central difference} \\
+ &amp; = r (\text{upwind}) + (1-r) (\text{central}) \\
+ &amp; =u_{i+\frac{1}{2}}.\frac{\phi_{i}+\phi_{i+1}}{2}+r |u_{i+\frac{1}{2}}| .\frac{\phi_{i}-\phi_{i+1}}{2} \\
+u_{i-\frac{1}{2}}.\phi_{i-\frac{1}{2}}  &amp;= u_{i-\frac{1}{2}} .\frac{\phi_{i}+\phi_{i-1}}{2}+r |u_{i-\frac{1}{2}}|. \frac{\phi_{i-1}-\phi_{i}}{2}
+\end{align}
+</annotation></semantics></math></p>
+<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>+</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">u_{i+\frac{1}{2}}=\frac{u_{i}+u_{i+1}}{2}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>+</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">u_{i-\frac{1}{2}}=\frac{u_{i}+u_{i-1}}{2}</annotation></semantics></math></p>
 </section>
+<section id="problem---marker-and-cell-algorithm-mac" class="slide level2">
+<h2>Problem - Marker and cell algorithm (MAC)</h2>
+<p>Under MAC algorithm, which of the following statements are true?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">continuity equations is discretised at current time step (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>)</label></li>
+<li><label><input type="checkbox">momentum equation is solved by assuming pressure from previous time step to get velocities</label></li>
+<li><label><input type="checkbox">pressure corrections are assumed to be zero in the neighbouring cells</label></li>
+<li><label><input type="checkbox">corrected velocities are obtained by solving the momentum equation with corrected pressures</label></li>
+</ul>
+<div class="fragment">
+<p>MAC algorithm:</p>
+<ol type="1">
+<li>Discretise <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>D</mi><mi>u</mi></mrow><mrow><mi>D</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mfrac><mrow><mi>∇</mi><mi>p</mi></mrow><mi>ρ</mi></mfrac><mo>+</mo><mi>ν</mi><msup><mi>∇</mi><mn>2</mn></msup><mi>u</mi></mrow><annotation encoding="application/x-tex">\frac{Du}{Dt}=- \frac{\nabla p}{\rho}+\nu \nabla^{2}u</annotation></semantics></math></li>
+<li>Taking <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> from previous time step solve the above equation to get <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>u</mi><mo accent="true">̃</mo></mover><annotation encoding="application/x-tex">\tilde{u}</annotation></semantics></math> (predicted velocity)</li>
+<li>Compute actual velocity <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mover><mi>u</mi><mo accent="true">̃</mo></mover><mo>+</mo><mi>k</mi><mi>p</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">u=\tilde{u}+k p'</annotation></semantics></math>, by solving <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>.</mi><mi>u</mi><mo>=</mo><mi>∇</mi><mi>.</mi><mover><mi>u</mi><mo accent="true">̃</mo></mover><mo>+</mo><mi>k</mi><mi>∇</mi><mi>p</mi><mi>′</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\nabla.u=\nabla.\tilde{u}+k\nabla p'=0</annotation></semantics></math></li>
+<li>Update pressure values as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>p</mi><mi>n</mi></msup><mo>+</mo><mi>p</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">p^{n+1}=p^{n}+p'</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>p</mi><mi>n</mi></msup><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">p^{n}=p</annotation></semantics></math> .</li>
+</ol>
+<p>To accelerate convergence, the value of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> need to be reduced. Similarly, increasing <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> can lead to a stable convergence</p>
+</div>
+</section>
+<section id="boundary-conditions" class="slide level2">
+<h2>Boundary Conditions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Flow</p>
+<ol type="1">
+<li>Prescribed velocity: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>=</mo><msub><mi>u</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">u_{i}=u_{b}</annotation></semantics></math></li>
+<li>Outflow: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>b</mi></msub><mo>=</mo><msub><mi>u</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">u_{b}=u_{i}</annotation></semantics></math></li>
+<li>No Slip: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>b</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{b}=0</annotation></semantics></math></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p>Temperature</p>
+<ol type="1">
+<li>Prescribed Temperature: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub><mo>=</mo><msub><mi>T</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">T_{i}=T_{b}</annotation></semantics></math></li>
+<li>Adiabatic: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>b</mi></msub><mo>=</mo><msub><mi>T</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">T_{b}=T_{i}</annotation></semantics></math></li>
+<li>Convection: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>h</mi><mrow><mi>i</mi><mi>n</mi><mi>t</mi></mrow></msub><msub><mi>T</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>h</mi><mrow><mi>e</mi><mi>x</mi><mi>t</mi></mrow></msub><msub><mi>T</mi><mi>b</mi></msub></mrow><mrow><msub><mi>h</mi><mrow><mi>i</mi><mi>n</mi><mi>t</mi></mrow></msub><mo>+</mo><msub><mi>h</mi><mrow><mi>e</mi><mi>x</mi><mi>t</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">T_{i}= \frac{h_{int}T_{i-1}+h_{ext}T_{b}}{h_{int}+h_{ext}}</annotation></semantics></math></li>
+</ol>
+</div></div>
+</section>
+<section>
+<section id="problems" class="title-slide slide level1 center">
+<h1>Problems</h1>
+
+</section>
+<section id="couette-flow" class="slide level2">
+<h2>Couette Flow</h2>
+<p>Consider the fully developed flow between two parallel plates as shown in the figure below. Write down the governing equation for the flow (along <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> direction). Discretise the governing equation using finite difference scheme and obtain the solution for velocity as a function of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p>
+<p><a href="./assets/Week10_2.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="./assets/Week10_2.excalidraw.svg"></a></p>
+<div class="fragment">
+<p>Governing equation:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>d</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\frac{d^{2}u}{dy^{2}}=0 
+</annotation></semantics></math></p>
+<p>Boundary conditions:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>=</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>=</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>U</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+u(y=0) &amp; =0 \\
+u(y=d) &amp; =U
+\end{align}
+</annotation></semantics></math></p>
+<p>Consider <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>U</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=1,U=1</annotation></semantics></math></p>
+<p><a href="./assets/week10/couette.pdf">Solution</a></p>
+</div>
+</section>
+<section id="channel-flow-parallel-plates" class="slide level2">
+<h2>Channel flow (parallel plates)</h2>
+<p>Consider the same problem as before except for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U=0</annotation></semantics></math> and there is a constant pressure gradient of 1Pa/m, the viscosity of the fluid to be 1kg / m.s and the separation between the plates to be 1m. (The problem is meant to illustrate the application of techniques presented in the lecture videos, hence the little emphasis was given to the values of the properties. Student is advised to attempt the solution with more realistic values when needed)</p>
+<p><a href="./assets/Week10_2.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="./assets/Week10_2.excalidraw.svg"></a></p>
+<div class="fragment">
+<p>Governing equation:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>d</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>d</mi><mi>p</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\mu\frac{ d^{2}u}{dy^{2}}-\frac{dp}{dx}=0
+</annotation></semantics></math></p>
+<p>Boundary conditions:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>=</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>=</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+u(y=0) &amp; =0 \\
+u(y=1) &amp; =0
+\end{align}
+</annotation></semantics></math></p>
+<p><a href="./assets/week10/channel.pdf">Solution</a></p>
+</div>
+</section>
+<section id="steady-diffusion" class="slide level2">
+<h2>Steady Diffusion</h2>
+<p>Consider a square slab of length 1m and thermal conductivity of 1 W/m.K with boundary conditions as specified in the figure below. If the initial temperature throughout the domain is 300K. Derive the discrete equations for the problem and solve for temperature profile as a function of space.</p>
+<p><a href="./assets/Week10_3.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="./assets/Week10_3.excalidraw.svg"></a></p>
+<p><a href="./assets/week10/unsteadyDiffusion.pdf">Solution</a></p>
+</section>
+<section id="advection---diffusion-upwind-scheme" class="slide level2">
+<h2>Advection - Diffusion (upwind scheme)</h2>
+<p>Consider a square slab of length 1m and thermal conductivity of 1 W/m.K (assume <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>1</mn><msup><mi>m</mi><mn>2</mn></msup><mi>/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">\alpha=1 m^{2} / s</annotation></semantics></math>) with boundary conditions as specified in the figure below. If the initial temperature throughout the domain is 300K. However, unlike the previous problem assume there is a constant velocity field throughout the domain given by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>u</mi><mo accent="true">→</mo></mover><mo>=</mo><mn>1</mn><mover><mi>i</mi><mo accent="true">̂</mo></mover><mo>+</mo><mn>2</mn><mover><mi>j</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">\vec{u}=1 \hat{i}+2\hat{j}</annotation></semantics></math> m/s. Derive the discrete equations for the problem and solve for temperature profile as a function of space. Use the upwind scheme to solve the problem.</p>
+<p><a href="./assets/Week10_3.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="./assets/Week10_3.excalidraw.svg"></a></p>
+<p><a href="./assets/week10/upwind.pdf">Solution</a></p>
+</section>
+<section id="advection---diffusion-central-scheme" class="slide level2">
+<h2>Advection - Diffusion (central scheme)</h2>
+<p>Consider a square slab of length 1m and thermal conductivity of 1 W/m.K (assume <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>1</mn><msup><mi>m</mi><mn>2</mn></msup><mi>/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">\alpha=1 m^{2} / s</annotation></semantics></math>) with boundary conditions as specified in the figure below. If the initial temperature throughout the domain is 300K. However, unlike the previous problem assume there is a constant velocity field throughout the domain given by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>u</mi><mo accent="true">→</mo></mover><mo>=</mo><mn>1</mn><mover><mi>i</mi><mo accent="true">̂</mo></mover><mo>+</mo><mn>2</mn><mover><mi>j</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">\vec{u}=1 \hat{i}+2\hat{j}</annotation></semantics></math> m/s. Derive the discrete equations for the problem and solve for temperature profile as a function of space. Use the central scheme to solve the problem.</p>
+<p><a href="./assets/Week10_3.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="./assets/Week10_3.excalidraw.svg"></a></p>
+<p><a href="./assets/week10/central.pdf">Solution</a></p>
+</section></section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>
 <p>Go to <a href="../index.html">Home</a></p>
