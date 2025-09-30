@@ -15,3 +15,7 @@
 .vtop td, .vtop th {
   vertical-align: top;
 }
+
+.katex {
+  font-size: 0.9em !important;
+}

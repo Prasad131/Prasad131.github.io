@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "a8c75bbe1169f5d7",
+    "id": "878d2557fa414429",
     "type": "split",
     "children": [
       {
-        "id": "9dfc111ded1108fd",
+        "id": "c96c844d3d974936",
         "type": "tabs",
         "children": [
           {
-            "id": "1994f82943546eb1",
+            "id": "e1616fdbdabe14a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "0a6fbcf1b0f14544",
+    "id": "7cedcb5eb78726d5",
     "type": "split",
     "children": [
       {
-        "id": "ff114a7f7d0914e0",
+        "id": "8ddc869d6b4e359d",
         "type": "tabs",
         "children": [
           {
-            "id": "81af9896acaec0f4",
+            "id": "f8d545de5bb8e13c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "c9b7c8ef9af32c00",
+            "id": "fa02696d7b62f350",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "c2d8ec21469c496f",
+            "id": "8cea5eac92c4bfe8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,24 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "335df44e5ffa22a2",
+    "id": "d9beac6d818f7f71",
     "type": "split",
     "children": [
       {
-        "id": "21e734c799dbf28b",
+        "id": "a384ed0ca72ea78c",
         "type": "tabs",
         "children": [
           {
-            "id": "147141640f054b76",
+            "id": "d9ed5e0a0c46dda7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "slides/Week11.qmd",
+                "file": "slides/Week10.qmd",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Week11"
+              "title": "Backlinks for Week10"
             }
           },
           {
-            "id": "27ffadf2d571b3eb",
+            "id": "f6fd0306174e79cc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "slides/Week11.qmd",
+                "file": "slides/Week8.qmd",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Week11"
+              "title": "Outgoing links from Week8"
             }
           },
           {
-            "id": "19d40b6a8437c0d1",
+            "id": "911e73d64807c0a4",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -138,18 +137,18 @@
             }
           },
           {
-            "id": "63817eb39247d17c",
+            "id": "08cced254a344d3a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "slides/Week11.qmd",
+                "file": "slides/Week8.qmd",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Week11"
+              "title": "Outline of Week8"
             }
           }
         ]
@@ -172,22 +171,43 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "1994f82943546eb1",
+  "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
     "slides/Week11_files/mediabag",
+    "slides/assets/Week11_2.png",
     "slides/Week11.qmd",
-    "slides/Week11_files/libs/quarto-html/tippy.umd.min.js",
-    "slides/Week11_files/libs/quarto-html/tippy.css",
-    "slides/Week11_files/libs/quarto-html/tabby.min.js",
-    "slides/Week11_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css",
-    "slides/Week11_files/libs/quarto-html/popper.min.js",
-    "slides/Week11_files/libs/quarto-html/light-border.css",
-    "slides/Week11_files/libs/quarto-html",
-    "slides/Week11_files/libs/clipboard/clipboard.min.js",
-    "slides/Week11_files/libs/clipboard",
     "slides/assets/Week10_3.excalidraw.svg",
+    "slides/assets/Week11_1.excalidraw.md",
+    "slides/assets/Week11_1.excalidraw.svg",
+    "slides/assets/Week11_1.png",
+    "Pasted Image 20250930182127_895.png",
+    "slides/Week11_files/libs/quarto-contrib/glightbox/lightbox.css",
+    "slides/Week11_files/libs/quarto-contrib/glightbox/glightbox.min.js",
+    "slides/Week11_files/libs/quarto-contrib/glightbox/glightbox.min.css",
+    "slides/Week11_files/libs/quarto-contrib/glightbox",
+    "slides/Week11_files/libs/quarto-contrib",
+    "slides/Week10.qmd",
+    "slides/Week11_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css",
+    "slides/Week11_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro.css",
     "slides/assets/Week10_3.excalidraw.md",
+    "slides/assets/Week10_2.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.svg",
-    "slides/assets/Week10_2.excalidraw.md"
+    "slides/assets/Week10_1.excalidraw.md",
+    "slides/assets/Week10_1.excalidraw.svg",
+    "slides/assets/Week9_9.excalidraw.md",
+    "slides/assets/Week9_9.excalidraw.svg",
+    "slides/assets/mixedConvCorrelations.png",
+    "slides/assets/Screenshot 2025-09-20 at 9.43.39 AM.png",
+    "slides/assets/Week9_8.excalidraw.md",
+    "slides/assets/Week9_7.excalidraw.md",
+    "slides/assets/Week9_6.excalidraw.md",
+    "slides/assets/Week9_5.excalidraw.md",
+    "slides/assets/Week9_4.excalidraw.md",
+    "slides/assets/Week9_3.excalidraw.md",
+    "slides/assets/Week9_2.excalidraw.md",
+    "slides/assets/Week9_1.excalidraw.md",
+    "slides/assets/Week8_4.excalidraw.md",
+    "slides/assets/Week8_3.excalidraw.md",
+    "slides/assets/Week8_1.excalidraw.md"
   ]
 }
