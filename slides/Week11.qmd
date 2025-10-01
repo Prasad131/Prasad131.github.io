@@ -156,6 +156,38 @@ $$
 T^{+}= (T_{w}-\bar{T}) \frac{\rho c_{p}u_{\tau}}{q_{w}''}
 $$
 
+## Integral Solution & Colburn Analogy
+
+Momentum Integral Equation 
+
+$$
+\frac{d}{dx} \int_{0}^{\delta(x)} \frac{\bar{u}}{U_{\infty}}\left( 1-\frac{\bar{u}}{U_{\infty}} \right) dy = \frac{C_{f}}{2} = \frac{\tau_{w}}{\rho U_{\infty}^{2}}
+$$
+
+The above equation when solved together with $u^{+}=f_{u}(y^{+})$ at $y=\delta$  gives $\delta,C_{f}$. 
+
+$f_{u}$ is the profile taken from universal turbulent velocity profiles near the walls.
+
+**Colburn Analogy**
+
+$$
+St_{x}Pr^{2/3} =\frac{C_{f,x}}{2}
+$$
+
+where $St_{x}=\frac{Nu_{x}}{Re_{x}Pr}$ is the local Stanton number and $C_{f,x}$ is obtained by solving the momentum integral equation.
+
+See @sec-integralsolCf for an example
+
+# Problems 
+
+## Integral Solution for turbulent boundary layer over flat plate{#sec-integralsolCf}
+
+Derive the skin friction coefficient formula recommended by Prandtl’s one-seventh power law velocity profile (obtain correlation from the data shown in the slides). Note that in this case, $\frac{u}{U_{\infty}}=\left( \frac{y}{\delta} \right)^{1/7}$ . Derive the expression for skin friction coefficient.
+
+[Solution](./assets/week11/vonKarman.pdf)
+
+## 
+
 # Thank You {.center .unlisted}
 
 Go to [Home](../index.html)

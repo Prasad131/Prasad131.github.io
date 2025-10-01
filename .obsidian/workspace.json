@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -173,9 +174,12 @@
   },
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
+    "slides/assets/week11/vonKarmanGeneralised.nb",
     "slides/Week11_files/mediabag",
-    "slides/assets/Week11_2.png",
     "slides/Week11.qmd",
+    "slides/assets/week11/vonKarman.nb",
+    "slides/assets/week11",
+    "slides/assets/Week11_2.png",
     "slides/assets/Week10_3.excalidraw.svg",
     "slides/assets/Week11_1.excalidraw.md",
     "slides/assets/Week11_1.excalidraw.svg",
@@ -187,8 +191,6 @@
     "slides/Week11_files/libs/quarto-contrib/glightbox",
     "slides/Week11_files/libs/quarto-contrib",
     "slides/Week10.qmd",
-    "slides/Week11_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css",
-    "slides/Week11_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro.css",
     "slides/assets/Week10_3.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.svg",

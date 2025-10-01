@@ -170,6 +170,11 @@ Durga Prasad Pydi
 <li><a href="#/turbulent-boundary-layer-equations" id="/toc-turbulent-boundary-layer-equations">Turbulent Boundary Layer Equations</a></li>
 <li><a href="#/universal-turbulent-velocity-profile" id="/toc-universal-turbulent-velocity-profile">Universal Turbulent Velocity Profile</a></li>
 <li><a href="#/universal-turbulent-temperature-profile" id="/toc-universal-turbulent-temperature-profile">Universal Turbulent Temperature Profile</a></li>
+<li><a href="#/integral-solution-colburn-analogy" id="/toc-integral-solution-colburn-analogy">Integral Solution &amp; Colburn Analogy</a></li>
+<li><a href="#/problems" id="/toc-problems">Problems</a>
+<ul>
+<li><a href="#/sec-integralsolCf" id="/toc-sec-integralsolCf">Integral Solution for turbulent boundary layer over flat plate</a></li>
+</ul></li>
 </ul>
 </nav>
 </section>
@@ -315,6 +320,30 @@ u_{\tau}=\sqrt{ \frac{\tau_{w}}{\rho} }
 T^{+}= (T_{w}-\bar{T}) \frac{\rho c_{p}u_{\tau}}{q_{w}''}
 </span></p>
 </section>
+<section id="integral-solution-colburn-analogy" class="slide level2">
+<h2>Integral Solution &amp; Colburn Analogy</h2>
+<p>Momentum Integral Equation</p>
+<p><span class="math display">
+\frac{d}{dx} \int_{0}^{\delta(x)} \frac{\bar{u}}{U_{\infty}}\left( 1-\frac{\bar{u}}{U_{\infty}} \right) dy = \frac{C_{f}}{2} = \frac{\tau_{w}}{\rho U_{\infty}^{2}}
+</span></p>
+<p>The above equation when solved together with <span class="math inline">u^{+}=f_{u}(y^{+})</span> at <span class="math inline">y=\delta</span> gives <span class="math inline">\delta,C_{f}</span>.</p>
+<p><span class="math inline">f_{u}</span> is the profile taken from universal turbulent velocity profiles near the walls.</p>
+<p><strong>Colburn Analogy</strong></p>
+<p><span class="math display">
+St_{x}Pr^{2/3} =\frac{C_{f,x}}{2}
+</span></p>
+<p>where <span class="math inline">St_{x}=\frac{Nu_{x}}{Re_{x}Pr}</span> is the local Stanton number and <span class="math inline">C_{f,x}</span> is obtained by solving the momentum integral equation.</p>
+<p>See <a href="#/sec-integralsolCf" class="quarto-xref">Section&nbsp;1.1</a> for an example</p>
+</section>
+<section>
+<section id="problems" class="title-slide slide level1 center">
+<h1>Problems</h1>
+
+</section>
+<section id="sec-integralsolCf" class="slide level2">
+<h2>Integral Solution for turbulent boundary layer over flat plate</h2>
+<p>Derive the skin friction coefficient formula recommended by Prandtl’s one-seventh power law velocity profile (obtain correlation from the data shown in the slides). Note that in this case, <span class="math inline">\frac{u}{U_{\infty}}=\left( \frac{y}{\delta} \right)^{1/7}</span> . Derive the expression for skin friction coefficient.</p>
+</section></section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>
 <p>Go to <a href="../index.html">Home</a></p>
