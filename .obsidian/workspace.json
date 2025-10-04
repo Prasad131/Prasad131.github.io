@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -174,8 +173,13 @@
   },
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
-    "slides/assets/week11/vonKarmanGeneralised.nb",
     "slides/Week11_files/mediabag",
+    "slides/assets/week11/pumping.nb",
+    "slides/assets/week11/iceberg.nb",
+    "slides/assets/week11/colburn.nb",
+    "slides/assets/week11/water.nb",
+    "slides/assets/week11/nu_lam_turb.nb",
+    "slides/assets/week11/vonKarmanGeneralised.nb",
     "slides/Week11.qmd",
     "slides/assets/week11/vonKarman.nb",
     "slides/assets/week11",
@@ -186,11 +190,6 @@
     "slides/assets/Week11_1.png",
     "Pasted Image 20250930182127_895.png",
     "slides/Week11_files/libs/quarto-contrib/glightbox/lightbox.css",
-    "slides/Week11_files/libs/quarto-contrib/glightbox/glightbox.min.js",
-    "slides/Week11_files/libs/quarto-contrib/glightbox/glightbox.min.css",
-    "slides/Week11_files/libs/quarto-contrib/glightbox",
-    "slides/Week11_files/libs/quarto-contrib",
-    "slides/Week10.qmd",
     "slides/assets/Week10_3.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.svg",

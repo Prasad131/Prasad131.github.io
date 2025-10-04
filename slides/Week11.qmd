@@ -186,7 +186,42 @@ Derive the skin friction coefficient formula recommended by Prandtl’s one-seve
 
 [Solution](./assets/week11/vonKarman.pdf)
 
-## 
+## Nusselt number correlation with transition point
+
+Consider the heat transfer in boundary layer flow from an isothermal wall $T_{0}$ to a constant temperature stream $(U_{\infty},T_{\infty})$. The leading laminar section of the boundary layer has a length comparable with the length of the trailing turbulent section; consequently, the heat flux averaged over the entire wall length L is influenced by both sections. Derive a formula for the L-averaged Nusselt number, assuming that the laminar–turbulent transition is located at a point $x$ (between $x=0$ and $x=L$) where $\frac{xU_{\infty}}{\nu}=3.5\times 10^{5}$ 
+
+[Solution](./assets/week11/nu_lam_turb.pdf)
+
+## Boundary Layer Thickness - Turbulent Flow
+
+Water flows with the velocity $U_{\infty}=0.2 m / s$ parallel to a plane wall. The following calculations refer to the position $x=6 m$ measured downstream from the leading edge. The water properties can be evaluated at 20^0^C.
+
+(a) A probe is to be inserted in the viscous sublayer to the position represented by $y^{+}=2.7$.Calculate the actual spacing y (mm) between the probe and the wall.
+
+(b) Calculate the boundary layer thickness δ, assuming that the length x is covered by turbulent boundary layer flow.
+
+(c) Calculate the heat transfer coefficient averaged over the length x.
+(Use the solution from @sec-integralsolCf)
+
+[Solution](./assets/week11/water.pdf)
+
+## Heat Transfer Coefficient - Colburn Analogy
+
+Compare heat-transfer coefficients for water flowing at an average temperature of 40°C and at a velocity of 0.5 m/s in a 2.54 cm diameter duct using Colburn analogy. (The friction factor is given by $f=0.079 Re^{-1/4}$)
+
+[Solution](./assets/week11/colburn.pdf)
+
+## Ice Berg Drift
+
+A flat sheet (tabular) iceberg drifts over the ocean as it is driven by the wind that blows over the top. The temperature of the surrounding seawater is 10^0^C, and the relative velocity between it and the iceberg is 10cm/s. The length of the iceberg in the direction of drift is L=100m. Calculate the corresponding wind velocity when the atmospheric air temperature is 40^0^C. (Make suitable assumptions to simplify the problem and state them).
+
+[Solution](./assets/week11/iceberg.pdf)
+
+## Pumping Power - Laminar vs Turbulent
+
+Consider the flow of a fluid through a tube of fixed diameter D and length L. The mass flow rate $\dot{m}$ is also fixed. The only change that may occur is the switch from laminar to turbulent flow because the Reynolds number $Re_{D}$ happens to be in the vicinity of 2000. In either regime, the flow is fully developed. Calculate the change in the pumping power required as the laminar flow is replaced by turbulent flow.
+
+[Solution](./assets/week11/pumping.pdf)
 
 # Thank You {.center .unlisted}
 

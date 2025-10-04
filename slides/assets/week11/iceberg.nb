@@ -1,0 +1,228 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8077,        220]
+NotebookOptionsPosition[      7190,        197]
+NotebookOutlinePosition[      7585,        213]
+CellTagsIndexPosition[      7542,        210]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "A flat sheet (tabular) iceberg drifts over the ocean as it is driven by the \
+wind that blows over the top. The temperature of the surrounding seawater is ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", "0"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9cdd6d32-cde2-4834-81fc-2c5edc83c02c"],
+ "C, and the relative velocity between it and the iceberg is 10cm/s. The \
+length of the iceberg in the direction of drift is L=100m Calculate the \
+corresponding wind velocity when the atmospheric air temperature is ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["40", "0"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "af91811d-e93e-4c3f-bc6e-5a2f633c7c72"],
+ "C. (Make suitable assumptions to simplify the problem and state them)."
+}], "Text",
+ CellChangeTimes->{{3.968540338852797*^9, 3.968540349577106*^9}, {
+  3.96854079778082*^9, 
+  3.968540800110339*^9}},ExpressionUUID->"956d779f-2885-446a-87b8-\
+385639000ff8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"TMeanAir", " ", "=", " ", 
+   FractionBox[
+    RowBox[{"40", "+", "4"}], "2"]}], ";", " ", 
+  RowBox[{"TMeanWater", " ", "=", " ", 
+   FractionBox[
+    RowBox[{"10", "+", "4"}], "2"]}], ";", " ", 
+  RowBox[{"L", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"water", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Mu]", "->", 
+      RowBox[{
+       RowBox[{"ThermodynamicData", "[", 
+        RowBox[{"\"\<Water\>\"", ",", "\"\<Viscosity\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Temperature\>\"", "->", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"TMeanWater", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], 
+          "}"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\[Rho]", "->", 
+      RowBox[{
+       RowBox[{"ThermodynamicData", "[", 
+        RowBox[{"\"\<Water\>\"", ",", "\"\<Density\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Temperature\>\"", "->", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"TMeanWater", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], 
+          "}"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+     RowBox[{"U", "->", "0.1"}], ",", 
+     RowBox[{"x", "->", "L"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"air", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Mu]", "->", 
+      RowBox[{
+       RowBox[{"ThermodynamicData", "[", 
+        RowBox[{"\"\<Air\>\"", ",", "\"\<Viscosity\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Temperature\>\"", "->", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"TMeanWater", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], 
+          "}"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\[Rho]", "->", 
+      RowBox[{
+       RowBox[{"ThermodynamicData", "[", 
+        RowBox[{"\"\<Air\>\"", ",", "\"\<Density\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Temperature\>\"", "->", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"TMeanWater", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], 
+          "}"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+     RowBox[{"x", "->", "L"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["Re", "x"], " ", "=", " ", 
+   FractionBox[
+    RowBox[{"\[Rho]", " ", "U", " ", "x"}], "\[Mu]"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["Cf", "x"], " ", "=", " ", 
+   FractionBox["0.0624", 
+    SuperscriptBox[
+     SubscriptBox["Re", "x"], 
+     RowBox[{"1", "/", "5"}]]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["Cf", "L"], " ", "=", " ", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "L"], 
+    RowBox[{
+     SubscriptBox["Cf", "x"], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["F", "D"], " ", "=", " ", 
+   RowBox[{"\[Rho]", " ", 
+    SuperscriptBox["U", "2"], " ", "L", " ", 
+    FractionBox[
+     SubscriptBox["Cf", "L"], "2"]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.968540355351963*^9, 3.968540358709014*^9}, {
+  3.9685403920523033`*^9, 3.96854047635376*^9}, {3.9685405287940493`*^9, 
+  3.968540691537085*^9}, {3.968540811865601*^9, 3.968540818991232*^9}, {
+  3.9685409198995667`*^9, 3.968540976821381*^9}, {3.9685410169710073`*^9, 
+  3.968541017164905*^9}, {3.968541055953079*^9, 3.9685411856422567`*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"86f13644-4b89-4676-912f-d0bd777855b8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqn", " ", "=", " ", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["F", "D"], "/.", "water"}], ")"}], " ", "==", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["F", "D"], "/.", "air"}], ")"}]}], ",", 
+    RowBox[{"x", ">", "0"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.968540428874511*^9, 3.968540436440764*^9}, 
+   3.968540646819151*^9, {3.96854072814023*^9, 3.968540773198326*^9}, {
+   3.968540834792533*^9, 3.968540835389543*^9}, {3.9685410390680723`*^9, 
+   3.968541044759336*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"5ca78a8a-82e5-49eb-9e41-05ef55db6a56"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"1.`", " ", 
+   SuperscriptBox["U", 
+    RowBox[{"9", "/", "5"}]]}], "\[Equal]", "7.969637187896591`"}]], "Output",\
+
+ CellChangeTimes->{{3.968540732975932*^9, 3.968540773646459*^9}, {
+   3.9685408247171507`*^9, 3.968540836534255*^9}, 3.968541046490734*^9, {
+   3.968541174047226*^9, 3.968541188738394*^9}},
+ CellLabel->"Out[46]=",ExpressionUUID->"702b739d-c401-437d-b7c3-c9a80b262867"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{"eqn", ",", "U"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "[", 
+   RowBox[{"[", "2", "]"}], "]"}], "+", "0.1", 
+  RowBox[{"(*", 
+   RowBox[{
+   "the", " ", "solution", " ", "will", " ", "be", " ", "only", " ", "the", " ",
+     "relative", " ", "velocity", " ", "so", " ", "0.1", " ", "is", " ", 
+    "added"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.968540838076264*^9, 3.9685408413008213`*^9}, {
+  3.968541194202835*^9, 
+  3.968541267415402*^9}},ExpressionUUID->"7f758c78-e5b3-423b-b357-\
+9020b38755c9"],
+
+Cell[BoxData["3.2681022865694174`"], "Output",
+ CellChangeTimes->{
+  3.968540841787961*^9, {3.968541191032576*^9, 3.9685412369423*^9}},
+ CellLabel->"Out[55]=",ExpressionUUID->"2abbfc7e-546c-4ffd-90b0-c3f7f6695fdd"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f84b22b4-7aa8-4acb-a6b6-8391e9ce07fd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 985, 21, 149, "Text",ExpressionUUID->"956d779f-2885-446a-87b8-385639000ff8"],
+Cell[1542, 43, 3601, 92, 603, "Input",ExpressionUUID->"86f13644-4b89-4676-912f-d0bd777855b8"],
+Cell[CellGroupData[{
+Cell[5168, 139, 667, 16, 44, "Input",ExpressionUUID->"5ca78a8a-82e5-49eb-9e41-05ef55db6a56"],
+Cell[5838, 157, 420, 9, 50, "Output",ExpressionUUID->"702b739d-c401-437d-b7c3-c9a80b262867"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6295, 171, 662, 18, 44, "Input",ExpressionUUID->"7f758c78-e5b3-423b-b357-9020b38755c9"],
+Cell[6960, 191, 214, 3, 50, "Output",ExpressionUUID->"2abbfc7e-546c-4ffd-90b0-c3f7f6695fdd"]
+}, Open  ]]
+}
+]
+*)
+
