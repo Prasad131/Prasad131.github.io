@@ -35,25 +35,25 @@ $$
 x-momentum equation:
 
 $$
-\rho\left( \frac{ \partial \bar{u} }{ \partial t } +\bar{u} \frac{ \partial \bar{u} }{ \partial x } +\bar{v} \frac{ \partial \bar{u} }{ \partial y } +\bar{w} \frac{ \partial \bar{u} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial x } +\mu\left( \frac{ \partial^{2} \bar{u} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{u} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{u} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{u'u'} }{ \partial x }-\rho \frac{ \partial \overline{u'v'} }{ \partial y }-\rho \frac{ \partial \overline{u'w'} }{ \partial z } 
+\rho\left( \bar{u} \frac{ \partial \bar{u} }{ \partial x } +\bar{v} \frac{ \partial \bar{u} }{ \partial y } +\bar{w} \frac{ \partial \bar{u} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial x } +\mu\left( \frac{ \partial^{2} \bar{u} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{u} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{u} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{u'u'} }{ \partial x }-\rho \frac{ \partial \overline{u'v'} }{ \partial y }-\rho \frac{ \partial \overline{u'w'} }{ \partial z } 
 $$
 
 y-momentum equation:
 
 $$
-\rho\left( \frac{ \partial \bar{v} }{ \partial t } +\bar{u} \frac{ \partial \bar{v} }{ \partial x } +\bar{v} \frac{ \partial \bar{v} }{ \partial y } +\bar{w} \frac{ \partial \bar{v} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial y } +\mu\left( \frac{ \partial^{2} \bar{v} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{v} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{v} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{v'u'} }{ \partial x }-\rho \frac{ \partial \overline{v'v'} }{ \partial y }-\rho \frac{ \partial \overline{v'w'} }{ \partial z } 
+\rho\left( \bar{u} \frac{ \partial \bar{v} }{ \partial x } +\bar{v} \frac{ \partial \bar{v} }{ \partial y } +\bar{w} \frac{ \partial \bar{v} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial y } +\mu\left( \frac{ \partial^{2} \bar{v} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{v} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{v} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{v'u'} }{ \partial x }-\rho \frac{ \partial \overline{v'v'} }{ \partial y }-\rho \frac{ \partial \overline{v'w'} }{ \partial z } 
 $$
 
 x-momentum equation:
 
 $$
-\rho\left( \frac{ \partial \bar{w} }{ \partial t } +\bar{u} \frac{ \partial \bar{w} }{ \partial x } +\bar{v} \frac{ \partial \bar{w} }{ \partial y } +\bar{w} \frac{ \partial \bar{w} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial z } +\mu\left( \frac{ \partial^{2} \bar{w} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{w} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{w} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{w'u'} }{ \partial x }-\rho \frac{ \partial \overline{w'v'} }{ \partial y }-\rho \frac{ \partial \overline{w'w'} }{ \partial z } 
+\rho\left( \bar{u} \frac{ \partial \bar{w} }{ \partial x } +\bar{v} \frac{ \partial \bar{w} }{ \partial y } +\bar{w} \frac{ \partial \bar{w} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial z } +\mu\left( \frac{ \partial^{2} \bar{w} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{w} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{w} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{w'u'} }{ \partial x }-\rho \frac{ \partial \overline{w'v'} }{ \partial y }-\rho \frac{ \partial \overline{w'w'} }{ \partial z } 
 $$
 
 energy equation:
 
 $$
-\rho c_{p}\left( \frac{ \partial \bar{T} }{ \partial t } +\bar{u} \frac{ \partial \bar{T} }{ \partial x } +\bar{v} \frac{ \partial \bar{T} }{ \partial y } +\bar{w} \frac{ \partial \bar{T} }{ \partial z }  \right)=k \left( \frac{ \partial^{2}\bar{T} }{ \partial x^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial z^{2} }  \right)-\rho c_{p} \frac{ \partial \overline{u'T'} }{ \partial x } -\rho c_{p} \frac{ \partial \overline{v'T'} }{ \partial y } -\rho c_{p} \frac{ \partial \overline{w'T'} }{ \partial z } 
+\rho c_{p}\left( \bar{u} \frac{ \partial \bar{T} }{ \partial x } +\bar{v} \frac{ \partial \bar{T} }{ \partial y } +\bar{w} \frac{ \partial \bar{T} }{ \partial z }  \right)=k \left( \frac{ \partial^{2}\bar{T} }{ \partial x^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial z^{2} }  \right)-\rho c_{p} \frac{ \partial \overline{u'T'} }{ \partial x } -\rho c_{p} \frac{ \partial \overline{v'T'} }{ \partial y } -\rho c_{p} \frac{ \partial \overline{w'T'} }{ \partial z } 
 $$
 
 ## Reynolds Stress
@@ -182,7 +182,7 @@ See @sec-integralsolCf for an example
 
 ## Integral Solution for turbulent boundary layer over flat plate{#sec-integralsolCf}
 
-Derive the skin friction coefficient formula recommended by Prandtl’s one-seventh power law velocity profile (obtain correlation from the data shown in the slides). Note that in this case, $\frac{u}{U_{\infty}}=\left( \frac{y}{\delta} \right)^{1/7}$ . Derive the expression for skin friction coefficient.
+Derive the skin friction coefficient formula recommended by Prandtl’s one-seventh power law velocity profile (obtain correlation from the data shown in the slides). Note that in this case, $\frac{u}{U_{\infty}}=\left( \frac{y}{\delta} \right)^{1/7}$.
 
 [Solution](./assets/week11/vonKarman.pdf)
 
@@ -207,7 +207,7 @@ Water flows with the velocity $U_{\infty}=0.2 m / s$ parallel to a plane wall. T
 
 ## Heat Transfer Coefficient - Colburn Analogy
 
-Compare heat-transfer coefficients for water flowing at an average temperature of 40°C and at a velocity of 0.5 m/s in a 2.54 cm diameter duct using Colburn analogy. (The friction factor is given by $f=0.079 Re^{-1/4}$)
+Compute heat-transfer coefficients for water flowing at an average temperature of 40°C and at a velocity of 0.5 m/s in a 2.54 cm diameter duct using Colburn analogy. (The friction factor is given by $f=0.079 Re^{-1/4}$)
 
 [Solution](./assets/week11/colburn.pdf)
 
