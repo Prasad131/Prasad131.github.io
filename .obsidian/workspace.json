@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "slides/Week11.qmd",
+                "file": "slides/Week12.qmd",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week11"
+              "title": "Week12"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -173,32 +174,33 @@
   },
   "active": "e1616fdbdabe14a1",
   "lastOpenFiles": [
+    "slides/Week12_files/mediabag",
+    "slides/assets/Week12_2.png",
+    "slides/Week12.qmd",
+    "slides/assets/Week12 .excalidraw.md",
+    "slides/assets/Week12 .excalidraw.svg",
+    "slides/Week12_files/libs/quarto-contrib/glightbox/lightbox.css",
+    "slides/Week12_files/libs/quarto-contrib/glightbox/glightbox.min.js",
+    "slides/Week12_files/libs/quarto-contrib/glightbox/glightbox.min.css",
+    "slides/Week12_files/libs/quarto-contrib/glightbox",
+    "slides/Week12_files/libs/quarto-contrib",
+    "slides/assets/Week12_1.excalidraw.md",
+    "slides/assets/Week12_1.excalidraw.svg",
+    "slides/Week11.qmd",
     "slides/Week11_files/mediabag",
     "slides/assets/week11/pumping.nb",
-    "slides/assets/week11/iceberg.nb",
-    "slides/assets/week11/colburn.nb",
-    "slides/assets/week11/water.nb",
-    "slides/assets/week11/nu_lam_turb.nb",
-    "slides/assets/week11/vonKarmanGeneralised.nb",
-    "slides/Week11.qmd",
-    "slides/assets/week11/vonKarman.nb",
-    "slides/assets/week11",
     "slides/assets/Week11_2.png",
     "slides/assets/Week10_3.excalidraw.svg",
     "slides/assets/Week11_1.excalidraw.md",
     "slides/assets/Week11_1.excalidraw.svg",
     "slides/assets/Week11_1.png",
     "Pasted Image 20250930182127_895.png",
-    "slides/Week11_files/libs/quarto-contrib/glightbox/lightbox.css",
     "slides/assets/Week10_3.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.svg",
     "slides/assets/Week10_1.excalidraw.md",
     "slides/assets/Week10_1.excalidraw.svg",
     "slides/assets/Week9_9.excalidraw.md",
-    "slides/assets/Week9_9.excalidraw.svg",
-    "slides/assets/mixedConvCorrelations.png",
-    "slides/assets/Screenshot 2025-09-20 at 9.43.39 AM.png",
     "slides/assets/Week9_8.excalidraw.md",
     "slides/assets/Week9_7.excalidraw.md",
     "slides/assets/Week9_6.excalidraw.md",

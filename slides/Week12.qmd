@@ -1,0 +1,57 @@
+---
+title: Fundamentals of Convective Heat Transfer
+subtitle: Week-12 (Live Session)
+author: Durga Prasad Pydi
+date: 2025-10-11
+format:
+  revealjs:
+    theme:
+      - default
+      - custom.scss
+    width: 1920
+    height: 1080
+    css: styles.css
+    slide-number: true
+    lightbox: true
+    crossrefs-hover: true
+    html-math-method: katex
+    toc: true
+    toc-depth: 2
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Appendix
+      key: app
+lightbox: true
+---
+
+## Introduction
+
+Evaporation - surface,
+Boiling - bulk
+
+## Dimensionless Parameters
+
+# Problems
+
+## Bubble radius
+
+Consider the spherical vapor bubble of radius r shown in figure below. The pressure and temperature inside the bubble $(P_{v},T_{v})$ are slightly above the pressure and temperature in the liquid $()P_{l},T_{l})$. The liquid is saturated, $T_{l}=T_{sat}$. 
+
+(a) Invoke the mechanical equilibrium of one hemispherical control volume and derive the relation between bubble radius and pressure difference.
+
+(b) Rely on the Clausius–Clapeyron thermodynamics relation $\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}$ and express the above equation in terms of temperature difference of vapor and saturation temperature.
+
+(c) Calculate the radius of a steam bubble with $T_{v}-T_{sat}=2K$ in water at$T_{sat}=100^{0}C$. (Take $\sigma=0.0589 N / m$, $h_{fg}=2257 kJ / kg$, $v_{g}=1.673 m^{3} / kg$)
+
+![](./assets/Week12_1.excalidraw.svg)
+
+## Heat Transfer Rate - Steam Relief Valve in pressurised cylinder
+
+Water boils in the pressurized cylindrical vessel shown below. The steam relief valve is set in such a way that the pressure inside the vessel is 4.76 bar. The bottom surface is made out of copper (polished), and its temperature is maintained at Tw = 160^0^C. Assume nucleate boiling, and calculate the total heat transfer rate from the bottom surface to the boiling water. Later, verify the correctness of the nucleate boiling assumption.
+
+![](./assets/Week12_2.png)
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)
