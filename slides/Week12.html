@@ -35,22 +35,6 @@
   </style>
   <link rel="stylesheet" href="Week12_files/libs/revealjs/dist/theme/quarto-6b6b2e0f9d40e74da6e83da32f0a6dd9.css">
   <link rel="stylesheet" href="styles.css">
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="Week12_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Week12_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Week12_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -165,21 +149,112 @@ Durga Prasad Pydi
 <h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/introduction" id="/toc-introduction">Introduction</a></li>
-<li><a href="#/dimensionless-parameters" id="/toc-dimensionless-parameters">Dimensionless Parameters</a></li>
+<li><a href="#/pool-boiling-curve" id="/toc-pool-boiling-curve">Pool Boiling Curve</a></li>
+<li><a href="#/laminar-film-condensation-on-a-vertical-plate" id="/toc-laminar-film-condensation-on-a-vertical-plate">Laminar film condensation on a vertical plate</a></li>
 <li><a href="#/problems" id="/toc-problems">Problems</a>
 <ul>
 <li><a href="#/bubble-radius" id="/toc-bubble-radius">Bubble radius</a></li>
 <li><a href="#/heat-transfer-rate---steam-relief-valve-in-pressurised-cylinder" id="/toc-heat-transfer-rate---steam-relief-valve-in-pressurised-cylinder">Heat Transfer Rate - Steam Relief Valve in pressurised cylinder</a></li>
+<li><a href="#/condensation-rate---vertical-vs-inclined-plates" id="/toc-condensation-rate---vertical-vs-inclined-plates">Condensation Rate - Vertical vs Inclined Plates</a></li>
+<li><a href="#/condensation-rate---vertical-plate-vs-horizontal-cylinder" id="/toc-condensation-rate---vertical-plate-vs-horizontal-cylinder">Condensation Rate - Vertical Plate vs Horizontal Cylinder</a></li>
+<li><a href="#/condensation-rate---flat-vs-round-tube-cross-section" id="/toc-condensation-rate---flat-vs-round-tube-cross-section">Condensation Rate - Flat vs Round Tube cross-section</a></li>
 </ul></li>
 </ul>
 </nav>
 </section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
-<p>Evaporation - surface, Boiling - bulk</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Evaporation</th>
+<th>Boiling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Surface phenomenon</td>
+<td>Bulk Phenomenon</td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>v</mi></msub><mo>&lt;</mo><msub><mi>P</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{v}&lt;P_{sat}</annotation></semantics></math> at a given <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>w</mi></msub><mo>&gt;</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{w}&gt;T_{sat}</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>No bubbles observed</td>
+<td>Usually accompanies by bubbles</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mi>r</mi><mo>=</mo><mfrac><mrow><mi>ρ</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>L</mi><mn>3</mn></msup></mrow><msup><mi>μ</mi><mn>2</mn></msup></mfrac><mo>,</mo><mi>J</mi><mi>a</mi><mo>=</mo><mfrac><mrow><msub><mi>c</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mi>w</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub></mfrac><mo>,</mo><mi>P</mi><mi>r</mi><mo>=</mo><mfrac><mrow><mi>μ</mi><msub><mi>c</mi><mi>p</mi></msub></mrow><mi>κ</mi></mfrac><mo>,</mo><mi>B</mi><mi>o</mi><mo>=</mo><mfrac><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></mrow><msup><mi>σ</mi><mn>2</mn></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Nu=f\left( Gr=\frac{\rho g (\rho_{l}-\rho_{v})L^{3}}{\mu^{2}},Ja=\frac{c_{p}(T_{w}-T_{sat})}{h_{fg}},Pr=\frac{\mu c_{p}}{\kappa},Bo=\frac{g (\rho_{l}-\rho_{v})L^{2}}{\sigma^{2}} \right)</annotation></semantics></math></p>
+<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>→</mo><mtext mathvariant="normal">Nusselt number</mtext><mo>,</mo><mi>G</mi><mi>r</mi><mo>→</mo><mtext mathvariant="normal">Grashof number</mtext></mrow><annotation encoding="application/x-tex">Nu\to \text{Nusselt number}, Gr\to \text{Grashof number}</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mi>a</mi><mo>→</mo><mtext mathvariant="normal">Jakob number</mtext><mo>,</mo><mi>P</mi><mi>r</mi><mo>→</mo><mtext mathvariant="normal">Prandtl number</mtext><mo>,</mo><mi>B</mi><mi>o</mi><mo>→</mo><mtext mathvariant="normal">Bond number</mtext></mrow><annotation encoding="application/x-tex">Ja\to \text{Jakob number}, Pr\to \text{Prandtl number}, Bo\to \text{Bond number}</annotation></semantics></math></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Pool Boiling</th>
+<th>Flow Boiling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cause for fluid motion</td>
+<td>natural convection</td>
+<td>external means</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Subcooled boiling</th>
+<th>Saturated Boiling</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>l</mi></msub><mo>&lt;</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{l}&lt;T_{sat}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>l</mi></msub><mo>&gt;</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{l}&gt;T_{sat}</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="dimensionless-parameters" class="slide level2">
-<h2>Dimensionless Parameters</h2>
+<section id="pool-boiling-curve" class="slide level2">
+<h2>Pool Boiling Curve</h2>
+<div id="fig-poolcurve" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-poolcurve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./assets/pool%20boiling%20curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Regimes of pool boiling in water at atmospheric pressure"><img data-src="./assets/pool%20boiling%20curve.png" style="width:60.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poolcurve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Regimes of pool boiling in water at atmospheric pressure
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="laminar-film-condensation-on-a-vertical-plate" class="slide level2">
+<h2>Laminar film condensation on a vertical plate</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>liquid film thickness, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mn>4</mn><msub><mi>μ</mi><mi>l</mi></msub><msub><mi>κ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>T</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>x</mi></mrow><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mi>′</mi><mi>g</mi><msub><mi>ρ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\delta(x)=\left(\frac{4 \mu_{l}\kappa_{l}(T_{sat}-T_{w})x}{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})}\right)^{1/4}</annotation></semantics></math></p>
+<p>liquid film velocity, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>δ</mi><mn>2</mn></msup></mrow><msub><mi>μ</mi><mi>l</mi></msub></mfrac><mrow><mo stretchy="true" form="prefix">[</mo><mfrac><mi>y</mi><mi>δ</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>y</mi><mi>δ</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">u(x,y)=\frac{g(\rho_{l}-\rho_{v})\delta^{2}}{\mu_{l}} \left[\frac{y}{\delta}-\frac{1}{2} (\frac{y}{\delta})^{2}\right]</annotation></semantics></math></p>
+<p>liquid mass flow rate per unit width, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>m</mi><mo accent="true">̇</mo></mover><mo>=</mo><mfrac><mrow><mi>g</mi><msub><mi>ρ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>δ</mi><mn>3</mn></msup></mrow><mrow><mn>3</mn><msub><mi>μ</mi><mi>l</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dot{m}=\frac{g \rho_{l}(\rho_{l}-\rho_{v})\delta^{3}}{3\mu_{l}}</annotation></semantics></math></p>
+<p>liquid film temperature, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>−</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>T</mi><mi>w</mi></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mi>y</mi><mi>δ</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{T_{sat}-T(x,y)}{T_{sat}-T_{w}}=1-\frac{y}{\delta}</annotation></semantics></math></p>
+<p>Local Nusselt number:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>u</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mfrac><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mi>′</mi><mi>g</mi><msub><mi>ρ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><mrow><mn>4</mn><msub><mi>μ</mi><mi>l</mi></msub><msub><mi>κ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>T</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+Nu = \left[ \frac{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})x^{3}}{4 \mu_{l}\kappa_{l}(T_{sat}-T_{w})} \right]^{1/4}
+</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mi>′</mi><mo>=</mo><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mn>0.68</mn><mi>J</mi><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">h_{fg}'=h_{fg}(1+0.68 Ja)</annotation></semantics></math></p>
+</div><div class="column" style="width:20%;">
+<p><a href="./assets/laminar_condensation.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="./assets/laminar_condensation.excalidraw.svg"></a></p>
+</div></div>
+<p>Mean Nusselt number:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>N</mi><mi>u</mi></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><msub><mrow><mi>N</mi><mi>u</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mi>x</mi><mo>=</mo><mi>L</mi></mrow></msub></mrow><annotation encoding="application/x-tex">
+\overline{Nu} = \frac{4}{3} \left. Nu\right|_{x=L}
+</annotation></semantics></math></p>
 </section>
 <section>
 <section id="problems" class="title-slide slide level1 center">
@@ -188,18 +263,81 @@ Durga Prasad Pydi
 </section>
 <section id="bubble-radius" class="slide level2">
 <h2>Bubble radius</h2>
-<p>Consider the spherical vapor bubble of radius r shown in figure below. The pressure and temperature inside the bubble <span class="math inline">(P_{v},T_{v})</span> are slightly above the pressure and temperature in the liquid <span class="math inline">()P_{l},T_{l})</span>. The liquid is saturated, <span class="math inline">T_{l}=T_{sat}</span>.</p>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Consider the spherical vapor bubble of radius r shown in figure. The pressure and temperature inside the bubble <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>P</mi><mi>v</mi></msub><mo>,</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(P_{v},T_{v})</annotation></semantics></math> are slightly above the pressure and temperature in the liquid <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>P</mi><mi>l</mi></msub><mo>,</mo><msub><mi>T</mi><mi>l</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">()P_{l},T_{l})</annotation></semantics></math>. The liquid is saturated, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>l</mi></msub><mo>=</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{l}=T_{sat}</annotation></semantics></math>.</p>
 <ol type="a">
 <li><p>Invoke the mechanical equilibrium of one hemispherical control volume and derive the relation between bubble radius and pressure difference.</p></li>
-<li><p>Rely on the Clausius–Clapeyron thermodynamics relation <span class="math inline">\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}</span> and express the above equation in terms of temperature difference of vapor and saturation temperature.</p></li>
-<li><p>Calculate the radius of a steam bubble with <span class="math inline">T_{v}-T_{sat}=2K</span> in water at<span class="math inline">T_{sat}=100^{0}C</span>. (Take <span class="math inline">\sigma=0.0589 N / m</span>, <span class="math inline">h_{fg}=2257 kJ / kg</span>, <span class="math inline">v_{g}=1.673 m^{3} / kg</span>)</p></li>
+<li><p>Rely on the Clausius–Clapeyron thermodynamics relation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mrow><mi>T</mi><msub><mi>v</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}</annotation></semantics></math> and express the above equation in terms of temperature difference of vapor and saturation temperature.</p></li>
+<li><p>Calculate the radius of a steam bubble with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>v</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>2</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">T_{v}-T_{sat}=2K</annotation></semantics></math> in water at<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><msup><mn>100</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">T_{sat}=100^{0}C</annotation></semantics></math>. (Take <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.0589</mn><mi>N</mi><mi>/</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\sigma=0.0589 N / m</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mo>=</mo><mn>2257</mn><mi>k</mi><mi>J</mi><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">h_{fg}=2257 kJ / kg</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mn>1.673</mn><msup><mi>m</mi><mn>3</mn></msup><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">v_{g}=1.673 m^{3} / kg</annotation></semantics></math>)</p></li>
 </ol>
-<p><a href="./assets/Week12_1.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="./assets/Week12_1.excalidraw.svg"></a></p>
+</div><div class="column" style="width:20%;">
+<p><a href="./assets/Week12_1.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="./assets/Week12_1.excalidraw.svg"></a></p>
+</div></div>
 </section>
 <section id="heat-transfer-rate---steam-relief-valve-in-pressurised-cylinder" class="slide level2">
 <h2>Heat Transfer Rate - Steam Relief Valve in pressurised cylinder</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
 <p>Water boils in the pressurized cylindrical vessel shown below. The steam relief valve is set in such a way that the pressure inside the vessel is 4.76 bar. The bottom surface is made out of copper (polished), and its temperature is maintained at Tw = 160<sup>0</sup>C. Assume nucleate boiling, and calculate the total heat transfer rate from the bottom surface to the boiling water. Later, verify the correctness of the nucleate boiling assumption.</p>
-<p><a href="./assets/Week12_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="./assets/Week12_2.png"></a></p>
+</div><div class="column" style="width:20%;">
+<p><a href="./assets/Week12_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="./assets/Week12_2.png"></a></p>
+</div></div>
+<div class="fragment">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>w</mi></msub><mi>″</mi><mo>=</mo><msub><mi>μ</mi><mi>l</mi></msub><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><msup><mrow><mo stretchy="true" form="prefix">[</mo><mfrac><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>σ</mi></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>c</mi><mrow><mi>p</mi><mo>,</mo><mi>l</mi></mrow></msub><mi>Δ</mi><msub><mi>T</mi><mi>e</mi></msub></mrow><mrow><msub><mi>C</mi><mrow><mi>s</mi><mo>,</mo><mi>f</mi></mrow></msub><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mi>P</mi><msubsup><mi>r</mi><mi>l</mi><mi>n</mi></msubsup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">
+q_{w}''=\mu_{l}h_{fg}\left[ \frac{g(\rho_{l}-\rho_{v})}{\sigma} \right]^{1/2}\left( \frac{c_{p,l}\Delta T_{e}}{C_{s,f}h_{fg}Pr_{l}^{n}} \right)^{3}
+</annotation></semantics></math></p>
+<p>Take all property values for water and steam at 4.76 bar saturation pressure</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 30%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>15</mn><msup><mn>0</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">T_{sat}=15 0^{0}C</annotation></semantics></math></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>l</mi></msub><mo>=</mo><mn>917.07</mn><mi>k</mi><mi>g</mi><mi>/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho_{l}=917.07 kg / m^{3}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>p</mi><mo>,</mo><mi>l</mi></mrow></msub><mo>=</mo><mn>4310</mn><mi>J</mi><mi>/</mi><mi>k</mi><mi>g</mi><mi>.</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">c_{p,l}=4310 J / kg.K</annotation></semantics></math></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>v</mi></msub><mo>=</mo><mn>2.548</mn><mi>k</mi><mi>g</mi><mi>/</mi><msup><mi>m</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho_{v}=2.548 kg / m^{3}</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mo>=</mo><mn>2113.67</mn><mi>k</mi><mi>J</mi><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">h_{fg}=2113.67 kJ / kg</annotation></semantics></math></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>l</mi></msub><mo>=</mo><mn>1.81</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>4</mn></mrow></msup><mi>P</mi><mi>a</mi><mi>.</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">\mu_{l}=1.81 \times 10^{-4} Pa.s</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><msub><mi>r</mi><mi>l</mi></msub><mo>=</mo><mn>1.14</mn></mrow><annotation encoding="application/x-tex">Pr_{l}=1.14</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.0488</mn><mi>N</mi><mi>/</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\sigma=0.0488 N / m</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>s</mi><mo>,</mo><mi>f</mi></mrow></msub><mo>=</mo><mn>0.0128</mn></mrow><annotation encoding="application/x-tex">C_{s,f}=0.0128</annotation></semantics></math></td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="condensation-rate---vertical-vs-inclined-plates" class="slide level2">
+<h2>Condensation Rate - Vertical vs Inclined Plates</h2>
+<p>A plane rectangular surface of width <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>1</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">L=1m</annotation></semantics></math> and temperature <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>w</mi></msub><mo>=</mo><msup><mn>80</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">T_{w}=80^{0}C</annotation></semantics></math> is suspended in saturated steam of temperature <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>100</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">100^{0}C</annotation></semantics></math>. When this surface is oriented such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> is aligned with the vertical, the steam condenses on it at the rate of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.063</mn><mi>k</mi><mi>g</mi><mi>/</mi><mi>s</mi><mi>.</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">0.063 kg /s .m</annotation></semantics></math>. Calculate the condensation rate when the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> width makes an angle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mn>0</mn></msup><annotation encoding="application/x-tex">45^{0}</annotation></semantics></math> angle with the vertical. Determine also the film Reynolds number and the flow regime.</p>
+</section>
+<section id="condensation-rate---vertical-plate-vs-horizontal-cylinder" class="slide level2">
+<h2>Condensation Rate - Vertical Plate vs Horizontal Cylinder</h2>
+<p>Saturated vapor condenses on a cold vertical slab of height L. Both sides of the slab are covered by laminar films of condensate. A single horizontal cylinder of diameter D and at the same temperature as the slab is immersed in the same saturated vapor. For what special diameter D will the total condensation rate on the cylinder equal the total condensation rate produced by the slab?</p>
+</section>
+<section id="condensation-rate---flat-vs-round-tube-cross-section" class="slide level2">
+<h2>Condensation Rate - Flat vs Round Tube cross-section</h2>
+<p>The horizontal thin-walled tube shown in the figure is cooled by an internal fluid of temperature <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>w</mi></msub><annotation encoding="application/x-tex">T_{w}</annotation></semantics></math>. The tube is immersed in a stagnant atmosphere of saturated vapor, which condenses in laminar-film fashion on the outer cylindrical surface. It is proposed to increase the total condensation rate by flattening the tube cross section into the shape shown on the right side of the figure. Calculate the percent increase in condensation flow rate associated with this design change.</p>
+<p><a href="./assets/flat_round.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="./assets/flat_round.excalidraw.svg"></a></p>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>
