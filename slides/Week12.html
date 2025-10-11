@@ -6,11 +6,11 @@
 <script src="Week12_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Week12_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Week12_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Week12_files/libs/quarto-html/quarto-syntax-highlighting-f801e177da3f3e0463951a68706c8deb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Week12_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Week12_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="Week12_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="Week12_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+  <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Durga Prasad Pydi">
   <meta name="dcterms.date" content="2025-10-11">
@@ -151,6 +151,7 @@ Durga Prasad Pydi
 <li><a href="#/introduction" id="/toc-introduction">Introduction</a></li>
 <li><a href="#/pool-boiling-curve" id="/toc-pool-boiling-curve">Pool Boiling Curve</a></li>
 <li><a href="#/laminar-film-condensation-on-a-vertical-plate" id="/toc-laminar-film-condensation-on-a-vertical-plate">Laminar film condensation on a vertical plate</a></li>
+<li><a href="#/laminar-film-condensation-on-horizontal-tubes" id="/toc-laminar-film-condensation-on-horizontal-tubes">Laminar Film Condensation on Horizontal Tubes</a></li>
 <li><a href="#/problems" id="/toc-problems">Problems</a>
 <ul>
 <li><a href="#/bubble-radius" id="/toc-bubble-radius">Bubble radius</a></li>
@@ -256,6 +257,27 @@ Nu = \left[ \frac{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})x^{3}}{4 \mu_{l}\kappa_{l
 \overline{Nu} = \frac{4}{3} \left. Nu\right|_{x=L}
 </annotation></semantics></math></p>
 </section>
+<section id="laminar-film-condensation-on-horizontal-tubes" class="slide level2">
+<h2>Laminar Film Condensation on Horizontal Tubes</h2>
+<div id="fig-horzcyl" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-horzcyl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./assets/horz_tube.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Illustration of film condesation on a horizontal cylindrical tube"><img data-src="./assets/horz_tube.excalidraw.svg"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-horzcyl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Illustration of film condesation on a horizontal cylindrical tube
+</figcaption>
+</figure>
+</div>
+<p>Condensation rate</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>m</mi><mo accent="true">̇</mo></mover><mo>=</mo><mn>1.923</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>g</mi><msub><mi>ρ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>κ</mi><mi>l</mi></msub><msup><mi>R</mi><mn>3</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>T</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><mrow><msub><mi>μ</mi><mi>l</mi></msub><msubsup><mi>h</mi><mi>f</mi><mn>3</mn></msubsup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+\dot{m}=1.923\left( \frac{g\rho_{l}(\rho_{l}-\rho_{v})\kappa_{l}R^{3}(T_{sat}-T_{w})^{3}}{\mu_{l}h_{f}^{3}} \right)^{1/4}
+</annotation></semantics></math></p>
+<p>Average heat transfer coefficient</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><msub><mi>h</mi><mi>D</mi></msub><mo accent="true">‾</mo></mover><mo>=</mo><mn>0.729</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mi>g</mi><msub><mi>ρ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>κ</mi><mi>l</mi><mn>3</mn></msubsup></mrow><mrow><msub><mi>μ</mi><mi>l</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>T</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>D</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+\bar{h_{D}} = 0.729\left( \frac{h_{fg}g \rho_{l}(\rho_{l}-\rho_{v})\kappa_{l}^{3}}{\mu_{l}(T_{sat}-T_{w})D} \right)^{1/4}
+</annotation></semantics></math></p>
+</section>
 <section>
 <section id="problems" class="title-slide slide level1 center">
 <h1>Problems</h1>
@@ -265,15 +287,16 @@ Nu = \left[ \frac{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})x^{3}}{4 \mu_{l}\kappa_{l
 <h2>Bubble radius</h2>
 <div class="columns">
 <div class="column" style="width:80%;">
-<p>Consider the spherical vapor bubble of radius r shown in figure. The pressure and temperature inside the bubble <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>P</mi><mi>v</mi></msub><mo>,</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(P_{v},T_{v})</annotation></semantics></math> are slightly above the pressure and temperature in the liquid <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>P</mi><mi>l</mi></msub><mo>,</mo><msub><mi>T</mi><mi>l</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">()P_{l},T_{l})</annotation></semantics></math>. The liquid is saturated, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>l</mi></msub><mo>=</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{l}=T_{sat}</annotation></semantics></math>.</p>
+<p>Consider the spherical vapor bubble of radius r shown in figure. The pressure and temperature inside the bubble <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>P</mi><mi>v</mi></msub><mo>,</mo><msub><mi>T</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(P_{v},T_{v})</annotation></semantics></math> are slightly above the pressure and temperature in the liquid <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>P</mi><mi>l</mi></msub><mo>,</mo><msub><mi>T</mi><mi>l</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(P_{l},T_{l})</annotation></semantics></math>. The liquid is saturated, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>l</mi></msub><mo>=</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{l}=T_{sat}</annotation></semantics></math>.</p>
 <ol type="a">
 <li><p>Invoke the mechanical equilibrium of one hemispherical control volume and derive the relation between bubble radius and pressure difference.</p></li>
-<li><p>Rely on the Clausius–Clapeyron thermodynamics relation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mrow><mi>T</mi><msub><mi>v</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}</annotation></semantics></math> and express the above equation in terms of temperature difference of vapor and saturation temperature.</p></li>
-<li><p>Calculate the radius of a steam bubble with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>v</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>2</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">T_{v}-T_{sat}=2K</annotation></semantics></math> in water at<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><msup><mn>100</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">T_{sat}=100^{0}C</annotation></semantics></math>. (Take <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.0589</mn><mi>N</mi><mi>/</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\sigma=0.0589 N / m</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mo>=</mo><mn>2257</mn><mi>k</mi><mi>J</mi><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">h_{fg}=2257 kJ / kg</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mn>1.673</mn><msup><mi>m</mi><mn>3</mn></msup><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">v_{g}=1.673 m^{3} / kg</annotation></semantics></math>)</p></li>
+<li><p>Rely on the Clausius–Clapeyron thermodynamics relation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mrow><mi>T</mi><msub><mi>v</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}</annotation></semantics></math> and express the above equation in terms of temperature difference of vapour and saturation temperature.</p></li>
+<li><p>Calculate the radius of a steam bubble with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>v</mi></msub><mo>−</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>2</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">T_{v}-T_{sat}=2K</annotation></semantics></math> in water at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>s</mi><mi>a</mi><mi>t</mi></mrow></msub><mo>=</mo><msup><mn>100</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">T_{sat}=100^{0}C</annotation></semantics></math>. (Take <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>0.0589</mn><mi>N</mi><mi>/</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\sigma=0.0589 N / m</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mo>=</mo><mn>2257</mn><mi>k</mi><mi>J</mi><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">h_{fg}=2257 kJ / kg</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mn>1.673</mn><msup><mi>m</mi><mn>3</mn></msup><mi>/</mi><mi>k</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">v_{g}=1.673 m^{3} / kg</annotation></semantics></math>)</p></li>
 </ol>
 </div><div class="column" style="width:20%;">
-<p><a href="./assets/Week12_1.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="./assets/Week12_1.excalidraw.svg"></a></p>
+<p><a href="./assets/Week12_1.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="./assets/Week12_1.excalidraw.svg"></a></p>
 </div></div>
+<p><a href="./assets/week12/bubble.pdf">Solution</a></p>
 </section>
 <section id="heat-transfer-rate---steam-relief-valve-in-pressurised-cylinder" class="slide level2">
 <h2>Heat Transfer Rate - Steam Relief Valve in pressurised cylinder</h2>
@@ -281,7 +304,7 @@ Nu = \left[ \frac{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})x^{3}}{4 \mu_{l}\kappa_{l
 <div class="column" style="width:80%;">
 <p>Water boils in the pressurized cylindrical vessel shown below. The steam relief valve is set in such a way that the pressure inside the vessel is 4.76 bar. The bottom surface is made out of copper (polished), and its temperature is maintained at Tw = 160<sup>0</sup>C. Assume nucleate boiling, and calculate the total heat transfer rate from the bottom surface to the boiling water. Later, verify the correctness of the nucleate boiling assumption.</p>
 </div><div class="column" style="width:20%;">
-<p><a href="./assets/Week12_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="./assets/Week12_2.png"></a></p>
+<p><a href="./assets/Week12_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="./assets/Week12_2.png"></a></p>
 </div></div>
 <div class="fragment">
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>w</mi></msub><mi>″</mi><mo>=</mo><msub><mi>μ</mi><mi>l</mi></msub><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><msup><mrow><mo stretchy="true" form="prefix">[</mo><mfrac><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ρ</mi><mi>l</mi></msub><mo>−</mo><msub><mi>ρ</mi><mi>v</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>σ</mi></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>c</mi><mrow><mi>p</mi><mo>,</mo><mi>l</mi></mrow></msub><mi>Δ</mi><msub><mi>T</mi><mi>e</mi></msub></mrow><mrow><msub><mi>C</mi><mrow><mi>s</mi><mo>,</mo><mi>f</mi></mrow></msub><msub><mi>h</mi><mrow><mi>f</mi><mi>g</mi></mrow></msub><mi>P</mi><msubsup><mi>r</mi><mi>l</mi><mi>n</mi></msubsup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">
@@ -324,20 +347,24 @@ q_{w}''=\mu_{l}h_{fg}\left[ \frac{g(\rho_{l}-\rho_{v})}{\sigma} \right]^{1/2}\le
 </tr>
 </tbody>
 </table>
+<p><a href="./assets/week12/prv.pdf">Solution</a></p>
 </div>
 </section>
 <section id="condensation-rate---vertical-vs-inclined-plates" class="slide level2">
 <h2>Condensation Rate - Vertical vs Inclined Plates</h2>
 <p>A plane rectangular surface of width <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>1</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">L=1m</annotation></semantics></math> and temperature <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>w</mi></msub><mo>=</mo><msup><mn>80</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">T_{w}=80^{0}C</annotation></semantics></math> is suspended in saturated steam of temperature <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>100</mn><mn>0</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">100^{0}C</annotation></semantics></math>. When this surface is oriented such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> is aligned with the vertical, the steam condenses on it at the rate of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.063</mn><mi>k</mi><mi>g</mi><mi>/</mi><mi>s</mi><mi>.</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">0.063 kg /s .m</annotation></semantics></math>. Calculate the condensation rate when the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math> width makes an angle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>45</mn><mn>0</mn></msup><annotation encoding="application/x-tex">45^{0}</annotation></semantics></math> angle with the vertical. Determine also the film Reynolds number and the flow regime.</p>
+<p><a href="./assets/week12/vertVsIncl.pdf">Solution</a></p>
 </section>
 <section id="condensation-rate---vertical-plate-vs-horizontal-cylinder" class="slide level2">
 <h2>Condensation Rate - Vertical Plate vs Horizontal Cylinder</h2>
 <p>Saturated vapor condenses on a cold vertical slab of height L. Both sides of the slab are covered by laminar films of condensate. A single horizontal cylinder of diameter D and at the same temperature as the slab is immersed in the same saturated vapor. For what special diameter D will the total condensation rate on the cylinder equal the total condensation rate produced by the slab?</p>
+<p><a href="./assets/week12/plateVsCyl.pdf">Solution</a></p>
 </section>
 <section id="condensation-rate---flat-vs-round-tube-cross-section" class="slide level2">
 <h2>Condensation Rate - Flat vs Round Tube cross-section</h2>
 <p>The horizontal thin-walled tube shown in the figure is cooled by an internal fluid of temperature <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>w</mi></msub><annotation encoding="application/x-tex">T_{w}</annotation></semantics></math>. The tube is immersed in a stagnant atmosphere of saturated vapor, which condenses in laminar-film fashion on the outer cylindrical surface. It is proposed to increase the total condensation rate by flattening the tube cross section into the shape shown on the right side of the figure. Calculate the percent increase in condensation flow rate associated with this design change.</p>
-<p><a href="./assets/flat_round.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="./assets/flat_round.excalidraw.svg"></a></p>
+<p><a href="./assets/flat_round.excalidraw.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="./assets/flat_round.excalidraw.svg"></a></p>
+<p><a href="./assets/week12/flatVsRound.pdf">Solution</a></p>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>

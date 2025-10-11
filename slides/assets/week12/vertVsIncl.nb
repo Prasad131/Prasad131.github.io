@@ -1,0 +1,148 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      4674,        140]
+NotebookOptionsPosition[      3840,        117]
+NotebookOutlinePosition[      4277,        134]
+CellTagsIndexPosition[      4234,        131]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Delta]", " ", "=", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox[
+      RowBox[{"4", " ", 
+       SubscriptBox["\[Mu]", "l"], " ", 
+       SubscriptBox["\[Kappa]", "l"], 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["T", "sat"], "-", 
+         SubscriptBox["T", "w"]}], ")"}], "x"}], 
+      RowBox[{
+       SubscriptBox["h", "fg"], 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"0.68", " ", "Ja"}]}], ")"}], "g", " ", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], " ", 
+       SubscriptBox["\[Rho]", "l"], 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["\[Rho]", "l"], "-", 
+         SubscriptBox["\[Rho]", "v"]}], ")"}]}]], ")"}], 
+    RowBox[{"1", "/", "4"}]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", " ", "=", " ", 
+    FractionBox[
+     RowBox[{"g", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], " ", 
+      SubscriptBox["\[Rho]", "l"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["\[Rho]", "l"], "-", 
+        SubscriptBox["\[Rho]", "v"]}], ")"}], 
+      SuperscriptBox["\[Delta]", "3"]}], 
+     RowBox[{"3", " ", 
+      SubscriptBox["\[Mu]", "l"]}]]}], ";"}], " "}]}], "Input",
+ CellChangeTimes->{{3.969141214232766*^9, 3.969141342057847*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"7807665b-212e-458b-9aca-ce77f368e8bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"m", "/.", 
+     RowBox[{"\[Theta]", "->", 
+      RowBox[{"90", "Degree"}]}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"m", "/.", 
+     RowBox[{"\[Theta]", "->", 
+      RowBox[{"45", " ", "Degree"}]}]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.96914136607965*^9, 3.969141400994236*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"4550419d-7346-437a-8a95-3f1c266d7137"],
+
+Cell[BoxData["1.0905077326652577`"], "Output",
+ CellChangeTimes->{{3.969141394961082*^9, 3.969141401566393*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"8d5d4926-413a-44f7-aefd-d2070a014b9d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"problem", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"mRate", "->", "0.063"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["\[Mu]", "l"], "->", 
+      RowBox[{
+       RowBox[{"ThermodynamicData", "[", 
+        RowBox[{"\"\<Water\>\"", ",", "\"\<Viscosity\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Temperature\>\"", "->", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"90", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], "}"}]}], 
+        "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  SubscriptBox["Re", "\[Delta]"], " ", "=", " ", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"4", " ", "mRate"}], 
+    SubscriptBox["\[Mu]", "l"]], "/.", "problem"}]}]}], "Input",
+ CellChangeTimes->{{3.969141413841729*^9, 3.969141414424246*^9}, {
+  3.9691415083712606`*^9, 3.969141643205494*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"e352d124-543c-4911-a98b-57e2f54b50d4"],
+
+Cell[BoxData["802.1000221834813`"], "Output",
+ CellChangeTimes->{{3.969141606024255*^9, 3.969141643852552*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"9afdd2ce-dea8-4099-95f1-c9f9fb7b27e5"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0e934311-3888-4ea9-8109-bacfdd997f03"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 1383, 40, 137, "Input",ExpressionUUID->"7807665b-212e-458b-9aca-ce77f368e8bb"],
+Cell[CellGroupData[{
+Cell[1962, 64, 449, 12, 44, "Input",ExpressionUUID->"4550419d-7346-437a-8a95-3f1c266d7137"],
+Cell[2414, 78, 190, 2, 50, "Output",ExpressionUUID->"8d5d4926-413a-44f7-aefd-d2070a014b9d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2641, 85, 990, 25, 162, "Input",ExpressionUUID->"e352d124-543c-4911-a98b-57e2f54b50d4"],
+Cell[3634, 112, 190, 2, 50, "Output",ExpressionUUID->"9afdd2ce-dea8-4099-95f1-c9f9fb7b27e5"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,794 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     40709,        786]
+NotebookOptionsPosition[     40037,        767]
+NotebookOutlinePosition[     40432,        783]
+CellTagsIndexPosition[     40389,        780]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hPlate", " ", "=", " ", 
+   RowBox[{"0.943", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["h", "fg"], 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"0.68", " ", "Ja"}]}], ")"}], " ", "g", " ", 
+        SubscriptBox["\[Rho]", "l"], 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["\[Rho]", "l"], "-", 
+          SubscriptBox["\[Rho]", "v"]}], ")"}], 
+        SuperscriptBox[
+         SubscriptBox["\[Kappa]", "l"], "3"]}], 
+       RowBox[{
+        SubscriptBox["\[Mu]", "l"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["T", "sat"], "-", 
+          SubscriptBox["T", "w"]}], ")"}], "L"}]], ")"}], 
+     RowBox[{"1", "/", "4"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mPlate", " ", "=", " ", 
+   FractionBox[
+    RowBox[{"hPlate", " ", "L", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["T", "sat"], "-", 
+       SubscriptBox["T", "w"]}], ")"}]}], 
+    SubscriptBox["h", "fg"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mCylinder", " ", "=", " ", 
+   RowBox[{"1.923", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"g", " ", 
+        SubscriptBox["\[Rho]", "l"], 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["\[Rho]", "l"], "-", 
+          SubscriptBox["\[Rho]", "v"]}], ")"}], 
+        SuperscriptBox[
+         SubscriptBox["\[Kappa]", "l"], "3"], 
+        SuperscriptBox["d", "3"], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           SubscriptBox["T", "sat"], "-", 
+           SubscriptBox["T", "w"]}], ")"}], "3"]}], 
+       RowBox[{"8", " ", 
+        SubscriptBox["\[Mu]", "l"], " ", 
+        SuperscriptBox[
+         SubscriptBox["h", "fg"], "3"]}]], ")"}], 
+     RowBox[{"1", "/", "4"}]]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.969142663187294*^9, 3.969142962712634*^9}, {
+  3.969143044466567*^9, 3.969143078989811*^9}, {3.969143109534849*^9, 
+  3.969143111050871*^9}, {3.969143153717948*^9, 3.969143154440493*^9}, {
+  3.969143206089569*^9, 3.9691432129810753`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"80dad3ca-de45-41dd-8f49-0106a13f8a25"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"mPlate", "==", "mCylinder"}], ")"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Ja", "->", "0"}], ",", 
+      RowBox[{"L", "->", "1"}]}], "}"}]}], ",", "d", ",", "Reals"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.969143116094062*^9, 3.969143138807295*^9}, {
+  3.96914317049436*^9, 3.969143188378194*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"5adf4e99-4c28-4483-ad6f-f1bab176507d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "ratnz", 
+   "\"Solve was unable to solve the system with inexact coefficients. The \
+answer was obtained by solving a corresponding exact system and numericizing \
+the result.\"", 2, 18, 14, 18585494580771630724, "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{{3.969143147736731*^9, 3.969143216404592*^9}},
+ CellLabel->
+  "During evaluation of \
+In[18]:=",ExpressionUUID->"2fec9add-1da2-49d4-ad2d-d138d69708ff"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"d", "\[Rule]", 
+    TemplateBox[{"0.7734042251693092`", 
+      InterpretationBox[
+       DynamicModuleBox[{Typeset`open = False}, 
+        TemplateBox[{"Expression", 
+          StyleBox[
+           TagBox[
+            TooltipBox["\"condition\"", 
+             TagBox[
+              RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+              Short[#, 7]& ]], Annotation[#, 
+             Short[
+              Or[
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 
+                0, Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 
+                0, Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 
+                0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 
+                0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`T, $CellContext`w] > 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`h, $CellContext`fg] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 
+                0, Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 
+                0, Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 
+                0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 
+                0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l]], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 
+                0, $CellContext`g > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], $CellContext`g < 
+                0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], \
+$CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] > 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0], 
+               And[
+               Subscript[$CellContext`h, $CellContext`fg] > 0, 
+                Subscript[$CellContext`T, $CellContext`w] < 
+                Subscript[$CellContext`T, $CellContext`sat], 
+                Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Rho], $CellContext`v] < 
+                Subscript[$CellContext`\[Rho], $CellContext`l], 
+                Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+                Subscript[$CellContext`\[Mu], $CellContext`l] < 
+                0, $CellContext`g < 0]], 7], "Tooltip"]& ], 
+           "IconizedCustomName", StripOnInput -> False], 
+          GridBox[{{
+             RowBox[{
+               TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+               TagBox["Or", "IconizedItem"]}]}, {
+             RowBox[{
+               TagBox["\"Byte count: \"", "IconizedLabel"], 
+               "\[InvisibleSpace]", 
+               TagBox["32816", "IconizedItem"]}]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+           "Column", 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          Dynamic[Typeset`open]}, "IconizedObject"]], 
+       Or[
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], $CellContext`g > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, $CellContext`g < 0], 
+        
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, $CellContext`g < 0], 
+        
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`T, $CellContext`w] > 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`h, $CellContext`fg] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, $CellContext`g > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l]], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, $CellContext`g > 
+         0, Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], $CellContext`g < 0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], $CellContext`g < 0], 
+        
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] > 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] > 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`l] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0], 
+        And[
+        Subscript[$CellContext`h, $CellContext`fg] > 0, 
+         Subscript[$CellContext`T, $CellContext`w] < 
+         Subscript[$CellContext`T, $CellContext`sat], 
+         Subscript[$CellContext`\[Rho], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Rho], $CellContext`v] < 
+         Subscript[$CellContext`\[Rho], $CellContext`l], 
+         Subscript[$CellContext`\[Kappa], $CellContext`l] < 0, 
+         Subscript[$CellContext`\[Mu], $CellContext`l] < 0, $CellContext`g < 
+         0]], SelectWithContents -> True, Selectable -> False]},
+     "ConditionalExpression"]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.96914312362827*^9, 3.969143216426496*^9}},
+ CellLabel->"Out[18]=",ExpressionUUID->"0c895a13-68b3-4985-add4-504485b23725"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d921d50a-d289-42a4-8754-8d8277937c40"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 2232, 64, 210, "Input",ExpressionUUID->"80dad3ca-de45-41dd-8f49-0106a13f8a25"],
+Cell[CellGroupData[{
+Cell[2811, 88, 489, 13, 44, "Input",ExpressionUUID->"5adf4e99-4c28-4483-ad6f-f1bab176507d"],
+Cell[3303, 103, 488, 11, 64, "Message",ExpressionUUID->"2fec9add-1da2-49d4-ad2d-d138d69708ff"],
+Cell[3794, 116, 36227, 648, 67, "Output",ExpressionUUID->"0c895a13-68b3-4985-add4-504485b23725"]
+}, Open  ]]
+}
+]
+*)
+

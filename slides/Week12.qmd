@@ -91,6 +91,23 @@ $$
 \overline{Nu} = \frac{4}{3} \left. Nu\right|_{x=L}
 $$
 
+
+## Laminar Film Condensation on Horizontal Tubes
+
+![Illustration of film condesation on a horizontal cylindrical tube](./assets/horz_tube.excalidraw.svg){#fig-horzcyl}
+
+Condensation rate
+
+$$
+\dot{m}=1.923\left( \frac{g\rho_{l}(\rho_{l}-\rho_{v})\kappa_{l}R^{3}(T_{sat}-T_{w})^{3}}{\mu_{l}h_{f}^{3}} \right)^{1/4}
+$$
+
+Average heat transfer coefficient
+
+$$
+\bar{h_{D}} = 0.729\left( \frac{h_{fg}g \rho_{l}(\rho_{l}-\rho_{v})\kappa_{l}^{3}}{\mu_{l}(T_{sat}-T_{w})D} \right)^{1/4}
+$$
+
 # Problems
 
 ## Bubble radius
@@ -98,13 +115,13 @@ $$
 :::: {.columns}
 
 ::: {.column width=80%}
-Consider the spherical vapor bubble of radius r shown in figure. The pressure and temperature inside the bubble $(P_{v},T_{v})$ are slightly above the pressure and temperature in the liquid $()P_{l},T_{l})$. The liquid is saturated, $T_{l}=T_{sat}$. 
+Consider the spherical vapor bubble of radius r shown in figure. The pressure and temperature inside the bubble $(P_{v},T_{v})$ are slightly above the pressure and temperature in the liquid $(P_{l},T_{l})$. The liquid is saturated, $T_{l}=T_{sat}$. 
 
 (a) Invoke the mechanical equilibrium of one hemispherical control volume and derive the relation between bubble radius and pressure difference.
 
-(b) Rely on the Clausius–Clapeyron thermodynamics relation $\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}$ and express the above equation in terms of temperature difference of vapor and saturation temperature.
+(b) Rely on the Clausius–Clapeyron thermodynamics relation $\frac{dP}{dT}=\frac{h_{fg}}{T v_{fg}}$ and express the above equation in terms of temperature difference of vapour and saturation temperature.
 
-(c) Calculate the radius of a steam bubble with $T_{v}-T_{sat}=2K$ in water at$T_{sat}=100^{0}C$. (Take $\sigma=0.0589 N / m$, $h_{fg}=2257 kJ / kg$, $v_{g}=1.673 m^{3} / kg$)
+(c) Calculate the radius of a steam bubble with $T_{v}-T_{sat}=2K$ in water at $T_{sat}=100^{0}C$. (Take $\sigma=0.0589 N / m$, $h_{fg}=2257 kJ / kg$, $v_{g}=1.673 m^{3} / kg$)
 :::
 
 ::: {.column width=20%}
@@ -113,6 +130,9 @@ Consider the spherical vapor bubble of radius r shown in figure. The pressure an
 
 :::
 ::::
+
+[Solution](./assets/week12/bubble.pdf)
+
 ## Heat Transfer Rate - Steam Relief Valve in pressurised cylinder
 
 :::: {.columns}
@@ -143,20 +163,27 @@ Take all property values for water and steam at 4.76 bar saturation pressure
 | $\mu_{l}=1.81 \times 10^{-4} Pa.s$ | $Pr_{l}=1.14$            | $\sigma=0.0488 N / m$ |
 | $C_{s,f}=0.0128$                   | $n=1$                    |                       |
 
+[Solution](./assets/week12/prv.pdf)
+
 ## Condensation Rate - Vertical vs Inclined Plates
 
 A plane rectangular surface of width $L=1m$ and temperature $T_{w}=80^{0}C$ is suspended in saturated steam of temperature $100^{0}C$. When this surface is oriented such that $L$ is aligned with the vertical, the steam condenses on it at the rate of $0.063 kg /s .m$. Calculate the condensation rate when the $L$ width makes an angle $45^{0}$ angle with the vertical. Determine also the film Reynolds number and the flow regime.
 
+[Solution](./assets/week12/vertVsIncl.pdf)
 
 ## Condensation Rate - Vertical Plate vs Horizontal Cylinder
 
 Saturated vapor condenses on a cold vertical slab of height L. Both sides of the slab are covered by laminar films of condensate. A single horizontal cylinder of diameter D and at the same temperature as the slab is immersed in the same saturated vapor. For what special diameter D will the total condensation rate on the cylinder equal the total condensation rate produced by the slab?
+
+[Solution](./assets/week12/plateVsCyl.pdf)
 
 ## Condensation Rate - Flat vs Round Tube cross-section
 
 The horizontal thin-walled tube shown in the figure is cooled by an internal fluid of temperature $T_{w}$. The tube is immersed in a stagnant atmosphere of saturated vapor, which condenses in laminar-film fashion on the outer cylindrical surface. It is proposed to increase the total condensation rate by flattening the tube cross section into the shape shown on the right side of the figure. Calculate the percent increase in condensation flow rate associated with this design change.
 
 ![](./assets/flat_round.excalidraw.svg)
+
+[Solution](./assets/week12/flatVsRound.pdf)
 
 
 # Thank You {.center .unlisted}
