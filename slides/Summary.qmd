@@ -1,6 +1,5 @@
 ---
 title: Fundamentals of Convective Heat Transfer
-subtitle: Summary (Live Session)
 author: Durga Prasad Pydi
 date: 2025-10-12
 format:
