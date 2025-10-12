@@ -2,7 +2,7 @@
 (* ::Package:: *)
 
 (* Configure the source folder and output file *)
-src = NotebookDirectory[]<>"week11/";  (* or set to a path string *)
+src = NotebookDirectory[]<>"week12/";  (* or set to a path string *)
 outSingle = FileNameJoin[{src, "All-Notebooks.pdf"}];
 
 (* Find notebooks *)
