@@ -1,0 +1,165 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      5517,        157]
+NotebookOptionsPosition[      4812,        137]
+NotebookOutlinePosition[      5249,        154]
+CellTagsIndexPosition[      5206,        151]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Compare heat-transfer coefficients for water flowing at an average \
+temperature of 40\[Degree]C and at a velocity of 0.5 m/s in a 2.54 cm \
+diameter duct using Colburn analogy.\
+\>", "Text",
+ CellChangeTimes->{
+  3.968539120334051*^9},ExpressionUUID->"4363efa8-2733-4da4-a0be-\
+185fbfb7e624"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"U", "=", "0.5"}], ";", " ", 
+  RowBox[{"d", "=", 
+   RowBox[{"2.54", " ", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "2"}]]}]}], ";", 
+  RowBox[{"Tw", "=", "40"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Rho]", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<Density\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Temperature\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"Tw", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], "}"}]}], 
+     "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Mu]", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<Viscosity\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Temperature\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"Tw", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], "}"}]}], 
+     "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Kappa]", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<ThermalConductivity\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Temperature\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"Tw", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], "}"}]}], 
+     "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Cp", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<IsobaricHeatCapacity\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Temperature\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"Tw", ",", "\"\<DegreesCelsius\>\""}], "]"}]}], "}"}]}], 
+     "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Pr", " ", "=", " ", 
+   FractionBox[
+    RowBox[{"\[Mu]", " ", "Cp", " "}], "\[Kappa]"]}], ";", " ", 
+  RowBox[{
+   SubscriptBox["Re", "D"], " ", "=", " ", 
+   FractionBox[
+    RowBox[{"\[Rho]", " ", "U", " ", "d"}], "\[Mu]"]}], ";", " ", 
+  RowBox[{"f", " ", "=", " ", 
+   RowBox[{"0.079", " ", 
+    SuperscriptBox[
+     SubscriptBox["Re", "D"], 
+     RowBox[{
+      RowBox[{"-", "1"}], "/", "4"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["Nu", "D"], " ", "=", " ", 
+   FractionBox[
+    RowBox[{"h", " ", "d"}], "\[Kappa]"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"St", " ", "=", " ", 
+   FractionBox[
+    SubscriptBox["Nu", "D"], 
+    RowBox[{
+     SubscriptBox["Re", "D"], "Pr"}]]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.96853914012656*^9, 3.968539302489526*^9}, {
+  3.968539448726549*^9, 3.968539560552718*^9}, {3.968539644986394*^9, 
+  3.968539690826721*^9}, {3.968539721413291*^9, 3.9685398142798862`*^9}, {
+  3.968569562256274*^9, 3.968569584850217*^9}, {3.968569625536191*^9, 
+  3.9685696757746077`*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"efec72a2-b92a-4f35-9716-b27ec9a0391c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"St", " ", 
+     SuperscriptBox["Pr", 
+      RowBox[{"2", "/", "3"}]]}], "==", 
+    FractionBox["f", "2"]}], ",", "h"}], "]"}]], "Input",
+ CellChangeTimes->{{3.968539755572282*^9, 3.968539762033861*^9}, {
+  3.968539838206888*^9, 3.968539841962956*^9}},
+ CellLabel->"In[52]:=",ExpressionUUID->"9cd9d43b-061c-4e40-baf3-094bf0f3beca"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"h", "\[Rule]", "2611.165563587975`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.9685397636823072`*^9, 3.968539772288929*^9}, {
+  3.968539811624675*^9, 3.968539816549101*^9}, {3.968569568940357*^9, 
+  3.9685695909978724`*^9}, {3.968569671930028*^9, 3.968569679240122*^9}},
+ CellLabel->"Out[52]=",ExpressionUUID->"e742485a-ed22-43ef-87f9-cd78fcdc605d"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"380c04da-d82f-49ff-9cae-096f5a55c004"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 303, 7, 83, "Text",ExpressionUUID->"4363efa8-2733-4da4-a0be-185fbfb7e624"],
+Cell[860, 29, 3091, 82, 402, "Input",ExpressionUUID->"efec72a2-b92a-4f35-9716-b27ec9a0391c"],
+Cell[CellGroupData[{
+Cell[3976, 115, 404, 10, 65, "Input",ExpressionUUID->"9cd9d43b-061c-4e40-baf3-094bf0f3beca"],
+Cell[4383, 127, 413, 7, 50, "Output",ExpressionUUID->"e742485a-ed22-43ef-87f9-cd78fcdc605d"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,471 @@
+## Incompressible Flow Equations & Reynolds Transport Theorem
+
+The governing equations for an unsteady, incompressible, newtonian and constant properties fluid are given in their vector form as
+
+Continuity: 
+
+$$
+\vec{\nabla}.\vec{v}=0
+$$
+
+. . .
+
+Momentum: 
+
+$$
+\rho\left( \frac{d\vec{v}}{dt} + \vec{v}.\vec{\nabla}\vec{v} \right)=-\vec{\nabla}p+\rho \vec{g}+\mu \nabla^{2}\vec{v}
+$$
+
+. . .
+
+**Reynolds Transport Theorem**
+
+$$
+\left.\frac{DN}{Dt}\right|_{sys} = \frac{ \partial }{ \partial t } \int_{CV} \rho \eta dV + \int_{CS} \rho \eta (\vec{v_{r}.\hat{n}}) dA
+$$
+
+. . .
+
+Energy:
+
+$$
+\rho C_{p} \frac{DT}{Dt} = q''' + \frac{ \partial  }{ \partial x_{j} } \left( k \frac{ \partial T }{ \partial x_{j} }  \right)+\frac{Dp}{Dt}+\mu \Phi
+$$
+
+where $\Phi=-\frac{2}{3} \left( \frac{ \partial u_{k} }{ \partial x_{k} } \right)^{2}+\left( \frac{ \partial u_{i} }{ \partial x_{j} }+\frac{ \partial u_{j} }{ \partial x_{i} } \right)\frac{ \partial u_{i} }{ \partial x_{j} }$ is the viscous dissipation term
+
+## Boundary Layer Flow Equations
+
+::::{.columns}
+
+::: {.column width=60%}
+
+Continuity:
+$$
+\frac{ \partial u }{ \partial x } +\frac{ \partial v }{ \partial y } =0
+$$
+
+Neglecting the pressure gradient (flow over a flat plate) and after scaling analysis
+
+Momentum:
+
+$$
+\rho\left( u \frac{ \partial u }{ \partial x } +v \frac{ \partial u }{ \partial y }  \right)=\mu \frac{ \partial^{2} u }{ \partial y^{2} } 
+$$
+:::
+
+::: {.column width=40%}
+![Hydrodynamic Boundary Layer](./assets/Summary_bl.excalidraw.svg)
+:::
+
+::::
+
+. . .
+
+Similarly, the energy equation is given by 
+
+. . .
+
+:::: {.columns}
+
+::: {.column width=60%}
+
+$$
+u \frac{ \partial T }{ \partial x } +v \frac{ \partial T }{ \partial y }  = \alpha \frac{ \partial^{2}T }{ \partial y^{2} }  
+$$
+:::
+
+::: {.column width=40%}
+![Thermal Boundary Layer](./assets/Summary_blT.excalidraw.svg)
+:::
+::::
+
+. . .
+
+Scaling
+
+. . .
+
+$$
+\begin{align}
+\delta_{t}<\delta &  & Nu \sim Pr^{1/3} Re^{1/2} \\
+\delta_{t}>\delta  &  & Nu \sim Pr^{1/2} Re^{1/2}
+\end{align}
+$$
+
+
+## Exact Solutions to Boundary Layer Equations
+
+Similarity method to reduce governing equations to an ODE
+
+. . . 
+
+::::{.columns}
+
+:::{.column width=50%}
+Blasius Solution (Hydrodynamic boundary layer)
+
+$$
+\begin{align}
+\frac{\delta}{x}  & = \frac{5}{\sqrt{ \mathrm{Re}_{x} }} \\
+C_{f,x} & =\frac{0.664}{\sqrt{ \mathrm{Re}_{x} }} \\
+C_{f,L} & =\frac{1.328}{\sqrt{ \mathrm{Re}_{x} }}
+\end{align}
+$$
+:::
+
+:::{.column width=50%}
+Pohlhausen Solution (Thermal boundary layer) for constant wall temperature
+
+$$
+\begin{align}
+Nu_{x} & =0.332 Pr^{1/3}\mathrm{Re}_{x}^{1/2} \\
+Nu_{L}  & =0.664 Pr^{1/3} \mathrm{Re}_{L}^{1/2} \\
+St_{x}Pr^{2/3} & =\frac{C_{f,x}}{2}  &  & \text{Colburns Analogy}
+\end{align}
+$$
+:::
+
+::::
+
+. . .
+
+For constant wall heat flux, we have $T_{w}-T_{\infty} = C \sqrt{ x }$
+
+. . .
+
+Displacement thickness (accounting for loss in mass across the boundary layer)
+
+$$
+\delta^{*} = \int_{0}^{\delta} \left( 1-\frac{u}{U_{\infty}} \right) dy
+$$
+
+. . .
+
+Momentum thickness (accounting for loss in momentum after the displacement thickness)
+
+$$
+\theta = \int_{0}^{\delta} \frac{u}{U_{\infty}}\left( 1-\frac{u}{U_{\infty}} \right)dy
+$$
+
+## Approximate Solutions to Boundary Layer Equations
+
+Workflow:
+
+1. Integral form of governing equations
+2. Assume profiles satisfying the equations in 1
+3. Determine the unknown variables ($\delta,\delta_{T}$)
+
+. . .
+
+Momentum Integral Equation
+
+$$
+\rho U_{\infty}^{2} \frac{d}{dx} \int_{0}^{\delta} \frac{u}{U_{\infty}}\left( 1-\frac{u}{U_{\infty}} \right)dy = \tau_{w}
+$$
+
+Energy Integral Equation (Constant Wall Temperature)
+
+$$
+\frac{d}{dx} \int_{0}^{\delta_{T}} u(T-T_{\infty}) = -\alpha \left.\frac{ \partial T }{ \partial y }  \right|_{y=0} = \frac{q_{w}''}{\rho c_{p}}
+$$
+
+. . .
+
+Solutions are close to exact solutions. However, the accuracy cannot be increased just by increasing the number of terms in the assumed profile
+
+## Internal Flows 
+
+Fully Developed Flow
+
+|                          | Parallel Plate | Circular Pipe |
+| ------------------------ | -------------- | ------------- |
+| Uniform Wall Temperature | $Nu_{4H}=8.24$ | $Nu_{D}=4.36$ |
+| Uniform Wall Heat Flux   | $Nu_{4H}=7.54$ | $Nu_{D}=3.66$ |
+
+Developing Flow (Uniform Wall Temperature)
+
+
+| Description                                        |                                                                                                                                                                                                         |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parallel Plate Channel                             | $Nu = \frac{2}{\frac{11}{24}+\sum_{n=1}^{\infty} C_n R_n(1) e^{-\frac{\lambda_n^2 x/r_0}{Re_D Pr}}}$                                                                                                    |
+| Circular Channel                                   | $\overline{Nu}_D(x) = - \frac{1}{\frac{2x/r_0}{Re_D Pr}} ln(\theta_m), \quad \theta_m = \frac{T_m(x)-T_w}{T_i-T_w}=8 \sum_{n=0}^{\infty} G_n \frac{e^{-\frac{\lambda_n^2 x/r_0}{Re_DPr}}}{\lambda_n^2}$ |
+| Couette Flow (isothermal top and bottom)           | $Nu_{bottom}=-2\left( 1+\frac{EcPr}{2} \right)$, $Nu_{top}=2\left( 1-\frac{EcPr}{2} \right)$                                                                                                            |
+| Couette Flow (isothermal top and adiabatic bottom) | $Nu_{top}=-4$ and $T_{max}=T_{H}+\frac{\mu U^{2}}{2\kappa}$                                                                                                                                             |
+
+## Richardson Number, $Ri_{H}$
+
+$$
+Ri_{H}=\frac{Gr_{H}}{\mathrm{Re}_{H}^{2}}
+$$
+
+| Criteria   | Type of convection |
+|------------|--------------------|
+| $Ri \gg 1$ | Natural            |
+| $Ri \ll 1$ | Forced             |
+| $Ri = 1$   | Mixed / Combined   |
+
+Conventionally we choose, $\mathrm{Re}_{H} = \sqrt{ Gr_{H} }$ such that $Ri_{H} = 1$
+
+Summary of scaling laws
+
+| $Pr$ | $\delta_{T}$ | Wall to velocity peak | Thickness of wall jet | Velocity scale | $Nu$ |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+| $\gg 1$ | $H Ra_{H}^{-1/4}$ | $H Ra_{H}^{-1/4}$ | $Pr^{1/2}HRa_{H}^{-1/4}$ | $\frac{\alpha}{H} Ra_{H}^{1/2}$ | $Ra_{H}^{1/4}$ |
+| $\ll 1$ | $Pr^{-1/4}HRa_{H}^{-1/4}$ | $Pr^{1/4}HRa_{H}^{-1/4}$ | $Pr^{-1/4}HRa_{H}^{-1/4}$ | $\frac{\alpha}{H}Pr^{1/2}Ra_{H}^{1/2}$ | $Pr^{1/4}Ra_{H}^{1/4}$ |
+
+## Natural Convection Correlations - Vertical Plates
+
+::: vtop
+
+| Geometry | $L_{c}$ | Range of $Ra$ | $Nu$ |
+|:----------:|:----------:|:----------:|--------------------------------------|
+| ![](./assets/Week9_1.excalidraw.svg) | $L$ | $10^{4}-10^{9}$<br><br>$10^{10}-10^{13}$<br><br>Entire Range | $Nu=0.59 Ra_{L}^{1/4}$<br><br>$Nu = 0.1 Ra_{L}^{1/3}$<br><br>$Nu = \left(0.825 + \frac{0.387Ra_{L}^{1/6}}{\left( 1+\left( \frac{0.492}{Pr} \right)^{9/16} \right)^{8/27}}\right)^{2}$ |
+| ![](./assets/Week9_2.excalidraw.svg) | $L$ |  | Use vertical plate equations for the upper surface of a cold plate and lower surface of a hot plate<br><br>Replace $g$ by $g \cos \theta$ for $-60^{0}\leq\theta \leq 60^{0}$ |
+:::
+
+## Natural Convection Correlations - Between Parallel Walls
+
+:::: {.columns}
+
+::: {.column width=70%}
+
+| $\theta$ |            Range of $Ra$            |                       $Nu$                       |
+| :------: | :---------------------------------: | :----------------------------------------------: |
+| $90^{0}$ |      $4\times 10^{4} - 10^{8}$      | $0.28 Ra^{1/4}\left( \frac{H}{L} \right)^{-1/4}$ |
+| $0^{0}$  | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.069 Ra^{1/3}Pr^{0.074}$            |
+| $30^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.065 Ra^{1/3}Pr^{0.074}$            |
+| $45^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.059 Ra^{1/3}Pr^{0.074}$            |
+| $60^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.057 Ra^{1/3}Pr^{0.074}$            |
+| $90^{0}$ | $5\times 10^{8}-7.97 \times 10^{8}$ |            $0.049 Ra^{1/3}Pr^{0.074}$            |
+
+:::
+
+::: {.column width=30% }
+
+![](./assets/Week9_9.excalidraw.svg) 
+
+:::
+
+::::
+
+
+For air the simplified correlations are given below
+
+$$
+\begin{align}
+Nu_{L}  & = 0.18 Gr_{L}^{1/4} \left( \frac{H}{L} \right)^{-1/9}  &  & 2\times 10^{3} < Gr_{L} < 2 \times 10^{4} \\
+Nu_{L}  & =0.65 Gr_{L}^{1/3} \left( \frac{H}{L} \right)^{-1/9}  &  & 2 \times 10^{4} < Gr_{L} < 11\times 10^{6}
+\end{align}
+$$
+
+## Reynolds Averaged Navier Stokes Equations
+
+Continuity equation:
+$$
+\frac{ \partial \bar{u} }{ \partial x } +\frac{ \partial \bar{v} }{ \partial y }+\frac{ \partial \bar{w} }{ \partial z } =0 
+$$
+
+x-momentum equation:
+
+$$
+\rho\left( \bar{u} \frac{ \partial \bar{u} }{ \partial x } +\bar{v} \frac{ \partial \bar{u} }{ \partial y } +\bar{w} \frac{ \partial \bar{u} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial x } +\mu\left( \frac{ \partial^{2} \bar{u} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{u} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{u} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{u'u'} }{ \partial x }-\rho \frac{ \partial \overline{u'v'} }{ \partial y }-\rho \frac{ \partial \overline{u'w'} }{ \partial z } 
+$$
+
+y-momentum equation:
+
+$$
+\rho\left( \bar{u} \frac{ \partial \bar{v} }{ \partial x } +\bar{v} \frac{ \partial \bar{v} }{ \partial y } +\bar{w} \frac{ \partial \bar{v} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial y } +\mu\left( \frac{ \partial^{2} \bar{v} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{v} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{v} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{v'u'} }{ \partial x }-\rho \frac{ \partial \overline{v'v'} }{ \partial y }-\rho \frac{ \partial \overline{v'w'} }{ \partial z } 
+$$
+
+x-momentum equation:
+
+$$
+\rho\left( \bar{u} \frac{ \partial \bar{w} }{ \partial x } +\bar{v} \frac{ \partial \bar{w} }{ \partial y } +\bar{w} \frac{ \partial \bar{w} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial z } +\mu\left( \frac{ \partial^{2} \bar{w} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{w} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{w} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{w'u'} }{ \partial x }-\rho \frac{ \partial \overline{w'v'} }{ \partial y }-\rho \frac{ \partial \overline{w'w'} }{ \partial z } 
+$$
+
+energy equation:
+
+$$
+\rho c_{p}\left( \bar{u} \frac{ \partial \bar{T} }{ \partial x } +\bar{v} \frac{ \partial \bar{T} }{ \partial y } +\bar{w} \frac{ \partial \bar{T} }{ \partial z }  \right)=k \left( \frac{ \partial^{2}\bar{T} }{ \partial x^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial z^{2} }  \right)-\rho c_{p} \frac{ \partial \overline{u'T'} }{ \partial x } -\rho c_{p} \frac{ \partial \overline{v'T'} }{ \partial y } -\rho c_{p} \frac{ \partial \overline{w'T'} }{ \partial z } 
+$$
+
+## Reynolds Stress
+
+Reynolds or turbulent stress is given by 
+
+$$
+\tau=-\rho
+\begin{bmatrix}
+\overline{u'u'} & \overline{u'v'} & \overline{u'w'} \\
+\overline{u'v'} & \overline{v'v'} & \overline{v'w'} \\
+\overline{u'w'} & \overline{v'w'} & \overline{w'w'}
+\end{bmatrix}
+$$
+
+Boussinesq eddy viscosity approximation:
+
+$$
+-\rho \overline{u_{i}'u_{j}'}=-\frac{2}{3}\rho k\delta_{ij}+\mu_{t}\left( \frac{ \partial \bar{u_{i}} }{ \partial x_{j} } + \frac{ \partial \bar{u_{j}} }{ \partial x_{i} }  \right)
+$$
+
+where $k$ is the turbulent kinetic energy and $\mu_{t}$ is the eddy viscosity
+
+$$
+k = \frac{1}{2}(\overline{u'u'}+\overline{v'v'}+\overline{w'w'})
+$$
+
+Shear stress is thus given by
+
+$$
+\tau_{ij}=-\bar{p}_{eff}\delta_{ij}+\mu_{eff}\left( \frac{ \partial \bar{u_{i}} }{ \partial x_{j} } +\frac{ \partial \bar{u_{j}} }{ \partial x_{i} }  \right)
+$$
+
+where $\bar{p}_{eff}=\bar{p}+\frac{2}{3}\rho k$ and $\mu_{eff}=\mu+\mu_{t}$ 
+
+## Turbulent Intensity
+
+The relative magnitude of the root mean square value of the fluctuating components with respect to the time averaged mean velocity
+
+$$
+I = \frac{\sqrt{ \frac{1}{3}(\overline{u'}^{2}+\overline{v'}^{2}+\overline{w'}^{2} })}{|\vec{U}|}
+$$
+
+
+| Case              | Range            |
+| ----------------- | ---------------- |
+| High turbulence   | $5\leq I\leq 20$ |
+| Medium turbulence | $1\leq I \leq 5$ |
+| Low turbulence    | $I<1$            |
+| For laminar flow  | $I=0$            |
+
+## Turbulent Boundary Layer Equations
+
+$$
+\frac{ \partial \bar{u} }{ \partial x } + \frac{ \partial \bar{v} }{ \partial y } =0
+$$
+
+$$
+\bar{u} \frac{ \partial \bar{u} }{ \partial x } + \bar{v} \frac{ \partial \bar{u} }{ \partial y } = \frac{ \partial  }{ \partial y } \left[ (\nu+\nu_{t}) \frac{ \partial \bar{u} }{ \partial y }  \right] 
+$$
+
+$$
+\bar{u}\frac{ \partial \bar{T} }{ \partial x } +\bar{v}\frac{ \partial \bar{T} }{ \partial y } = \frac{ \partial  }{ \partial y } \left[ (\alpha+\alpha_{t})\frac{ \partial \bar{T} }{ \partial y }  \right] 
+$$
+
+Thus, we have $\bar{u},\bar{v},\bar{T},\nu_{t},\alpha_{t}$ (5 unknowns) and 3 equations (above). So we need 2 more equations - Closure problem
+
+
+::: {.callout-note}
+$\nu_{t},\alpha_{t}$ are properties of the flow
+:::
+
+. . .
+
+**Prandtl Mixing Length Theory**
+
+$$
+\nu_{t}=\kappa^{2}y^{2}\left| \frac{ \partial \bar{u} }{ \partial y } \right|
+$$
+
+where $\kappa$ is the von Kármán constant (approximately equal to 0.4)
+
+## Universal Turbulent Velocity Profile
+
+
+
+![Universal Turbulent Velocity Profile](./assets/Week11_1.png){#fig-turbvelprofile}
+
+$$
+u_{\tau}=\sqrt{ \frac{\tau_{w}}{\rho} }
+$$
+
+## Universal Turbulent Temperature Profile
+
+![Universal Turbulent Temperature Profile](./assets/Week11_2.png)
+
+For $Pr\geq 0.7$ and $Pr_{t} \approx 0.9 \text{ or } 1$ 
+
+$$
+T^{+}= (T_{w}-\bar{T}) \frac{\rho c_{p}u_{\tau}}{q_{w}''}
+$$
+
+## Integral Solution & Colburn Analogy
+
+Momentum Integral Equation 
+
+$$
+\frac{d}{dx} \int_{0}^{\delta(x)} \frac{\bar{u}}{U_{\infty}}\left( 1-\frac{\bar{u}}{U_{\infty}} \right) dy = \frac{C_{f}}{2} = \frac{\tau_{w}}{\rho U_{\infty}^{2}}
+$$
+
+The above equation when solved together with $u^{+}=f_{u}(y^{+})$ at $y=\delta$  gives $\delta,C_{f}$. 
+
+$f_{u}$ is the profile taken from universal turbulent velocity profiles near the walls.
+
+**Colburn Analogy**
+
+$$
+St_{x}Pr^{2/3} =\frac{C_{f,x}}{2}
+$$
+
+where $St_{x}=\frac{Nu_{x}}{Re_{x}Pr}$ is the local Stanton number and $C_{f,x}$ is obtained by solving the momentum integral equation.
+
+## Pool Boiling Curve
+
+![Regimes of pool boiling in water at atmospheric pressure](./assets/pool%20boiling%20curve.png){#fig-poolcurve width=60%}
+
+## Laminar film condensation on a vertical plate
+
+:::: {.columns}
+
+::: {.column width=80%}
+
+liquid film thickness, $\delta(x)=\left(\frac{4 \mu_{l}\kappa_{l}(T_{sat}-T_{w})x}{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})}\right)^{1/4}$
+
+liquid film velocity, $u(x,y)=\frac{g(\rho_{l}-\rho_{v})\delta^{2}}{\mu_{l}} \left[\frac{y}{\delta}-\frac{1}{2} (\frac{y}{\delta})^{2}\right]$
+
+liquid mass flow rate per unit width, $\dot{m}=\frac{g \rho_{l}(\rho_{l}-\rho_{v})\delta^{3}}{3\mu_{l}}$
+
+liquid film temperature, $\frac{T_{sat}-T(x,y)}{T_{sat}-T_{w}}=1-\frac{y}{\delta}$
+
+Local Nusselt number:
+
+$$
+Nu = \left[ \frac{h_{fg}' g \rho_{l}(\rho_{l}-\rho_{v})x^{3}}{4 \mu_{l}\kappa_{l}(T_{sat}-T_{w})} \right]^{1/4}
+$$
+where $h_{fg}'=h_{fg}(1+0.68 Ja)$
+
+:::
+
+::: {.column width=20%}
+![](./assets/laminar_condensation.excalidraw.svg)
+:::
+
+::::
+
+Mean Nusselt number:
+
+$$
+\overline{Nu} = \frac{4}{3} \left. Nu\right|_{x=L}
+$$
+
+
+## Laminar Film Condensation on Horizontal Tubes
+
+![Illustration of film condesation on a horizontal cylindrical tube](./assets/horz_tube.excalidraw.svg){#fig-horzcyl}
+
+Condensation rate
+
+$$
+\dot{m}=1.923\left( \frac{g\rho_{l}(\rho_{l}-\rho_{v})\kappa_{l}R^{3}(T_{sat}-T_{w})^{3}}{\mu_{l}h_{f}^{3}} \right)^{1/4}
+$$
+
+Average heat transfer coefficient
+
+$$
+\bar{h_{D}} = 0.729\left( \frac{h_{fg}g \rho_{l}(\rho_{l}-\rho_{v})\kappa_{l}^{3}}{\mu_{l}(T_{sat}-T_{w})D} \right)^{1/4}
+$$
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)

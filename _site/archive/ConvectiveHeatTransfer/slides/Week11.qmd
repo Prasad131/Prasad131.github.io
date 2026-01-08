@@ -1,0 +1,201 @@
+## Reynolds Averaged Navier Stokes Equations
+
+Continuity equation:
+$$
+\frac{ \partial \bar{u} }{ \partial x } +\frac{ \partial \bar{v} }{ \partial y }+\frac{ \partial \bar{w} }{ \partial z } =0 
+$$
+
+x-momentum equation:
+
+$$
+\rho\left( \bar{u} \frac{ \partial \bar{u} }{ \partial x } +\bar{v} \frac{ \partial \bar{u} }{ \partial y } +\bar{w} \frac{ \partial \bar{u} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial x } +\mu\left( \frac{ \partial^{2} \bar{u} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{u} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{u} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{u'u'} }{ \partial x }-\rho \frac{ \partial \overline{u'v'} }{ \partial y }-\rho \frac{ \partial \overline{u'w'} }{ \partial z } 
+$$
+
+y-momentum equation:
+
+$$
+\rho\left( \bar{u} \frac{ \partial \bar{v} }{ \partial x } +\bar{v} \frac{ \partial \bar{v} }{ \partial y } +\bar{w} \frac{ \partial \bar{v} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial y } +\mu\left( \frac{ \partial^{2} \bar{v} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{v} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{v} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{v'u'} }{ \partial x }-\rho \frac{ \partial \overline{v'v'} }{ \partial y }-\rho \frac{ \partial \overline{v'w'} }{ \partial z } 
+$$
+
+x-momentum equation:
+
+$$
+\rho\left( \bar{u} \frac{ \partial \bar{w} }{ \partial x } +\bar{v} \frac{ \partial \bar{w} }{ \partial y } +\bar{w} \frac{ \partial \bar{w} }{ \partial z }  \right)=-\frac{ \partial \bar{p} }{ \partial z } +\mu\left( \frac{ \partial^{2} \bar{w} }{ \partial x^{2} }+\frac{ \partial^{2} \bar{w} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{w} }{ \partial z^{2} }   \right)-\rho \frac{ \partial \overline{w'u'} }{ \partial x }-\rho \frac{ \partial \overline{w'v'} }{ \partial y }-\rho \frac{ \partial \overline{w'w'} }{ \partial z } 
+$$
+
+energy equation:
+
+$$
+\rho c_{p}\left( \bar{u} \frac{ \partial \bar{T} }{ \partial x } +\bar{v} \frac{ \partial \bar{T} }{ \partial y } +\bar{w} \frac{ \partial \bar{T} }{ \partial z }  \right)=k \left( \frac{ \partial^{2}\bar{T} }{ \partial x^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial y^{2} } +\frac{ \partial^{2}\bar{T} }{ \partial z^{2} }  \right)-\rho c_{p} \frac{ \partial \overline{u'T'} }{ \partial x } -\rho c_{p} \frac{ \partial \overline{v'T'} }{ \partial y } -\rho c_{p} \frac{ \partial \overline{w'T'} }{ \partial z } 
+$$
+
+## Reynolds Stress
+
+Reynolds or turbulent stress is given by 
+
+$$
+\tau=-\rho
+\begin{bmatrix}
+\overline{u'u'} & \overline{u'v'} & \overline{u'w'} \\
+\overline{u'v'} & \overline{v'v'} & \overline{v'w'} \\
+\overline{u'w'} & \overline{v'w'} & \overline{w'w'}
+\end{bmatrix}
+$$
+
+Boussinesq eddy viscosity approximation:
+
+$$
+-\rho \overline{u_{i}'u_{j}'}=-\frac{2}{3}\rho k\delta_{ij}+\mu_{t}\left( \frac{ \partial \bar{u_{i}} }{ \partial x_{j} } + \frac{ \partial \bar{u_{j}} }{ \partial x_{i} }  \right)
+$$
+
+where $k$ is the turbulent kinetic energy and $\mu_{t}$ is the eddy viscosity
+
+$$
+k = \frac{1}{2}(\overline{u'u'}+\overline{v'v'}+\overline{w'w'})
+$$
+
+Shear stress is thus given by
+
+$$
+\tau_{ij}=-\bar{p}_{eff}\delta_{ij}+\mu_{eff}\left( \frac{ \partial \bar{u_{i}} }{ \partial x_{j} } +\frac{ \partial \bar{u_{j}} }{ \partial x_{i} }  \right)
+$$
+
+where $\bar{p}_{eff}=\bar{p}+\frac{2}{3}\rho k$ and $\mu_{eff}=\mu+\mu_{t}$ 
+
+## Turbulent Intensity
+
+The relative magnitude of the root mean square value of the fluctuating components with respect to the time averaged mean velocity
+
+$$
+I = \frac{\sqrt{ \frac{1}{3}(\overline{u'}^{2}+\overline{v'}^{2}+\overline{w'}^{2} })}{|\vec{U}|}
+$$
+
+
+| Case              | Range            |
+| ----------------- | ---------------- |
+| High turbulence   | $5\leq I\leq 20$ |
+| Medium turbulence | $1\leq I \leq 5$ |
+| Low turbulence    | $I<1$            |
+| For laminar flow  | $I=0$            |
+
+## Turbulent Boundary Layer Equations
+
+$$
+\frac{ \partial \bar{u} }{ \partial x } + \frac{ \partial \bar{v} }{ \partial y } =0
+$$
+
+$$
+\bar{u} \frac{ \partial \bar{u} }{ \partial x } + \bar{v} \frac{ \partial \bar{u} }{ \partial y } = \frac{ \partial  }{ \partial y } \left[ (\nu+\nu_{t}) \frac{ \partial \bar{u} }{ \partial y }  \right] 
+$$
+
+$$
+\bar{u}\frac{ \partial \bar{T} }{ \partial x } +\bar{v}\frac{ \partial \bar{T} }{ \partial y } = \frac{ \partial  }{ \partial y } \left[ (\alpha+\alpha_{t})\frac{ \partial \bar{T} }{ \partial y }  \right] 
+$$
+
+Thus, we have $\bar{u},\bar{v},\bar{T},\nu_{t},\alpha_{t}$ (5 unknowns) and 3 equations (above). So we need 2 more equations - Closure problem
+
+
+::: {.callout-note}
+$\nu_{t},\alpha_{t}$ are properties of the flow
+:::
+
+. . .
+
+**Prandtl Mixing Length Theory**
+
+$$
+\nu_{t}=\kappa^{2}y^{2}\left| \frac{ \partial \bar{u} }{ \partial y } \right|
+$$
+
+where $\kappa$ is the von Kármán constant (approximately equal to 0.4)
+
+## Universal Turbulent Velocity Profile
+
+
+
+![Universal Turbulent Velocity Profile](./assets/Week11_1.png){#fig-turbvelprofile}
+
+$$
+u_{\tau}=\sqrt{ \frac{\tau_{w}}{\rho} }
+$$
+
+## Universal Turbulent Temperature Profile
+
+![Universal Turbulent Temperature Profile](./assets/Week11_2.png)
+
+For $Pr\geq 0.7$ and $Pr_{t} \approx 0.9 \text{ or } 1$ 
+
+$$
+T^{+}= (T_{w}-\bar{T}) \frac{\rho c_{p}u_{\tau}}{q_{w}''}
+$$
+
+## Integral Solution & Colburn Analogy
+
+Momentum Integral Equation 
+
+$$
+\frac{d}{dx} \int_{0}^{\delta(x)} \frac{\bar{u}}{U_{\infty}}\left( 1-\frac{\bar{u}}{U_{\infty}} \right) dy = \frac{C_{f}}{2} = \frac{\tau_{w}}{\rho U_{\infty}^{2}}
+$$
+
+The above equation when solved together with $u^{+}=f_{u}(y^{+})$ at $y=\delta$  gives $\delta,C_{f}$. 
+
+$f_{u}$ is the profile taken from universal turbulent velocity profiles near the walls.
+
+**Colburn Analogy**
+
+$$
+St_{x}Pr^{2/3} =\frac{C_{f,x}}{2}
+$$
+
+where $St_{x}=\frac{Nu_{x}}{Re_{x}Pr}$ is the local Stanton number and $C_{f,x}$ is obtained by solving the momentum integral equation.
+
+See @sec-integralsolCf for an example
+
+# Problems 
+
+## Integral Solution for turbulent boundary layer over flat plate{#sec-integralsolCf}
+
+Derive the skin friction coefficient formula recommended by Prandtl’s one-seventh power law velocity profile (obtain correlation from the data shown in the slides). Note that in this case, $\frac{u}{U_{\infty}}=\left( \frac{y}{\delta} \right)^{1/7}$.
+
+[Solution](./assets/week11/vonKarman.pdf)
+
+## Nusselt number correlation with transition point
+
+Consider the heat transfer in boundary layer flow from an isothermal wall $T_{0}$ to a constant temperature stream $(U_{\infty},T_{\infty})$. The leading laminar section of the boundary layer has a length comparable with the length of the trailing turbulent section; consequently, the heat flux averaged over the entire wall length L is influenced by both sections. Derive a formula for the L-averaged Nusselt number, assuming that the laminar–turbulent transition is located at a point $x$ (between $x=0$ and $x=L$) where $\frac{xU_{\infty}}{\nu}=3.5\times 10^{5}$ 
+
+[Solution](./assets/week11/nu_lam_turb.pdf)
+
+## Boundary Layer Thickness - Turbulent Flow
+
+Water flows with the velocity $U_{\infty}=0.2 m / s$ parallel to a plane wall. The following calculations refer to the position $x=6 m$ measured downstream from the leading edge. The water properties can be evaluated at 20^0^C.
+
+(a) A probe is to be inserted in the viscous sublayer to the position represented by $y^{+}=2.7$.Calculate the actual spacing y (mm) between the probe and the wall.
+
+(b) Calculate the boundary layer thickness δ, assuming that the length x is covered by turbulent boundary layer flow.
+
+(c) Calculate the heat transfer coefficient averaged over the length x.
+(Use the solution from @sec-integralsolCf)
+
+[Solution](./assets/week11/water.pdf)
+
+## Heat Transfer Coefficient - Colburn Analogy
+
+Compute heat-transfer coefficients for water flowing at an average temperature of 40°C and at a velocity of 0.5 m/s in a 2.54 cm diameter duct using Colburn analogy. (The friction factor is given by $f=0.079 Re^{-1/4}$)
+
+[Solution](./assets/week11/colburn.pdf)
+
+## Ice Berg Drift
+
+A flat sheet (tabular) iceberg drifts over the ocean as it is driven by the wind that blows over the top. The temperature of the surrounding seawater is 10^0^C, and the relative velocity between it and the iceberg is 10cm/s. The length of the iceberg in the direction of drift is L=100m. Calculate the corresponding wind velocity when the atmospheric air temperature is 40^0^C. (Make suitable assumptions to simplify the problem and state them).
+
+[Solution](./assets/week11/iceberg.pdf)
+
+## Pumping Power - Laminar vs Turbulent
+
+Consider the flow of a fluid through a tube of fixed diameter D and length L. The mass flow rate $\dot{m}$ is also fixed. The only change that may occur is the switch from laminar to turbulent flow because the Reynolds number $Re_{D}$ happens to be in the vicinity of 2000. In either regime, the flow is fully developed. Calculate the change in the pumping power required as the laminar flow is replaced by turbulent flow.
+
+[Solution](./assets/week11/pumping.pdf)
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)

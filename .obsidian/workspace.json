@@ -35,7 +35,8 @@
               "title": "Week12"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -186,12 +186,12 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "74e481460e9e6e3d",
+  "active": "4c2f379a48ff91d6",
   "lastOpenFiles": [
+    "slides/Summary.qmd",
     "slides/Summary_files/mediabag",
     "slides/Week12.qmd",
     "slides/Week11.qmd",
-    "slides/Summary.qmd",
     "slides/Week9.qmd",
     "slides/Week8.qmd",
     "slides/Week7.qmd",

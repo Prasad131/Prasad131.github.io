@@ -1,0 +1,218 @@
+## Basics of Finite Difference Method
+
+Consider a second order differential equations as follows
+
+$$
+A \phi_{xx}+B \phi_{xy}+C \phi_{yy} + D \phi_{x} +  E \phi_{y}+F \phi = G(x,y)
+$$
+$$
+\begin{align}
+B^{2}-4AC = 0 &  & \text{parabolic} \\
+B^{2}-4AC < 0  &  & \text{elliptic} &  & \text{equilibrium problems} \\
+B^{2}-4AC > 0  &  & \text{hyperbolic} &  & \text{time marching problems}
+\end{align}
+$$
+
+Taylor Series expansion 
+
+$$
+f(x+\Delta x) = f(x)+\Delta x \frac{ \partial f }{ \partial x } +\frac{\Delta x^{2}}{2!} \frac{ \partial^{2} f }{ \partial x^{2} } + \frac{\Delta x^{3}}{3!}\frac{ \partial^{3} f }{ \partial x^{3} } +\dots
+$$
+
+First-order forward difference: 
+
+$$
+\frac{ \partial T_{i,j} }{ \partial x }=\frac{T_{i+1,j}-T_{i,j}}{\Delta x}+O(\Delta x)
+$$
+
+First-order backward difference: 
+$$
+\frac{ \partial T_{i,j} }{ \partial x }=\frac{T_{i,j}-T_{i-1,j}}{\Delta x}+O(\Delta x)
+$$
+
+Second-order central difference: 
+$$
+\frac{ \partial^{2} T_{i,j} }{ \partial x^{2} }=\frac{T_{i+1,j}-2T_{i,j}+T_{i-1,j}}{\Delta x^{2}}+O(\Delta x^{2})
+$$ 
+
+## Problem - 1D Unsteady Heat Conduction with volumetric heat generation term 
+
+Discretise the below equation with first order backward time and second-order central differencing in spatial domain
+
+$$
+\frac{ \partial T }{ \partial t } = \alpha \frac{ \partial^{2} T }{ \partial x^{2} }  + \frac{q'''}{\rho c_{p}}
+$$
+
+[Solution](./assets/week10/discretise.pdf)
+
+## Checker boarding problem 
+
+Which of the following is the reason for checker boarding problem? 
+ 
+- [ ] second-order central differencing of pressure term in momentum equations
+- [ ] second-order central differencing of velocity term in continuity equation
+- [ ] storing velocity and pressure at the same grid points
+
+. . .
+
+:::: {.columns}
+
+::: {.column width=60%}
+The major reason for checker boarding problem is the decoupling due to central differencing in both continuity and momentum equations. The central differencing allows for oscillating solutions, where both continuity and momentum equations will be satisfied while it is not physically possible. 
+
+Staggered grid allows to couple these two, so even if one of them is not physical, the solver looks for other solutions and will eventually converges to a physically consistent solution
+:::
+
+::: {.column width=40%}
+![](./assets/Week10_1.excalidraw.svg)
+:::
+
+::::
+
+## Discretising the advection term
+
+Advection term $\frac{ \partial u \phi }{ \partial x }$ needs to be discretised on a 1D grid point $i$
+
+$$
+\begin{align}
+\frac{ \partial (u \phi) }{ \partial x }  & = \frac{\left( u_{i+\frac{1}{2}} .\phi_{i+\frac{1}{2}}-u_{i-\frac{1}{2}}.\phi_{i-\frac{1}{2}}\right)}{\Delta x} \\
+u_{i+\frac{1}{2}}.\phi_{i+\frac{1}{2}}  & =\phi_{i}. \frac{ u_{i+\frac{1}{2}}+|u_{i+\frac{1}{2}}|}{2}+\phi_{i+1}.\frac{ u_{i+\frac{1}{2}}-|u_{i+\frac{1}{2}}|}{2} &  & \text{upwind scheme} \\
+ &=u_{i+\frac{1}{2}} .\frac{\phi_{i}+\phi_{i+1}}{2}+|u_{i+\frac{1}{2}}|. \frac{\phi_{i}-\phi_{i+1}}{2} \\
+ & =u_{i+\frac{1}{2}} .\frac{\phi_{i}+\phi_{i+1}}{2} &  & \text{central difference} \\
+ & = r (\text{upwind}) + (1-r) (\text{central}) \\
+ & =u_{i+\frac{1}{2}}.\frac{\phi_{i}+\phi_{i+1}}{2}+r |u_{i+\frac{1}{2}}| .\frac{\phi_{i}-\phi_{i+1}}{2} \\
+u_{i-\frac{1}{2}}.\phi_{i-\frac{1}{2}}  &= u_{i-\frac{1}{2}} .\frac{\phi_{i}+\phi_{i-1}}{2}+r |u_{i-\frac{1}{2}}|. \frac{\phi_{i-1}-\phi_{i}}{2}
+\end{align}
+$$
+
+where $u_{i+\frac{1}{2}}=\frac{u_{i}+u_{i+1}}{2}$ and $u_{i-\frac{1}{2}}=\frac{u_{i}+u_{i-1}}{2}$
+
+## Problem - Marker and cell algorithm (MAC)
+
+Under MAC algorithm, which of the following statements are true?
+
+- [ ] continuity equations is discretised at current time step ($n$)
+- [ ] momentum equation is solved by assuming pressure from previous time step to get velocities
+- [ ] pressure corrections are assumed to be zero in the neighbouring cells
+- [ ] corrected velocities are obtained by solving the momentum equation with corrected pressures
+
+. . .
+
+MAC algorithm:
+
+1. Discretise $\frac{Du}{Dt}=- \frac{\nabla p}{\rho}+\nu \nabla^{2}u$ 
+2. Taking $p$ from previous time step solve the above equation to get $\tilde{u}$ (predicted velocity)
+3. Compute actual velocity $u=\tilde{u}+k \nabla p'$, by solving $\nabla.u=\nabla.\tilde{u}+k\nabla^2 p'=0$ 
+4. Update pressure values as $p^{n+1}=p^{n}+p'$ where $p^{n}=p$ . 
+
+To accelerate convergence, the value of $k$ need to be reduced. Similarly, increasing $k$ can lead to a stable convergence
+
+## Boundary Conditions
+
+:::: {.columns}
+
+::: {.column width=50%} 
+
+Flow
+
+1. Prescribed velocity: $u_{i}=u_{b}$
+2. Outflow: $u_{b}=u_{i}$
+3. No Slip: $u_{b}=0$ 
+
+:::
+
+::: {.column width=50%}
+
+Temperature
+
+1. Prescribed Temperature: $T_{i}=T_{b}$
+2. Adiabatic: $T_{b}=T_{i}$
+3. Convection: $T_{i}= \frac{h_{int}T_{i-1}+h_{ext}T_{b}}{h_{int}+h_{ext}}$
+
+:::
+
+::::
+
+# Problems
+
+
+## Couette Flow
+
+Consider the fully developed flow between two parallel plates as shown in the figure below. Write down the governing equation for the flow (along $y$ direction). Discretise the governing equation using finite difference scheme and obtain the solution for velocity as a function of $y$. 
+
+![](./assets/Week10_2.excalidraw.svg)
+
+. . .
+
+Governing equation:
+
+$$
+\frac{d^{2}u}{dy^{2}}=0 
+$$
+
+Boundary conditions:
+
+$$
+\begin{align}
+u(y=0) & =0 \\
+u(y=d) & =U
+\end{align}
+$$
+
+Consider $d=1,U=1$ 
+
+[Solution](./assets/week10/couette.pdf)
+
+## Channel flow (parallel plates)
+
+Consider the same problem as before except for $U=0$ and there is a constant pressure gradient of 1Pa/m, the viscosity of the fluid to be 1kg / m.s and the separation between the plates to be 1m. (The problem is meant to illustrate the application of techniques presented in the lecture videos, hence the little emphasis was given to the values of the properties. Student is advised to attempt the solution with more realistic values when needed)
+
+![](./assets/Week10_2.excalidraw.svg)
+
+. . .
+
+Governing equation:
+
+$$
+\mu\frac{ d^{2}u}{dy^{2}}-\frac{dp}{dx}=0
+$$
+
+Boundary conditions:
+
+$$
+\begin{align}
+u(y=0) & =0 \\
+u(y=1) & =0
+\end{align}
+$$
+
+[Solution](./assets/week10/channel.pdf)
+
+## Steady Diffusion
+
+Consider a square slab of length 1m and thermal conductivity of 1 W/m.K with boundary conditions as specified in the figure below. If the initial temperature throughout the domain is 300K. Derive the discrete equations for the problem and solve for temperature profile as a function of space.
+
+![](./assets/Week10_3.excalidraw.svg)
+
+[Solution](./assets/week10/unsteadyDiffusion.pdf)
+
+## Advection - Diffusion (upwind scheme)
+
+Consider a square slab of length 1m and thermal conductivity of 1 W/m.K (assume $\alpha=1 m^{2} / s$) with boundary conditions as specified in the figure below. If the initial temperature throughout the domain is 300K. However, unlike the previous problem assume there is a constant velocity field throughout the domain given by $\vec{u}=1 \hat{i}+2\hat{j}$ m/s.  Derive the discrete equations for the problem and solve for temperature profile as a function of space. Use the upwind scheme to solve the problem.
+
+![](./assets/Week10_3.excalidraw.svg)
+
+[Solution](./assets/week10/upwind.pdf)
+
+## Advection - Diffusion (central scheme)
+
+Consider a square slab of length 1m and thermal conductivity of 1 W/m.K (assume $\alpha=1 m^{2} / s$) with boundary conditions as specified in the figure below. If the initial temperature throughout the domain is 300K. However, unlike the previous problem assume there is a constant velocity field throughout the domain given by $\vec{u}=1 \hat{i}+2\hat{j}$ m/s.  Derive the discrete equations for the problem and solve for temperature profile as a function of space. Use the central scheme to solve the problem.
+
+![](./assets/Week10_3.excalidraw.svg)
+
+[Solution](./assets/week10/central.pdf)
+
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)

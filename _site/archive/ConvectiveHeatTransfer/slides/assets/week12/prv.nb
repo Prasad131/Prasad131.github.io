@@ -1,0 +1,309 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     10664,        301]
+NotebookOptionsPosition[      9514,        273]
+NotebookOutlinePosition[      9951,        290]
+CellTagsIndexPosition[      9908,        287]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", " ", "=", " ", "4.76"}], ";", " ", 
+   RowBox[{
+    SubscriptBox["T", "w"], "=", "160"}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.969055383812792*^9, 3.9690553989993563`*^9}, {
+  3.9690574713878717`*^9, 3.9690574887535686`*^9}, {3.9690575824905453`*^9, 
+  3.969057583059864*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"9e306e0b-5015-4d30-a22e-423132a6e7a8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SubscriptBox["T", "sat"], " ", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ThermodynamicData", "[", 
+      RowBox[{"\"\<Water\>\"", ",", " ", "\"\<LiquidVaporPhaseBoundary\>\"", ",",
+        " ", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Pressure\>\"", " ", "->", " ", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "-", "273.15"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Mu]", "l"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<Viscosity\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Temperature\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{
+          SubscriptBox["T", "sat"], ",", "\"\<DegreesCelsius\>\""}], "]"}]}], 
+       "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["h", "f"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<Enthalpy\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Pressure\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["h", "g"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<Enthalpy\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<Pressure\>\"", "->", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], ",", 
+        RowBox[{"\"\<Quality\>\"", "->", "1"}]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["h", "fg"], " ", "=", " ", 
+   RowBox[{
+    SubscriptBox["h", "g"], " ", "-", " ", 
+    SubscriptBox["h", "f"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["v", "f"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<SpecificVolume\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Pressure\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["v", "g"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<SpecificVolume\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<Pressure\>\"", "->", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], ",", 
+        RowBox[{"\"\<Quality\>\"", "->", "1"}]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Rho]", "l"], " ", "=", " ", 
+   FractionBox["1", 
+    SubscriptBox["v", "f"]]}], ";", "  ", 
+  RowBox[{
+   SubscriptBox["\[Rho]", "v"], " ", "=", " ", 
+   FractionBox["1", 
+    SubscriptBox["v", "g"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["c", "pl"], " ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<IsobaricHeatCapacity\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Pressure\>\"", "->", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[Kappa]", "l"], "  ", "=", " ", 
+   RowBox[{
+    RowBox[{"ThermodynamicData", "[", 
+     RowBox[{"\"\<Water\>\"", ",", "\"\<ThermalConductivity\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<Pressure\>\"", "->", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{"P", ",", "\"\<bar\>\""}], "]"}]}], ",", 
+        RowBox[{"\"\<Quality\>\"", "->", "1"}]}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["Pr", "l"], " ", "=", " ", 
+   FractionBox[
+    RowBox[{
+     SubscriptBox["\[Mu]", "l"], 
+     SubscriptBox["c", "pl"]}], 
+    SubscriptBox["\[Kappa]", "l"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[CapitalDelta]T", "e"], " ", "=", " ", 
+   RowBox[{
+    SubscriptBox["T", "w"], "-", 
+    SubscriptBox["T", "sat"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["c", "sf"], " ", "=", " ", "0.0128"}], ";"}], 
+  " "}]}], "Input",
+ CellChangeTimes->{
+  3.969055735820335*^9, {3.969055768517067*^9, 3.969055789958823*^9}, 
+   3.969057097689106*^9, 3.969057483735276*^9, {3.9690575222144213`*^9, 
+   3.969057530378808*^9}, {3.969057572751171*^9, 3.969057598179778*^9}, {
+   3.969057639368946*^9, 3.9690576707326593`*^9}, {3.969057721762024*^9, 
+   3.9690577517533607`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"6ce4b57d-e3a2-457a-abee-2d943d542815"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"qs", "=", " ", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Mu]", "l"], " ", 
+    SubscriptBox["h", "fg"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["\[Rho]", "l"], "-", 
+          SubscriptBox["\[Rho]", "v"]}], ")"}]}], "\[Sigma]"], ")"}], 
+     RowBox[{"1", "/", "2"}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["c", "pl"], " ", 
+        SubscriptBox["\[CapitalDelta]T", "e"]}], 
+       RowBox[{
+        SubscriptBox["c", "sf"], " ", 
+        SubscriptBox["h", "fg"], " ", 
+        SuperscriptBox[
+         SubscriptBox["Pr", "l"], "n"]}]], ")"}], "3"]}], " ", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"g", "->", "9.81"}], ",", 
+     RowBox[{"\[Sigma]", "->", "0.0482"}], ",", " ", 
+     RowBox[{"n", "->", "1"}]}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.969056393564042*^9, 3.969056402867261*^9}, {
+  3.969056445107648*^9, 3.969056562314396*^9}, {3.969056977885083*^9, 
+  3.969056978045053*^9}, {3.9690571503856*^9, 3.969057162632578*^9}, {
+  3.9690572244749002`*^9, 3.9690572458126793`*^9}, {3.9690573666968727`*^9, 
+  3.969057377143626*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"fa1ffb9d-84a2-4892-9557-cfef239107df"],
+
+Cell[BoxData["4210.450645135606`"], "Output",
+ CellChangeTimes->{3.9690577650826387`*^9, 3.969064323720183*^9, 
+  3.9690643672559767`*^9},
+ CellLabel->"Out[51]=",ExpressionUUID->"05b61f88-8f96-44a8-a737-c34b1ec8b936"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Q", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"qs", " ", 
+    FractionBox[
+     RowBox[{"\[Pi]", " ", 
+      SuperscriptBox["D", "2"]}], "4"]}], "/.", 
+   RowBox[{"{", 
+    RowBox[{"D", "->", "0.2"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.969057227972905*^9, 3.969057268933098*^9}, {
+  3.969064308583309*^9, 3.96906434755693*^9}, {3.9690644802568893`*^9, 
+  3.969064491120425*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"515e1d0d-01a9-4149-8719-0ad42a08898f"],
+
+Cell[BoxData["132.27520815060424`"], "Output",
+ CellChangeTimes->{
+  3.969057765103573*^9, {3.969064319555245*^9, 3.969064367283033*^9}, 
+   3.9690644916922913`*^9},
+ CellLabel->"Out[54]=",ExpressionUUID->"51b9a703-6eed-455f-b0ce-f1b68b68dd23"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"qsMax", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"0.149", " ", 
+    SubscriptBox["h", "fg"], " ", 
+    SubscriptBox["\[Rho]", "v"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"\[Sigma]", " ", "g", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["\[Rho]", "l"], "-", 
+          SubscriptBox["\[Rho]", "v"]}], ")"}]}], 
+       SuperscriptBox[
+        SubscriptBox["\[Rho]", "v"], "2"]], ")"}], 
+     RowBox[{"1", "/", "4"}]]}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"g", "->", "9.81"}], ",", " ", 
+     RowBox[{"\[Sigma]", "->", "0.0482"}]}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.9690577709869223`*^9, 3.969057818746812*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"ff449107-3410-48de-ab99-95b074992063"],
+
+Cell[BoxData["2.9483701708419877`*^6"], "Output",
+ CellChangeTimes->{3.969057822565076*^9, 3.969064323764367*^9, 
+  3.969064367302581*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"42a9e5e3-b474-4a4a-88cc-a064ac691733"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"be8834a3-a269-454c-9db0-0346b13f0297"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 415, 9, 44, "Input",ExpressionUUID->"9e306e0b-5015-4d30-a22e-423132a6e7a8"],
+Cell[972, 31, 5130, 139, 537, "Input",ExpressionUUID->"6ce4b57d-e3a2-457a-abee-2d943d542815"],
+Cell[CellGroupData[{
+Cell[6127, 174, 1327, 36, 72, "Input",ExpressionUUID->"fa1ffb9d-84a2-4892-9557-cfef239107df"],
+Cell[7457, 212, 217, 3, 50, "Output",ExpressionUUID->"05b61f88-8f96-44a8-a737-c34b1ec8b936"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7711, 220, 485, 12, 67, "Input",ExpressionUUID->"515e1d0d-01a9-4149-8719-0ad42a08898f"],
+Cell[8199, 234, 244, 4, 50, "Output",ExpressionUUID->"51b9a703-6eed-455f-b0ce-f1b68b68dd23"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8480, 243, 798, 22, 69, "Input",ExpressionUUID->"ff449107-3410-48de-ab99-95b074992063"],
+Cell[9281, 267, 217, 3, 50, "Output",ExpressionUUID->"42a9e5e3-b474-4a4a-88cc-a064ac691733"]
+}, Open  ]]
+}
+]
+*)
+

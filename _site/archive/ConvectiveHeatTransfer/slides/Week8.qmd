@@ -1,0 +1,344 @@
+## Assumptions
+
+-   Steady, laminar, 2D flow
+-   Viscous dissipation term is neglected
+-   Boundary layer approximation is valid ($\delta_T/H \ll 1$)
+-   Temperature difference between plate and flud is small enough to assume constant properties of the fluid
+-   Flow is incompressible - however, density will vary with location. The assumption is valid because the change in density is due to changes in temperature field
+
+![Illustration of natural convection over a vertical heated plate](./assets/Week8_1.excalidraw.svg){#fig-natconvplate}
+
+## Boussinesq Approximation
+
+Treat density as constant in the continuity equation and the inertia terms of the momentum equation, but allow it to change with temperature in the gravity term
+
+Thus, continuity equation becomes
+
+$$
+\frac{ \partial u }{ \partial x } + \frac{ \partial v }{ \partial y } =0
+$$
+
+X-momentum equation is neglected under boundary layer approximation, hence y-momentum equation becomes
+
+$$
+u \frac{ \partial v }{ \partial x } +v \frac{ \partial v }{ \partial y } = \nu \frac{ \partial^{2} v }{ \partial x^{2} }+ \beta g(T-T_{\infty})
+$$ where $\beta=-\frac{1}{\rho}\left.\frac{ \partial \rho }{ \partial T }\right|_{P}$ is the volumetric expansion coefficient of the fluid
+
+Energy equation becomes
+
+$$
+u \frac{ \partial T }{ \partial x } +v \frac{ \partial T }{ \partial y } = \alpha \frac{ \partial^{2} T }{ \partial x^{2} } 
+$$
+
+## Scale Analysis
+
+$$
+\begin{align}
+x  & \sim  & \delta_{T} & u  & \sim & \frac{\alpha}{\delta_{T}} \\
+y & \sim & H  & v & \sim & \frac{\alpha H}{\delta_{T}^{2}}
+\end{align}
+$$
+
+non-dimensional numbers governing the flow physics are
+
+$$
+\begin{align}
+\text{Prandlt number, } Pr &  = \frac{\nu}{\alpha} \\
+\text{Rayleigh number, } Ra_{H} & = \frac{g\beta \Delta TH^{3}}{\alpha \nu}
+\end{align}
+$$
+
+Scaling analysis for the momentum equations gives us,
+
+$$
+u \frac{ \partial v }{ \partial x } + v \frac{ \partial v }{ \partial y } = \nu \frac{ \partial^{2} v }{ \partial^{2} } + g\beta(T-T_{\infty}) 
+$$
+
+$$
+\begin{align}
+u \frac{ \partial v }{ \partial x },  v \frac{ \partial v }{ \partial y }  & \sim \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1}Pr^{-1} \\
+\nu \frac{ \partial^{2} v }{ \partial x^{2} }  & \sim  \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1} \\
+g\beta (T-T_{\infty}) & \sim 1
+\end{align}
+$$
+
+## Nusselt number for $Pr\gg 1$
+
+$$
+\begin{align}
+u \frac{ \partial v }{ \partial x },  v \frac{ \partial v }{ \partial y }  & \sim \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1}Pr^{-1} \\
+\nu \frac{ \partial^{2} v }{ \partial x^{2} }  & \sim  \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1} \\
+g\beta (T-T_{\infty}) & \sim 1
+\end{align}
+$$
+
+If $Pr\gg 1$, then the inertial terms would be negligible or viscous and buoyancy forces balance each other
+
+$$
+\implies \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1} \sim 1
+$$
+
+which gives us an estimate of the boundary layer thickness as $\frac{\delta_{T}}{H} \sim Ra_{H}^{-1/4}$
+
+Heat transfer coefficient is given by,
+
+$$
+\begin{align}
+h  & = \frac{-\kappa \left. \frac{ \partial T }{ \partial x } \right|_{x=0}}{T_{w}-T_{\infty}} \\
+h & \sim \frac{\kappa}{\delta_{T}}
+\end{align}
+$$
+
+If we define Nusselt number, $Nu_{H}=\frac{hH}{\kappa}$
+
+$$
+\implies Nu \sim \frac{H}{\delta_{T}} \sim Ra_{H}^{1/4}
+$$
+
+## Nusselt number for $Pr\ll 1$
+
+$$
+\begin{align}
+u \frac{ \partial v }{ \partial x },  v \frac{ \partial v }{ \partial y }  & \sim \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1}Pr^{-1} \\
+\nu \frac{ \partial^{2} v }{ \partial x^{2} }  & \sim  \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1} \\
+g\beta (T-T_{\infty}) & \sim 1
+\end{align}
+$$
+
+If $Pr\ll 1$, then the viscous terms would be negligible or inertial and buoyance forces balance each other
+
+$$
+\implies \left( \frac{H}{\delta_{T}} \right)^{4}Ra_{H}^{-1}Pr^{-1} \sim 1
+$$
+
+which gives us an estimate of the boundary layer thickness as $\frac{\delta_{T}}{H} \sim Ra_{H}^{-1/4}Pr^{-1/4}$
+
+Heat transfer coefficient is given by,
+
+$$
+\begin{align}
+h  & = \frac{-\kappa \left. \frac{ \partial T }{ \partial x } \right|_{x=0}}{T_{w}-T_{\infty}} \\
+h & \sim \frac{\kappa}{\delta_{T}}
+\end{align}
+$$
+
+If we define Nusselt number, $Nu_{H}=\frac{hH}{\kappa}$
+
+$$
+\implies Nu \sim \frac{H}{\delta_{T}} \sim Ra_{H}^{1/4}Pr^{1/4} \sim Bo_{H}^{1/4}
+$$
+
+where Boussinesq number, $Bo_{H} = Ra_{H}Pr$
+
+## Nusselt number for $Pr\ll 1$ and close to wall
+
+::::: columns
+::: {.column width="50%"}
+Very close to the wall, inertial forces are small, hence viscous and buoyancy forces balance each other, say $\delta_{\nu}$ is the thickness of this thin region
+
+$$
+\implies \nu \frac{ \partial^{2}v }{ \partial x^{2} } \sim g\beta(T-T_{\infty})
+$$
+
+we obtain,
+
+$$
+\frac{\delta_{\nu}}{H} \sim Gr_{H}^{-1/4}
+$$
+
+where $Gr_{H}=\frac{Ra_{H}}{Pr}$
+
+and, we have $\frac{\delta_{\nu}}{\delta_{T}} \sim Pr^{1/2}$
+:::
+
+::: {.column width="50%"}
+![Illustration of viscous region close to the wall](./assets/Week8_2.excalidraw.svg){#fig-closewall fig-align="center"}
+:::
+:::::
+
+## Non-dimensionalising Governing Equations
+
+Non-dimensional parameters $$
+x^{*} = \frac{x}{H}, y^{*}=\frac{y}{H}
+$$
+
+$$
+u^{*} = \frac{u}{U_{ref}}, v^{*} = \frac{v}{U_{ref}}
+$$
+
+$$
+\theta = \frac{T-T_{\infty}}{T_{w}-T_{\infty}}
+$$
+
+Continuity
+
+$$
+\frac{ \partial u^{*} }{ \partial  x^{*} } + \frac{ \partial v^{*} }{ \partial y^{*} }=0 
+$$
+
+Y-Momentum equation
+
+$$
+u^{*} \frac{ \partial v^{*} }{ \partial x^{*} } + v^{*} \frac{ \partial v^{*} }{ \partial y^{*} } = \frac{1}{\mathrm{Re}_{H}} \frac{ \partial^{2} v^{*} }{ \partial x^{*2} } + \frac{g\beta(T_{w}-T_{\infty})H}{U_{ref}^{2}} \theta 
+$$
+
+Energy equation
+
+$$
+u^{*} \frac{ \partial \theta }{ \partial x^{*} } + v^{*} \frac{ \partial \theta }{ \partial y^{*} } = \frac{1}{\mathrm{Re}_{H}Pr} \frac{ \partial^{2} \theta }{ \partial x^{*2} }  
+$$
+
+We define Grashof number, $Gr_{H}=\frac{g\beta(T_{w}-T_{\infty})H}{U_{ref}^{2}}\theta$ and Richardson number, $Ri_{H}=\frac{Gr_{H}}{\mathrm{Re}_{H}^{2}}$
+
+## Richardson Number, $Ri_{H}$
+
+$$
+Ri_{H}=\frac{Gr_{H}}{\mathrm{Re}_{H}^{2}}
+$$
+
+| Criteria   | Type of convection |
+|------------|--------------------|
+| $Ri \gg 1$ | Natural            |
+| $Ri \ll 1$ | Forced             |
+| $Ri = 1$   | Mixed / Combined   |
+
+Conventionally we choose, $\mathrm{Re}_{H} = \sqrt{ Gr_{H} }$ such that $Ri_{H} = 1$
+
+Summary of scaling laws
+
+| $Pr$ | $\delta_{T}$ | Wall to velocity peak | Thickness of wall jet | Velocity scale | $Nu$ |
+|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+| $\gg 1$ | $H Ra_{H}^{-1/4}$ | $H Ra_{H}^{-1/4}$ | $Pr^{1/2}HRa_{H}^{-1/4}$ | $\frac{\alpha}{H} Ra_{H}^{1/2}$ | $Ra_{H}^{1/4}$ |
+| $\ll 1$ | $Pr^{-1/4}HRa_{H}^{-1/4}$ | $Pr^{1/4}HRa_{H}^{-1/4}$ | $Pr^{-1/4}HRa_{H}^{-1/4}$ | $\frac{\alpha}{H}Pr^{1/2}Ra_{H}^{1/2}$ | $Pr^{1/4}Ra_{H}^{1/4}$ |
+
+## Similarity Equations - Constant Wall Temperature
+
+::::: columns
+::: {.column width="50%"}
+Similarity variable, $\eta=\frac{x}{\delta_{T}}$ for $Pr>1$
+
+where $\delta_{T} \sim y Ra_{y}^{-1/4}$
+
+Choosing non-dimensional temperature and velocity as
+
+$\theta(\eta,Pr)=\frac{T-T_{\infty}}{T_{w}-T_{\infty}}$, $v=\frac{\alpha}{y}Ra_{y}^{1/2} f'(\eta,Pr)$
+
+where $Ra_{y}=\frac{g\beta \Delta Ty^{3}}{\alpha \nu}$ and $\Delta T=T_{w}-T_{\infty}$
+
+The similarity equation becomes
+
+$$
+\begin{align}
+\frac{1}{Pr} \left( \frac{f'^{2}}{2}-\frac{3}{4} f f'' \right) & =-f'''+\theta \\
+\theta''-\frac{3}{4}f \theta' & =0
+\end{align}
+$$
+:::
+
+::: {.column width="50%"}
+![Illustration of similarity law](./assets/Week8_3.excalidraw.svg){#fig-similarityuwt}
+:::
+:::::
+
+and boundary conditions are
+
+$$
+\begin{align}
+\text{at x = 0} &   & u & =0  & \implies & \eta=0 & f=0\\
+  &  & v & =0 &  &  & f'=0 \\
+ &  & T & =T_{w} &  &  & \theta=1\\
+\text{at x} \to \infty  &  & v & =0  & \implies & \eta\to \infty & f'=0 \\
+ &  & T & =T_{\infty} &  &  & \theta=0
+\end{align}
+$$
+
+## Nusselt number correlations
+
+::::: columns
+::: {.column width="60%"}
+For constant wall temperature
+
+$$
+\begin{align}
+h  & = -\frac{k}{y} Ra_{y}^{1/4}\theta'(0) \\
+Nu  & = -Ra_{y}^{1/4}\theta'(0) \\
+\overline{Nu}  & = \frac{4}{3} Nu_{y}|_{y=H}
+\end{align}
+$$ For $Pr\to \infty, \overline{Nu}=0.671Ra_{H}^{1/4}$, and for $Pr\to 0$, $\overline{Nu}=0.8(Ra_{H}Pr)^{1/4}$
+
+Extending similar analysis to uniform wall heat flux case gives us
+
+$$
+\begin{align}
+Pr\to \infty &  & Nu & =0.616 Ra_{*y}^{1/5} \\
+Pr \to 0  &  & Nu  & = 0.644 (Ra_{*y}Pr)^{1/5}
+\end{align}
+$$ where $Ra_{*y} = \frac{g\beta q''_{w}y^{4}}{\alpha \nu \kappa}$
+:::
+
+::: {.column width="40%"}
+![Temperature and heat flux profiles under different boundary conditions](./assets/Week8_4.excalidraw.svg){#fig-temphfprofiles}
+:::
+:::::
+
+# Problems
+
+## Estimation of heat transfer coefficient - constant wall temperature
+
+A vertical wall of an oven is 60 cm long and is covered with a metal sheet maintained at 170°C. Air temperature inside the oven is 90°C and the pressure is atmospheric. Calculate the local heat-transfer coefficient at the end of the wall and the average heat transfer coefficient over the wall.
+
+Look up appropriate properties from @app-airprops
+
+## Estimation of heat transfer coefficient - uniform wall heat flux
+
+A vertical wall of an oven is 60 cm long and it is covered with a metal plate that is heated electrically. The wall heat flux is 15 W/m^2^ on the plate. The inside air temperature is 90°C and pressure is atmospheric; Pr = 1 is assumed. Calculate a. The local heat-transfer coefficient at the end of the plate b. Average heat-transfer coefficient over the plate
+
+Look up appropriate properties from @app-airprops
+
+## Free vs Forced Convective Heat Transfer
+
+A 1m vertical plate is maintained at 100°C and exposed to air at atmospheric pressure and 20°C. Compare free convection heat transfer with that from forcing air over the plate at a velocity equal to the maximum velocity that occurs in the free convection boundary layer. Comment on the results.
+
+## Position of maximum velocity
+
+Derive an expression for the maximum velocity in the laminar free-convection boundary layer on a vertical plate with constant surface temperature. At what position in the boundary layer does this velocity occur?
+
+## Air Properties {.scrollable .unlisted}
+
+::: {#app-airprops}
+
+| $T[^{0}C]$ | $\rho [kg / m^{3}]$ | $c_{p}[kJ / kg.K]$ | $\kappa[W /m.K]$ | $\beta[\times 10^{3} K^{-1}]$ | $\mu[\times 10^{5} kg / m.s]$ | $\nu[\times 10^{6} m^{2} / s]$ | $\alpha[\times 10^{6} m^{2} / s]$ | $Pr$ |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:-----:|
+| -150 | 2.793 | 1.026 | 0.012 | 8.21 | 0.87 | 3.11 | 4.19 | 0.74 |
+| -100 | 1.98 | 1.009 | 0.0165 | 5.82 | 1.18 | 5.96 | 8.28 | 0.72 |
+| -50 | 1.534 | 1.005 | 0.0206 | 4.51 | 1.47 | 9.55 | 13.4 | 0.715 |
+| 0 | 1.293 | 1.005 | 0.0242 | 3.67 | 1.72 | 13.3 | 18.7 | 0.711 |
+| 20 | 1.2045 | 1.005 | 0.0257 | 3.43 | 1.82 | 15.11 | 21.4 | 0.713 |
+| 40 | 1.1267 | 1.009 | 0.0271 | 3.2 | 1.91 | 16.97 | 23.9 | 0.711 |
+| 60 | 1.0595 | 1.009 | 0.0285 | 3 | 2 | 18.9 | 26.7 | 0.709 |
+| 80 | 0.9908 | 1.009 | 0.0299 | 2.83 | 2.1 | 20.94 | 29.6 | 0.708 |
+| 100 | 0.9458 | 1.013 | 0.0314 | 2.68 | 2.18 | 23.06 | 32.8 | 0.704 |
+| 120 | 0.898 | 1.013 | 0.0328 | 2.55 | 2.27 | 25.23 | 36.1 | 0.7 |
+| 140 | 0.8535 | 1.013 | 0.0343 | 2.43 | 2.35 | 27.55 | 39.7 | 0.694 |
+| 160 | 0.815 | 1.017 | 0.0358 | 2.32 | 2.43 | 29.85 | 41 | 0.693 |
+| 180 | 0.7785 | 1.022 | 0.0372 | 2.21 | 2.51 | 32.29 | 46.7 | 0.69 |
+| 200 | 0.7475 | 1.026 | 0.0386 | 2.11 | 2.58 | 34.63 | 50.5 | 0.685 |
+| 250 | 0.6745 | 1.034 | 0.0421 | 1.91 | 2.78 | 41.17 | 60.3 | 0.68 |
+| 300 | 0.6157 | 1.047 | 0.039 | 1.75 | 2.95 | 47.85 | 70.3 | 0.68 |
+| 350 | 0.5662 | 1.055 | 0.0485 | 1.61 | 3.12 | 55.05 | 81.1 | 0.68 |
+| 400 | 0.5242 | 1.068 | 0.0516 | 1.49 | 3.28 | 62.53 | 91.9 | 0.68 |
+| 450 | 0.4875 | 1.08 | 0.0543 | 1.38 | 3.44 | 70.54 | 103.1 | 0.685 |
+| 500 | 0.4564 | 1.092 | 0.057 | 1.29 | 3.86 | 70.48 | 114.2 | 0.69 |
+| 600 | 0.4041 | 1.114 | 0.0621 | 1.15 | 3.58 | 95.57 | 138.2 | 0.69 |
+| 700 | 0.3625 | 1.135 | 0.0667 | 1.03 | 4.12 | 113.7 | 162.2 | 0.7 |
+| 800 | 0.3287 | 0.156 | 0.0706 | 0.93 | 4.37 | 132.8 | 185.8 | 0.715 |
+| 900 | 0.3021 | 1.172 | 0.0741 | 0.85 | 4.59 | 152.5 | 210 | 0.725 |
+| 1000 | 0.277 | 1.185 | 0.077 | 0.79 | 4.8 | 175 | 235 | 0.735 |
+
+: Air Properties as a function of temperature
+
+:::
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)

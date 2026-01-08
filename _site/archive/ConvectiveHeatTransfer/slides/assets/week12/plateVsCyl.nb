@@ -1,0 +1,125 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      3795,        117]
+NotebookOptionsPosition[      3350,        102]
+NotebookOutlinePosition[      3745,        118]
+CellTagsIndexPosition[      3702,        115]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hPlate", " ", "=", " ", 
+   RowBox[{"0.943", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["h", "fg"], 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"0.68", " ", "Ja"}]}], ")"}], " ", "g", " ", 
+        SubscriptBox["\[Rho]", "l"], 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["\[Rho]", "l"], "-", 
+          SubscriptBox["\[Rho]", "v"]}], ")"}], 
+        SuperscriptBox[
+         SubscriptBox["\[Kappa]", "l"], "3"]}], 
+       RowBox[{
+        SubscriptBox["\[Mu]", "l"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["T", "sat"], "-", 
+          SubscriptBox["T", "w"]}], ")"}], "L"}]], ")"}], 
+     RowBox[{"1", "/", "4"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mPlate", " ", "=", " ", 
+   FractionBox[
+    RowBox[{"2", " ", "hPlate", " ", "L", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["T", "sat"], "-", 
+       SubscriptBox["T", "w"]}], ")"}]}], 
+    SubscriptBox["h", "fg"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mCylinder", " ", "=", " ", 
+   RowBox[{"2", " ", "1.923", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"g", " ", 
+        SubscriptBox["\[Rho]", "l"], 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["\[Rho]", "l"], "-", 
+          SubscriptBox["\[Rho]", "v"]}], ")"}], 
+        SuperscriptBox[
+         SubscriptBox["\[Kappa]", "l"], "3"], 
+        SuperscriptBox["d", "3"], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           SubscriptBox["T", "sat"], "-", 
+           SubscriptBox["T", "w"]}], ")"}], "3"]}], 
+       RowBox[{"8", " ", 
+        SubscriptBox["\[Mu]", "l"], " ", 
+        SuperscriptBox[
+         SubscriptBox["h", "fg"], "3"]}]], ")"}], 
+     RowBox[{"1", "/", "4"}]]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.969142663187294*^9, 3.969142962712634*^9}, {
+  3.969143044466567*^9, 3.969143078989811*^9}, {3.969143109534849*^9, 
+  3.969143111050871*^9}, {3.969143153717948*^9, 3.969143154440493*^9}, {
+  3.969143206089569*^9, 3.9691432129810753`*^9}, {3.969174297759313*^9, 
+  3.969174300191162*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"80dad3ca-de45-41dd-8f49-0106a13f8a25"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"mPlate", "==", "mCylinder"}], ")"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Ja", "->", "0"}], ",", 
+      RowBox[{"L", "->", "1"}]}], "}"}]}], ",", "d", ",", "Reals"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.969143116094062*^9, 3.969143138807295*^9}, {
+  3.96914317049436*^9, 3.969143188378194*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"5adf4e99-4c28-4483-ad6f-f1bab176507d"]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{272, Automatic}, {Automatic, 50}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d921d50a-d289-42a4-8754-8d8277937c40"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 2300, 65, 210, "Input",ExpressionUUID->"80dad3ca-de45-41dd-8f49-0106a13f8a25"],
+Cell[2857, 87, 489, 13, 44, "Input",ExpressionUUID->"5adf4e99-4c28-4483-ad6f-f1bab176507d"]
+}
+]
+*)
+
