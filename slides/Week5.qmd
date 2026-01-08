@@ -1,0 +1,29 @@
+---
+title: Compuational Fluid Dynamics for Incompressible Flows
+subtitle: Week-05 (Live Session)
+author: Durga Prasad Pydi
+date: 2026-02-21
+format: 
+    revealjs:
+        theme: [default,custom.scss]
+        width: 1920
+        height: 1080
+        css: styles.css
+        slide-number: true
+        lightbox: true
+        crossrefs-hover: true
+        html-math-method: mathml
+        toc: true
+        toc-depth: 2
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Appendix
+      key: app
+lightbox: true
+---
+
+
+# Thank You {.center .unlisted}
+
+Go to [Home](../index.html)
