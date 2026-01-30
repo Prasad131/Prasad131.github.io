@@ -22,8 +22,212 @@ crossref:
       key: app
 lightbox: true
 ---
+## About Course
+
+This is introductory course on computational fluid dynamics (CFD). This course will primarily cover the basics of computational fluid dynamics starting from classification of partial differential equations, linear solvers, finite difference method and finite volume method for discretizing Laplace equation, convective-diffusive equation & Navier-Stokes equations. The course will help faculty members, students and researchers in the field to get an overview of the concepts in CFD.
+
+. . .
+
+**INTENDED AUDIENCE** : Undergraduate and postgraduate students of Mechanical Engineering and similar branches; Faculty members associated with Mechanical Engineering; Practicing engineers associated with fluid and thermal industries.
+
+. . .
+
+**PREREQUISITES** :   No specific pre-requisite. Fundamental knowledge of Mathematics and Fluid Mechanics should be sufficient.
 
 
+
+
+## About Me 
+
+- PMRF Scholar from the Department of Mechanical Engineering, Indian Institute of Technology Madras
+- My research interest falls in application of CFD for understanding the thermal and fluid dynamics of flows inside buildings and glazing systems 
+
+**Live Session timings**: 05:00 PM - 07:00 PM IST on every Saturday 
+**Meeting Link**: Will be circulated to enrolled students on their registered email id
+
+All live sessions will be recorded and can be accessed using below links
+
+[![Recorded Lectures](https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png){width=100}](https://www.youtube.com/playlist?list=PLRHs8aBtrthsvtpsqecJVXS4IBnuTzRIr) [![Session Materials](https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg){width=100}](https://drive.google.com/drive/folders/19AlG5eqBAbBhfGGNvrADIad_L-GWeIKC?usp=drive_link)
+
+For any **queries regarding live sessions** email to: me22d400@smail.iitm.ac.in
+
+Any **other queries**: use the ***discussion forum*** on course website
+
+
+
+## Accessing Live Session Materials {.scrollable}
+![](./assets/homePage.png)
+
+
+## References and Books 
+
+1. J. C. Tannehill, D. A. Anderson, and R. H. Pletcher, “Computational Fluid Mechanics and Heat Transfer”, Taylor & Francis, Second Edition, 2010.
+
+2. T. Sundararajan, and K. Muralidhar, “Computational Fluid Flow and Heat Transfer”, Narosa Publishing House, Second Edition, 2009.
+
+3. S. V. Patankar, “Numerical Heat Transfer and Fluid Flow”, Special Indian Edition, 2011.
+
+
+
+
+## Course Contents 
+- Applications of CFD and brief recap of governing equations and boundary conditions 
+- Classification of PDEs - elliptic, parabolic and hyperbolic - highlighting the relevance to CFD 
+- Key qualifications for solvers and Finite difference method (FDM) as a tool to solve PDEs
+- Application of FDM to elliptic,parabolic and hyperbolic equations (Weeks-4,5&6)
+- Evaluating the learned strategies using techniques presented in 3
+- Alternate formulations of governing equation and their solutions 
+- MAC Algorithm
+- Finite Volume Method using SIMPLE (last 4-5 weeks)
+
+
+
+## Summary of Week 1 
+
+- What is CFD?
+- Who cares?
+    - Major applications - Aerospace, Automobiles, Process Engineering, **HVAC**, Electronics, Sports, Biomedical, etc 
+- Experiments vs Simulations
+- Conservation laws (pre-requisite)
+- Workflow
+    - Modelling equations $\to$ Solving $\to$ Validation
+
+
+
+
+## Question 1
+
+Which statement is true for Burger's equation
+
+- [ ]  1-D Navier Stokes equation with pressure gradient term
+- [ ] 1-D Navier Stokes equation without pressure gradient term
+- [ ]  2-D Navier Stokes equation with pressure gradient term
+- [ ]  None of these
+
+
+
+
+
+## Question 2
+
+Which one of the following equations relate the substantial derivative with the local derivative of a scalar quantity $\phi$ in a flow field that convects with a velocity vector $\vec{u}$?
+
+- [ ]  $\frac{D \phi}{Dt} = \frac{ \partial \phi }{ \partial t } + \vec{u}.\vec{\nabla}\phi$
+- [ ]  $\frac{D \phi}{Dt} = \frac{ \partial \phi }{ \partial t } - \vec{u}.\vec{\nabla}\phi$
+- [ ]  $\frac{D \phi}{Dt} = \frac{ \partial \phi }{ \partial t } + (\vec{\nabla}.\vec{u}) \phi$
+- [ ]  $\frac{D\phi}{Dt}=\frac{ \partial \phi }{ \partial t }+\vec{\nabla}.(\phi \vec{u})$
+
+
+
+
+
+## Question 3
+
+Which among these is a combination of value specified and flux specified boundary condition?
+
+- [ ]  Dirichlet boundary condition
+- [ ]  Neumann boundary condition
+- [ ]  Robin boundary condition
+- [ ]  Symmetry boundary condition
+
+
+
+
+
+# Question 4
+
+Among the following, which best describes the Stokes equation?
+
+- [ ]  Low Reynolds number flow 
+- [ ] High Reynolds number flow 
+- [ ] Compressible flow 
+- [ ] None of the above 
+
+
+
+
+# Question 5
+
+Which type of equation defines a steady heat conduction with heat generation in a solid body?
+
+- [ ] Laplace equation 
+- [ ] Poisson equation 
+- [ ] Fourier equation 
+- [ ] Tricomi equation 
+
+
+
+
+# Question 6
+
+Viscous Burger's equation is defined as 
+
+- [ ] $\frac{ \partial u }{ \partial t }+u \frac{ \partial u }{ \partial x }= \nu \frac{ \partial^{2} u }{ \partial t^{2} }$
+- [ ] $\frac{ \partial u }{ \partial t }+u \frac{ \partial u }{ \partial x }= \nu \frac{ \partial^{2} u }{ \partial y^{2} }$
+- [ ] $\frac{ \partial u }{ \partial t }+u \frac{ \partial u }{ \partial x }= \nu \frac{ \partial^{2} u }{ \partial x^{2} }$
+- [ ] $u \frac{ \partial u }{ \partial t }=\nu \frac{ \partial^{2}u }{ \partial x^{2} }$
+
+
+
+
+
+# Question 7 
+
+Which of these falls in the post-processing category?
+
+- [ ] Grid generation 
+- [ ] Discretization
+- [ ] Defining boundary condition 
+- [ ] Flow visualisation 
+
+
+
+
+# Question 8
+
+Which of these falls in the pre-processing category?
+
+1. Grid generation 
+2. Assigning boundary conditions
+3. Flow visualization
+4. Analyze results
+
+- [ ] 1 and 3
+- [ ] 1 and 2
+- [ ] 2 and 3
+- [ ] 2 and 4
+
+
+
+
+# Question 9 
+
+Which statement is true regarding staggered grid arrangement?
+
+1. Strong coupling between pressure and velocities
+
+2. Pressure-velocity decoupling, approximation for terms 
+
+3. Higher order numerical schemes with order higher than $2^{nd}$ will be difficult
+
+4. All variables stored at the same set of grid points and use same control volume for all variables
+
+- [ ] 1,2 and 4
+- [ ] 2 and 4
+- [ ] 1,2 and 3
+- [ ] 1 and 3
+
+
+
+
+# Question 10
+
+In the general transport equation $\frac{ \partial \rho \phi }{ \partial t }+\vec{\nabla}.(\rho \vec{u}\phi)=\vec{\nabla}.(\Gamma \vec{\nabla}\phi)+S_{\phi}$ , what is the value of diffusion coefficient for energy equation?
+
+- [ ] $T$
+- [ ] $\frac{\kappa}{C_{p}}$
+- [ ] $\frac{q'''}{C_{p}}$
+- [ ] None of the above 
 
 # Thank You {.center .unlisted}
 

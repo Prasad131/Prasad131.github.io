@@ -8,35 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "74e481460e9e6e3d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "slides/Summary.qmd",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Summary"
-            }
-          },
-          {
             "id": "4c2f379a48ff91d6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "slides/Week12.qmd",
-                "mode": "source",
-                "source": false
+                "file": "slides/assets/me22d400.jpeg"
               },
-              "icon": "lucide-file",
-              "title": "Week12"
+              "icon": "lucide-image",
+              "title": "me22d400"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -186,22 +169,24 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4c2f379a48ff91d6",
+  "active": "f8d545de5bb8e13c",
   "lastOpenFiles": [
+    "slides/Week1_files/mediabag",
+    "slides/Week1_files/libs/quarto-contrib/glightbox/lightbox.css",
+    "slides/Week1_files/libs/quarto-contrib/glightbox/glightbox.min.js",
+    "slides/Week1_files/libs/quarto-contrib/glightbox/glightbox.min.css",
+    "slides/Week1_files/libs/quarto-contrib/glightbox",
+    "slides/Week1_files/libs/quarto-contrib",
+    "slides/assets/homePage.png",
+    "slides/assets/Pasted image 20260124103456.png",
+    "slides/Week1.qmd",
+    "slides/Week12.qmd",
     "slides/Summary.qmd",
     "slides/Summary_files/mediabag",
-    "slides/Week12.qmd",
     "slides/Week11.qmd",
-    "slides/Week9.qmd",
-    "slides/Week8.qmd",
-    "slides/Week7.qmd",
     "slides/assets/Summary_bl.excalidraw.md",
     "slides/assets/Summary_blT.excalidraw.md",
     "slides/assets/Summary_blT.excalidraw.svg",
-    "slides/Summary_files/libs/quarto-contrib/glightbox/lightbox.css",
-    "slides/Summary_files/libs/quarto-contrib/glightbox/glightbox.min.js",
-    "slides/Summary_files/libs/quarto-contrib/glightbox/glightbox.min.css",
-    "slides/Summary_files/libs/quarto-contrib/glightbox",
     "slides/assets/Summary_bl.excalidraw.svg",
     "slides/assets/horz_tube.excalidraw.md",
     "Pasted Image 20251011090457_335.png",
@@ -213,9 +198,7 @@
     "slides/assets/pool boiling curve.png",
     "slides/assets/pool boiling curve.excalidraw.md",
     "slides/assets/pool boiling curve.excalidraw.svg",
-    "slides/assets/Week12_2.png",
     "slides/assets/Week12_1.excalidraw.md",
-    "slides/assets/Week12_1.excalidraw.svg",
     "slides/assets/Week11_1.excalidraw.md",
     "slides/assets/Week10_3.excalidraw.md",
     "slides/assets/Week10_2.excalidraw.md",
