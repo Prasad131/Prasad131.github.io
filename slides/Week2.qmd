@@ -23,6 +23,295 @@ crossref:
 lightbox: true
 ---
 
+## Accessing Live Session Materials {.scrollable .unlisted}
+
+**Live Session timings**: 05:00 PM - 07:00 PM IST on every Saturday **Meeting Link**: Will be circulated to enrolled students on their registered email id
+
+All live sessions will be recorded and can be accessed using below links
+
+[![Recorded Lectures](https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png){width="100"}](https://www.youtube.com/playlist?list=PLRHs8aBtrthsvtpsqecJVXS4IBnuTzRIr) [![Session Written Notes](https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg){width="80"}](https://drive.google.com/drive/folders/19AlG5eqBAbBhfGGNvrADIad_L-GWeIKC?usp=drive_link) [![Session Slides](https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg){width="80"}](https://prasad131.github.io/)
+
+For any **queries regarding live sessions** email to: me22d400\@smail.iitm.ac.in
+
+Any **other queries**: use the ***discussion forum*** on course website
+
+. . .
+
+![](./assets/homePage.png)
+
+## Course Contents {.unlisted}
+
+-   ~~Applications of CFD and brief recap of governing equations and boundary conditions~~
+-   Classification of PDEs - elliptic, parabolic and hyperbolic - highlighting the relevance to CFD
+-   Key qualifications for solvers and Finite difference method (FDM) as a tool to solve PDEs
+-   Application of FDM
+    -   elliptic
+    -   parabolic
+    -   hyperbolic
+-   Evaluating the learned strategies using techniques presented in 3
+-   Alternate formulations of governing equation and their solutions
+-   MAC Algorithm
+-   Finite Volume Method using SIMPLE (last 4-5 weeks)
+
+# Concepts
+
+## Classification of Phenomena
+
+For a general $2^{nd}$ order PDE, defined as 
+$$
+a \phi_{x x} + b \phi_{x y} + c \phi_{yy}=h
+$$
+
+The characteristics are given by $\frac{dy}{dx}=\frac{b \pm \sqrt{ b^{2}-4ac }}{2a}$
+
+Discriminant: $D=\sqrt{ b^{2}-4ac }$  determines the classes of PDEs 
+
+- $D>0$
+- $D=0$
+- $D<0$ 
+
+## Water Ripples
+
+{{< video https://www.youtube.com/embed/FeXP7SxCKKE width="70%" height="60%">}}
+
+Which PDE can describe this phenomenon?
+
+-   [ ] Hyperbolic
+-   [ ] Parabolic
+-   [ ] Elliptic
+
+## Dye in Agar
+
+{{< video https://www.youtube.com/embed/AIZ2ji10Rk0 width="50%" height="50%" >}}
+
+Which PDE can describe this phenomenon?
+
+-   [ ] Hyperbolic
+-   [ ] Parabolic
+-   [ ] Elliptic
+
+. . .
+
+Can you give an example of an elliptic phenomenon?
+
+# Problems
+
+## Question 1 {.scrollable}
+
+The lines along which a partial differential equation reduces to an ordinary differential equation are called
+
+-   [ ] parabolic lines
+-   [ ] hyperbolic lines
+-   [ ] characteristic lines
+-   [ ] None of these
+
+. . .
+
+Solution: Characteristic lines
+Consider $u_{t}+u_{x x}=0$ 
+what are the characteristic lines for the above equation?
+$\frac{dt}{dx}=0$ 
+
+Consider $u_{tt}-u_{x x}=0$
+$a=-1,b=0,c=1$ 
+$b^{2}-4ac=4>0$
+$\frac{dt}{dx}=\pm{1}$
+
+## Question 2
+
+Which of these apply to parabolic equations?
+
+-   [ ] They have one real characteristic line
+-   [ ] They have two real characteristic lines
+-   [ ] They have two imaginary characteristic lines
+-   [ ] They do not have characteristic lines
+
+. . .
+
+Solution: They have one real characteristic line
+
+## Question 3
+
+Which of these characteristics apply to hyperbolic equation?
+
+-   [ ] finite domain of dependence and infinite domain of influence
+-   [ ] finite domain of dependence and finite domain of influence
+-   [ ] no domain of dependence and no domain of influence
+-   [ ] None of the above
+
+. . .
+
+Solution: finite domain of dependence and finite domain of influence
+
+## Question 4
+
+The nature of the second order partial differential equation $\frac{ \partial \phi }{ \partial t }+\alpha \frac{ \partial \phi }{ \partial x }+\beta \frac{ \partial^{2} \phi }{ \partial x^{2} }=0$
+
+-   [ ] circular
+-   [ ] elliptic
+-   [ ] parabolic
+-   [ ] hyperbolic
+
+. . .
+
+Solution: parabolic
+
+$a=\beta,b=0,c=0$
+$D=b^{2}-4ac=0-\beta \times 0 \times 4=0$ 
+
+## Question 5
+
+The value of $\alpha$ for which the equation $\alpha \frac{ \partial^{2}\phi }{ \partial x^{2} }+4 \frac{ \partial^{2}\phi }{ \partial x  \partial y} + 2 \frac{ \partial^{2} \phi }{ \partial y^{2} }=0$ becomes parabolic is
+
+-   [ ] 1
+-   [ ] 2
+-   [ ] 4
+-   [ ] 8
+
+. . .
+
+Solution: 2
+
+$4^{2}-4\times 2 \times \alpha=0 \implies \alpha=?$ 
+
+## Question 6
+
+The steady compressible flow defined by $(1-M_{\infty}^{2})\frac{ \partial^{2}\phi }{ \partial x^{2} }+\frac{ \partial^{2}\phi }{ \partial y^{2} }=0$ becomes hyperbolic under the condition
+
+-   [ ] $M_{\infty}=0$
+-   [ ] $M_{\infty}=1$
+-   [ ] $M_{\infty}>1$
+-   [ ] $M_{\infty}<1$
+
+. . .
+
+Solution: $M_{\infty}>1$
+
+$0-4(1-M_{inf}^{2})>0$ $\implies$ $M_{inf}>1$
+
+## Question 7
+
+The Tricomi equation $y \frac{ \partial^{2} u }{ \partial x^{2} }+\frac{ \partial^{2}u }{ \partial y^{2} }=0$ shows elliptic nature under the condition
+
+-   [ ] $y>0$
+-   [ ] $y<0$
+-   [ ] $y=0$
+-   [ ] cannot be determined
+
+. . .
+
+Solution: $y>0$
+
+$0-4y < 0$ $\implies$ $y>0$ 
+
+## Question 8 {.scrollable}
+
+The following system of equations is classified as $$
+\begin{align}
+\frac{ \partial u }{ \partial t } +8 \frac{ \partial v }{ \partial x }  & =0 \\
+\frac{ \partial v }{ \partial t }+2 \frac{ \partial u }{ \partial x }  & = 0 
+\end{align}
+$$
+
+-   [ ] elliptic
+-   [ ] parabolic
+-   [ ] hyperbolic
+-   [ ] None of the above
+
+. . .
+
+Solution: hyperbolic
+
+2D NS : $u,v,p$
+continuity
+x & y momentum 
+$u_{x}+v_{y}=0$
+
+$U = \begin{pmatrix}u \\ v\end{pmatrix}$, $U_{x}=\begin{pmatrix}u_{x} \\ v_{x}\end{pmatrix}$
+$U_{t}+AU_{x}=0$
+$A=\begin{pmatrix}0 & 8 \\ 2  & 0\end{pmatrix}$
+
+First eqn wrt t and then second eqn wrt x 
+$u_{t}+8v_{x}=0$
+$u_{tt}+8v_{xt}=0$
+
+$v_{t}+2u_{x}=0$
+$v_{tx}+2u_{x x}=0$
+
+$v_{tx}=v_{xt}$
+$u_{tt}-16u_{x x}=0$
+$0-4 \times -16>0$ $\implies$ hyperbolic 
+
+Calculate eigen values for matrix A
+$\lambda^{2}-8\times{2}=0$
+
+## Question 9 {.scrollable}
+
+The nature of the following Cauchy-Reimann equations is $$
+\begin{align}
+\frac{ \partial u }{ \partial x } + \frac{ \partial v }{ \partial y }  & =0 \\
+\frac{ \partial v }{ \partial x } -\frac{ \partial u }{ \partial y }  & =0
+\end{align}
+$$
+
+-   [ ] elliptic
+-   [ ] parabolic
+-   [ ] hyperbolic
+-   [ ] None of the above
+
+. . .
+
+Solution: elliptic
+
+$U=\begin{pmatrix}u \\ v\end{pmatrix}$
+
+$U_{x}+ A U_{y}=0$ where $U_{x}=\begin{pmatrix}u_{x} \\ v_{x}\end{pmatrix}$ and $U_{y}=\begin{pmatrix}u_{y} \\ v_{y}\end{pmatrix}$
+
+$A=\begin{pmatrix}0 & 1 \\ -1 & 0\end{pmatrix}$
+
+characteristic equation for matrix $A$: $\lambda^{2}+1=0$
+eigen values for $A$ are $\pm i$ 
+
+## Question 10 {.scrollable}
+
+The following system of equations is classified as ($\beta$ has real value) $$
+\begin{align}
+\beta^{2} \frac{ \partial u }{ \partial x } -\frac{ \partial v }{ \partial y }  & =0 \\
+\frac{ \partial v }{ \partial x } - \frac{ \partial u }{ \partial y }  & =0
+\end{align}
+$$
+
+-   [ ] elliptic
+-   [ ] parabolic
+-   [ ] hyperbolic
+-   [ ] None of the above
+
+. . .
+
+Solution: hyperbolic
+
+$U=\begin{pmatrix}u \\ v\end{pmatrix}$
+
+$U_{x}+ A U_{y}=0$ where $U_{x}=\begin{pmatrix}u_{x} \\ v_{x}\end{pmatrix}$ and $U_{y}=\begin{pmatrix}u_{y} \\ v_{y}\end{pmatrix}$
+
+$$
+\begin{pmatrix}
+u_{x} \\
+v_{x} \\
+\end{pmatrix} + \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix} \begin{pmatrix}
+u_{y} \\
+v_{y}
+\end{pmatrix}=0
+$$
+
+$A=\begin{pmatrix}0 & -\frac{1}{\beta^{2}} \\ -1 & 0\end{pmatrix}$
+
+$\lambda^{2}-\frac{1}{\beta^{2}}=0$
+
+$\beta \in \mathbb{R}$ $\implies$ $\lambda$ $\in \mathbb{R}$ so hyperbolic
 
 # Thank You {.center .unlisted}
 

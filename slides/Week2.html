@@ -6,7 +6,10 @@
 <script src="Week2_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Week2_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Week2_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Week2_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="Week2_files/libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Week2_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="Week2_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="Week2_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Durga Prasad Pydi">
@@ -141,7 +144,284 @@ Durga Prasad Pydi
 </div>
 
   <p class="date">2026-01-31</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/concepts" id="/toc-concepts">Concepts</a>
+<ul>
+<li><a href="#/classification-of-phenomena" id="/toc-classification-of-phenomena">Classification of Phenomena</a></li>
+<li><a href="#/water-ripples" id="/toc-water-ripples">Water Ripples</a></li>
+<li><a href="#/dye-in-agar" id="/toc-dye-in-agar">Dye in Agar</a></li>
+</ul></li>
+<li><a href="#/problems" id="/toc-problems">Problems</a>
+<ul>
+<li><a href="#/question-1" id="/toc-question-1">Question 1</a></li>
+<li><a href="#/question-2" id="/toc-question-2">Question 2</a></li>
+<li><a href="#/question-3" id="/toc-question-3">Question 3</a></li>
+<li><a href="#/question-4" id="/toc-question-4">Question 4</a></li>
+<li><a href="#/question-5" id="/toc-question-5">Question 5</a></li>
+<li><a href="#/question-6" id="/toc-question-6">Question 6</a></li>
+<li><a href="#/question-7" id="/toc-question-7">Question 7</a></li>
+<li><a href="#/question-8" id="/toc-question-8">Question 8</a></li>
+<li><a href="#/question-9" id="/toc-question-9">Question 9</a></li>
+<li><a href="#/question-10" id="/toc-question-10">Question 10</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
+<section id="accessing-live-session-materials" class="slide level2 scrollable unlisted">
+<h2>Accessing Live Session Materials</h2>
+<p><strong>Live Session timings</strong>: 05:00 PM - 07:00 PM IST on every Saturday <strong>Meeting Link</strong>: Will be circulated to enrolled students on their registered email id</p>
+<p>All live sessions will be recorded and can be accessed using below links</p>
+<p><a href="https://www.youtube.com/playlist?list=PLRHs8aBtrthsvtpsqecJVXS4IBnuTzRIr"><img data-src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" width="100" alt="Recorded Lectures"></a> <a href="https://drive.google.com/drive/folders/19AlG5eqBAbBhfGGNvrADIad_L-GWeIKC?usp=drive_link"><img data-src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" width="80" alt="Session Written Notes"></a> <a href="https://prasad131.github.io/"><img data-src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" width="80" alt="Session Slides"></a></p>
+<p>For any <strong>queries regarding live sessions</strong> email to: me22d400@smail.iitm.ac.in</p>
+<p>Any <strong>other queries</strong>: use the <strong><em>discussion forum</em></strong> on course website</p>
+<div class="fragment">
+<p><a href="./assets/homePage.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="./assets/homePage.png"></a></p>
+</div>
+</section>
+<section id="course-contents" class="slide level2 unlisted">
+<h2>Course Contents</h2>
+<ul>
+<li><del>Applications of CFD and brief recap of governing equations and boundary conditions</del></li>
+<li>Classification of PDEs - elliptic, parabolic and hyperbolic - highlighting the relevance to CFD</li>
+<li>Key qualifications for solvers and Finite difference method (FDM) as a tool to solve PDEs</li>
+<li>Application of FDM
+<ul>
+<li>elliptic</li>
+<li>parabolic</li>
+<li>hyperbolic</li>
+</ul></li>
+<li>Evaluating the learned strategies using techniques presented in 3</li>
+<li>Alternate formulations of governing equation and their solutions</li>
+<li>MAC Algorithm</li>
+<li>Finite Volume Method using SIMPLE (last 4-5 weeks)</li>
+</ul>
+</section>
+<section>
+<section id="concepts" class="title-slide slide level1 center">
+<h1>Concepts</h1>
+
+</section>
+<section id="classification-of-phenomena" class="slide level2">
+<h2>Classification of Phenomena</h2>
+<p>For a general <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>n</mi><mi>d</mi></mrow></msup><annotation encoding="application/x-tex">2^{nd}</annotation></semantics></math> order PDE, defined as <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msub><mi>ϕ</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>+</mo><mi>b</mi><msub><mi>ϕ</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>+</mo><mi>c</mi><msub><mi>ϕ</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo>=</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">
+a \phi_{x x} + b \phi_{x y} + c \phi_{yy}=h
+</annotation></semantics></math></p>
+<p>The characteristics are given by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dy}{dx}=\frac{b \pm \sqrt{ b^{2}-4ac }}{2a}</annotation></semantics></math></p>
+<p>Discriminant: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">D=\sqrt{ b^{2}-4ac }</annotation></semantics></math> determines the classes of PDEs</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D&gt;0</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D=0</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D&lt;0</annotation></semantics></math></li>
+</ul>
+</section>
+<section id="water-ripples" class="slide level2">
+<h2>Water Ripples</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/FeXP7SxCKKE" width="70%" height="60%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>Which PDE can describe this phenomenon?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Hyperbolic</label></li>
+<li><label><input type="checkbox">Parabolic</label></li>
+<li><label><input type="checkbox">Elliptic</label></li>
+</ul>
+</section>
+<section id="dye-in-agar" class="slide level2">
+<h2>Dye in Agar</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/AIZ2ji10Rk0" width="50%" height="50%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>Which PDE can describe this phenomenon?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Hyperbolic</label></li>
+<li><label><input type="checkbox">Parabolic</label></li>
+<li><label><input type="checkbox">Elliptic</label></li>
+</ul>
+<div class="fragment">
+<p>Can you give an example of an elliptic phenomenon?</p>
+</div>
+</section></section>
+<section>
+<section id="problems" class="title-slide slide level1 center">
+<h1>Problems</h1>
+
+</section>
+<section id="question-1" class="slide level2 scrollable">
+<h2>Question 1</h2>
+<p>The lines along which a partial differential equation reduces to an ordinary differential equation are called</p>
+<ul class="task-list">
+<li><label><input type="checkbox">parabolic lines</label></li>
+<li><label><input type="checkbox">hyperbolic lines</label></li>
+<li><label><input type="checkbox">characteristic lines</label></li>
+<li><label><input type="checkbox">None of these</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: Characteristic lines Consider <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>t</mi></msub><mo>+</mo><msub><mi>u</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{t}+u_{x x}=0</annotation></semantics></math> what are the characteristic lines for the above equation? <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>t</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{dt}{dx}=0</annotation></semantics></math></p>
+<p>Consider <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mrow><mi>t</mi><mi>t</mi></mrow></msub><mo>−</mo><msub><mi>u</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{tt}-u_{x x}=0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>b</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>c</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=-1,b=0,c=1</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi><mo>=</mo><mn>4</mn><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b^{2}-4ac=4&gt;0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>t</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mi>±</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\frac{dt}{dx}=\pm{1}</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-2" class="slide level2">
+<h2>Question 2</h2>
+<p>Which of these apply to parabolic equations?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">They have one real characteristic line</label></li>
+<li><label><input type="checkbox">They have two real characteristic lines</label></li>
+<li><label><input type="checkbox">They have two imaginary characteristic lines</label></li>
+<li><label><input type="checkbox">They do not have characteristic lines</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: They have one real characteristic line</p>
+</div>
+</section>
+<section id="question-3" class="slide level2">
+<h2>Question 3</h2>
+<p>Which of these characteristics apply to hyperbolic equation?</p>
+<ul class="task-list">
+<li><label><input type="checkbox">finite domain of dependence and infinite domain of influence</label></li>
+<li><label><input type="checkbox">finite domain of dependence and finite domain of influence</label></li>
+<li><label><input type="checkbox">no domain of dependence and no domain of influence</label></li>
+<li><label><input type="checkbox">None of the above</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: finite domain of dependence and finite domain of influence</p>
+</div>
+</section>
+<section id="question-4" class="slide level2">
+<h2>Question 4</h2>
+<p>The nature of the second order partial differential equation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>ϕ</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mi>α</mi><mfrac><mrow><mi>∂</mi><mi>ϕ</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mi>β</mi><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{ \partial \phi }{ \partial t }+\alpha \frac{ \partial \phi }{ \partial x }+\beta \frac{ \partial^{2} \phi }{ \partial x^{2} }=0</annotation></semantics></math></p>
+<ul class="task-list">
+<li><label><input type="checkbox">circular</label></li>
+<li><label><input type="checkbox">elliptic</label></li>
+<li><label><input type="checkbox">parabolic</label></li>
+<li><label><input type="checkbox">hyperbolic</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: parabolic</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>β</mi><mo>,</mo><mi>b</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a=\beta,b=0,c=0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi><mo>=</mo><mn>0</mn><mo>−</mo><mi>β</mi><mo>×</mo><mn>0</mn><mo>×</mo><mn>4</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">D=b^{2}-4ac=0-\beta \times 0 \times 4=0</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-5" class="slide level2">
+<h2>Question 5</h2>
+<p>The value of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> for which the equation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mn>4</mn><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mi>∂</mi><mi>x</mi><mi>∂</mi><mi>y</mi></mrow></mfrac><mo>+</mo><mn>2</mn><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mi>∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\alpha \frac{ \partial^{2}\phi }{ \partial x^{2} }+4 \frac{ \partial^{2}\phi }{ \partial x  \partial y} + 2 \frac{ \partial^{2} \phi }{ \partial y^{2} }=0</annotation></semantics></math> becomes parabolic is</p>
+<ul class="task-list">
+<li><label><input type="checkbox">1</label></li>
+<li><label><input type="checkbox">2</label></li>
+<li><label><input type="checkbox">4</label></li>
+<li><label><input type="checkbox">8</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: 2</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>4</mn><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo>×</mo><mn>2</mn><mo>×</mo><mi>α</mi><mo>=</mo><mn>0</mn><mo>⟹</mo><mi>α</mi><mo>=</mo><mi>?</mi></mrow><annotation encoding="application/x-tex">4^{2}-4\times 2 \times \alpha=0 \implies \alpha=?</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-6" class="slide level2">
+<h2>Question 6</h2>
+<p>The steady compressible flow defined by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msubsup><mi>M</mi><mi>∞</mi><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mi>∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">(1-M_{\infty}^{2})\frac{ \partial^{2}\phi }{ \partial x^{2} }+\frac{ \partial^{2}\phi }{ \partial y^{2} }=0</annotation></semantics></math> becomes hyperbolic under the condition</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>∞</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">M_{\infty}=0</annotation></semantics></math></label></li>
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>∞</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M_{\infty}=1</annotation></semantics></math></label></li>
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>∞</mi></msub><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M_{\infty}&gt;1</annotation></semantics></math></label></li>
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>∞</mi></msub><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M_{\infty}&lt;1</annotation></semantics></math></label></li>
+</ul>
+<div class="fragment">
+<p>Solution: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>∞</mi></msub><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M_{\infty}&gt;1</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>−</mo><mn>4</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msubsup><mi>M</mi><mrow><mi>i</mi><mi>n</mi><mi>f</mi></mrow><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0-4(1-M_{inf}^{2})&gt;0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⟹</mo><annotation encoding="application/x-tex">\implies</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mrow><mi>i</mi><mi>n</mi><mi>f</mi></mrow></msub><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M_{inf}&gt;1</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-7" class="slide level2">
+<h2>Question 7</h2>
+<p>The Tricomi equation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y \frac{ \partial^{2} u }{ \partial x^{2} }+\frac{ \partial^{2}u }{ \partial y^{2} }=0</annotation></semantics></math> shows elliptic nature under the condition</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&gt;0</annotation></semantics></math></label></li>
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&lt;0</annotation></semantics></math></label></li>
+<li><label><input type="checkbox"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y=0</annotation></semantics></math></label></li>
+<li><label><input type="checkbox">cannot be determined</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&gt;0</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>−</mo><mn>4</mn><mi>y</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0-4y &lt; 0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⟹</mo><annotation encoding="application/x-tex">\implies</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&gt;0</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-8" class="slide level2 scrollable">
+<h2>Question 8</h2>
+<p>The following system of equations is classified as <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>8</mn><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>2</mn><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+\frac{ \partial u }{ \partial t } +8 \frac{ \partial v }{ \partial x }  &amp; =0 \\
+\frac{ \partial v }{ \partial t }+2 \frac{ \partial u }{ \partial x }  &amp; = 0 
+\end{align}
+</annotation></semantics></math></p>
+<ul class="task-list">
+<li><label><input type="checkbox">elliptic</label></li>
+<li><label><input type="checkbox">parabolic</label></li>
+<li><label><input type="checkbox">hyperbolic</label></li>
+<li><label><input type="checkbox">None of the above</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: hyperbolic</p>
+<p>2D NS : <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">u,v,p</annotation></semantics></math> continuity x &amp; y momentum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>x</mi></msub><mo>+</mo><msub><mi>v</mi><mi>y</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{x}+v_{y}=0</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>u</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>v</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U = \begin{pmatrix}u \\ v\end{pmatrix}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>x</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>x</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U_{x}=\begin{pmatrix}u_{x} \\ v_{x}\end{pmatrix}</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>t</mi></msub><mo>+</mo><mi>A</mi><msub><mi>U</mi><mi>x</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U_{t}+AU_{x}=0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A=\begin{pmatrix}0 &amp; 8 \\ 2  &amp; 0\end{pmatrix}</annotation></semantics></math></p>
+<p>First eqn wrt t and then second eqn wrt x <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>t</mi></msub><mo>+</mo><mn>8</mn><msub><mi>v</mi><mi>x</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{t}+8v_{x}=0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mrow><mi>t</mi><mi>t</mi></mrow></msub><mo>+</mo><mn>8</mn><msub><mi>v</mi><mrow><mi>x</mi><mi>t</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{tt}+8v_{xt}=0</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>t</mi></msub><mo>+</mo><mn>2</mn><msub><mi>u</mi><mi>x</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v_{t}+2u_{x}=0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>t</mi><mi>x</mi></mrow></msub><mo>+</mo><mn>2</mn><msub><mi>u</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v_{tx}+2u_{x x}=0</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mrow><mi>t</mi><mi>x</mi></mrow></msub><mo>=</mo><msub><mi>v</mi><mrow><mi>x</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{tx}=v_{xt}</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mrow><mi>t</mi><mi>t</mi></mrow></msub><mo>−</mo><mn>16</mn><msub><mi>u</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u_{tt}-16u_{x x}=0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>−</mo><mn>4</mn><mo>×</mo><mi>−</mi><mn>16</mn><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0-4 \times -16&gt;0</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⟹</mo><annotation encoding="application/x-tex">\implies</annotation></semantics></math> hyperbolic</p>
+<p>Calculate eigen values for matrix A <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>λ</mi><mn>2</mn></msup><mo>−</mo><mn>8</mn><mo>×</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda^{2}-8\times{2}=0</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-9" class="slide level2 scrollable">
+<h2>Question 9</h2>
+<p>The nature of the following Cauchy-Reimann equations is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+\frac{ \partial u }{ \partial x } + \frac{ \partial v }{ \partial y }  &amp; =0 \\
+\frac{ \partial v }{ \partial x } -\frac{ \partial u }{ \partial y }  &amp; =0
+\end{align}
+</annotation></semantics></math></p>
+<ul class="task-list">
+<li><label><input type="checkbox">elliptic</label></li>
+<li><label><input type="checkbox">parabolic</label></li>
+<li><label><input type="checkbox">hyperbolic</label></li>
+<li><label><input type="checkbox">None of the above</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: elliptic</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>u</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>v</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U=\begin{pmatrix}u \\ v\end{pmatrix}</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>x</mi></msub><mo>+</mo><mi>A</mi><msub><mi>U</mi><mi>y</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U_{x}+ A U_{y}=0</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>x</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>x</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U_{x}=\begin{pmatrix}u_{x} \\ v_{x}\end{pmatrix}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>y</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>y</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>y</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U_{y}=\begin{pmatrix}u_{y} \\ v_{y}\end{pmatrix}</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A=\begin{pmatrix}0 &amp; 1 \\ -1 &amp; 0\end{pmatrix}</annotation></semantics></math></p>
+<p>characteristic equation for matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>λ</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda^{2}+1=0</annotation></semantics></math> eigen values for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> are <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>±</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\pm i</annotation></semantics></math></p>
+</div>
+</section>
+<section id="question-10" class="slide level2 scrollable">
+<h2>Question 10</h2>
+<p>The following system of equations is classified as (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> has real value) <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mi>β</mi><mn>2</mn></msup><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac><mrow><mi>∂</mi><mi>v</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>∂</mi><mi>u</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align}
+\beta^{2} \frac{ \partial u }{ \partial x } -\frac{ \partial v }{ \partial y }  &amp; =0 \\
+\frac{ \partial v }{ \partial x } - \frac{ \partial u }{ \partial y }  &amp; =0
+\end{align}
+</annotation></semantics></math></p>
+<ul class="task-list">
+<li><label><input type="checkbox">elliptic</label></li>
+<li><label><input type="checkbox">parabolic</label></li>
+<li><label><input type="checkbox">hyperbolic</label></li>
+<li><label><input type="checkbox">None of the above</label></li>
+</ul>
+<div class="fragment">
+<p>Solution: hyperbolic</p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>u</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>v</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U=\begin{pmatrix}u \\ v\end{pmatrix}</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>x</mi></msub><mo>+</mo><mi>A</mi><msub><mi>U</mi><mi>y</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U_{x}+ A U_{y}=0</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>x</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>x</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U_{x}=\begin{pmatrix}u_{x} \\ v_{x}\end{pmatrix}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mi>y</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>y</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>y</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">U_{y}=\begin{pmatrix}u_{y} \\ v_{y}\end{pmatrix}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>x</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>b</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>c</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>d</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>u</mi><mi>y</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>v</mi><mi>y</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+\begin{pmatrix}
+u_{x} \\
+v_{x} \\
+\end{pmatrix} + \begin{pmatrix}
+a &amp; b \\
+c &amp; d
+\end{pmatrix} \begin{pmatrix}
+u_{y} \\
+v_{y}
+\end{pmatrix}=0
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mfrac><mn>1</mn><msup><mi>β</mi><mn>2</mn></msup></mfrac></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A=\begin{pmatrix}0 &amp; -\frac{1}{\beta^{2}} \\ -1 &amp; 0\end{pmatrix}</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>λ</mi><mn>2</mn></msup><mo>−</mo><mfrac><mn>1</mn><msup><mi>β</mi><mn>2</mn></msup></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda^{2}-\frac{1}{\beta^{2}}=0</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\beta \in \mathbb{R}</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⟹</mo><annotation encoding="application/x-tex">\implies</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\in \mathbb{R}</annotation></semantics></math> so hyperbolic</p>
+</div>
+</section></section>
 <section id="thank-you" class="title-slide slide level1 center unlisted">
 <h1>Thank You</h1>
 <p>Go to <a href="../index.html">Home</a></p>
@@ -629,6 +909,38 @@ Durga Prasad Pydi
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>

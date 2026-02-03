@@ -8,15 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4c2f379a48ff91d6",
+            "id": "4c18f88b52757cec",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "slides/assets/me22d400.jpeg"
+                "file": "slides/Week2.qmd",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "me22d400"
+              "icon": "lucide-file",
+              "title": "Week2"
             }
           }
         ]
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d9beac6d818f7f71",
@@ -169,21 +172,20 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "f8d545de5bb8e13c",
+  "active": "4c18f88b52757cec",
   "lastOpenFiles": [
+    "slides/Week2_files/mediabag",
+    "slides/assets/me22d400.jpeg",
+    "slides/assets/homePage.png",
+    "slides/Week2.qmd",
+    "archive/ConvectiveHeatTransfer/slides/Week9.qmd",
+    "slides/Week2_files/libs/quarto-contrib/glightbox/lightbox.css",
+    "slides/Week2_files/libs/quarto-contrib/glightbox/glightbox.min.js",
+    "slides/Week2_files/libs/quarto-contrib/glightbox/glightbox.min.css",
+    "slides/Week2_files/libs/quarto-contrib/glightbox",
+    "slides/Week2_files/libs/quarto-contrib",
     "slides/Week1_files/mediabag",
     "slides/Week1_files/libs/quarto-contrib/glightbox/lightbox.css",
-    "slides/Week1_files/libs/quarto-contrib/glightbox/glightbox.min.js",
-    "slides/Week1_files/libs/quarto-contrib/glightbox/glightbox.min.css",
-    "slides/Week1_files/libs/quarto-contrib/glightbox",
-    "slides/Week1_files/libs/quarto-contrib",
-    "slides/assets/homePage.png",
-    "slides/assets/Pasted image 20260124103456.png",
-    "slides/Week1.qmd",
-    "slides/Week12.qmd",
-    "slides/Summary.qmd",
-    "slides/Summary_files/mediabag",
-    "slides/Week11.qmd",
     "slides/assets/Summary_bl.excalidraw.md",
     "slides/assets/Summary_blT.excalidraw.md",
     "slides/assets/Summary_blT.excalidraw.svg",
@@ -197,7 +199,6 @@
     "slides/assets/laminar_condensation.excalidraw.svg",
     "slides/assets/pool boiling curve.png",
     "slides/assets/pool boiling curve.excalidraw.md",
-    "slides/assets/pool boiling curve.excalidraw.svg",
     "slides/assets/Week12_1.excalidraw.md",
     "slides/assets/Week11_1.excalidraw.md",
     "slides/assets/Week10_3.excalidraw.md",
